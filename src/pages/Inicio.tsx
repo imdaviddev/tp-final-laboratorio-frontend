@@ -1,4 +1,3 @@
-import '../css/inicio.css';
 import Home from '../components/Home';
 
 const Inicio = () => {
