@@ -1,4 +1,4 @@
-import { Dashboard } from '../pages';
+import { Dashboard, Inicio } from '../pages';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const Router = () => {
@@ -6,6 +6,8 @@ const Router = () => {
   <BrowserRouter>
     <Routes>
       <Route  element={<Dashboard/>} path='/' />
+      <Route element={<Inicio />} path="/Inicio" />
+
     </Routes>
   </BrowserRouter>
   </>

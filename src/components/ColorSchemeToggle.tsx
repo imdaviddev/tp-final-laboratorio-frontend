@@ -26,7 +26,7 @@ export default function ColorSchemeToggle(props: IconButtonProps) {
   }
   return (
     <IconButton
-      data-screenshot="toggle-mode"
+      data-screenshot="toggle-mode" //Boton de modo de luz
       size="sm"
       variant="outlined"
       color="neutral"

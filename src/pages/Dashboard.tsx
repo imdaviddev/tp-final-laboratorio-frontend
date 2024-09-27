@@ -13,14 +13,12 @@ import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import Sidebar from '../components/Sidebar'; 
 import OrderTable from '../components/OrderTable';
 import OrderList from '../components/OrderList';
-import Header from '../components/Header';
 
 export default function Dashboard() {
   return (
     <CssVarsProvider disableTransitionOnChange>
       <CssBaseline />
       <Box sx={{ display: 'flex', minHeight: '100dvh' }}>
-        <Header />
         <Sidebar />
         <Box
           component="main"
@@ -51,7 +49,7 @@ export default function Dashboard() {
               <Link
                 underline="none"
                 color="neutral"
-                href="#some-link"
+                href="Inicio" //TENER CUIDADO COMO DECLARAMOS LOS LINKS
                 aria-label="Home"
               >
                 <HomeRoundedIcon />

@@ -1,9 +1,11 @@
-const Inicio = () => {
-  return (
-    <div>
-    HOLA MUNDO
-    </div>
-  )
-}
+import '../css/inicio.css';
+import Home from '../components/Home';
 
-export default Inicio
+const Inicio = () => {
+    return (
+      <Home></Home>
+    )
+  }
+  
+  export default Inicio
+  

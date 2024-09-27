@@ -1,0 +1,30 @@
+
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.Logo, .icon-login{
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+.nav-header-list{
+    margin: 10px;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    
+}
+
+.welcome-header{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+
+  
