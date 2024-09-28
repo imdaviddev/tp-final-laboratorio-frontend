@@ -9,7 +9,6 @@ export default function Header() {
         <img src="3.png" alt="Login" className="icon-login"/>
       </div>
       <ListaNav/>
-      <div className='welcome-header'>Bienvenidos a Amazona</div>
     </header>
   );
 }
