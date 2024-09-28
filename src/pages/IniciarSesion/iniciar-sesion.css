@@ -1,47 +1,112 @@
-.wrapper-iniciar-sesion {
-    display: flex;
-    flex-direction: row; 
-    width: 100%;
-    height: 100vh; 
+:root{
+    --cls-border-form: rgb(209, 208, 208);
+    --cls-color-form: rgb(103, 102, 102);
 }
 
-.wrapper-fondo-iniciar-sesion {
-    flex: 2; 
+.page-container {
     display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/** Header **/
+.header-iniciar-sesion {
+    display:flex;
+    flex-direction:column;
+    width: 100%;;
+}
+
+.header-top-iniciar-sesion {
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 18vh;
+    padding: 1rem;
+}
+
+.header-top-iniciar-sesion .logo-amazona {
+    background-image: url("1.png");
+    width: 10rem;
+    height: 5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.header-top-iniciar-sesion .imagen-de-perfil {
+    width: 3rem;
+}
+
+.header-bottom-iniciar-sesion {
+    padding: 1rem 0;
+    display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    border-right: rgb(210, 53, 53) 2px solid;
-    background: linear-gradient(90rad,rgb(197, 46, 46),70%, transparent);
-    padding-inline: 3rem;
+    padding: 10px;
+    color: linear;
+    border-top: solid 1px gray;
+    border-bottom: solid 1px gray;
+    background: linear-gradient(
+        to top, 
+        rgb(106, 23, 23),
+        rgb(126, 30, 30), 
+        rgb(142, 32, 32), 
+        rgb(156, 21, 21) 40%, 
+        rgb(192, 21, 21) 50%, 
+        rgb(255, 29, 29), 
+        rgb(253, 89, 89)
+    );
 }
 
-.wrapper-fondo-iniciar-sesion img {
-    width: 60%;
-    border-radius: 0.5rem;
-}
-
-.wrapper-formulario-iniciar-sesion {
-    flex: 1;
+.header-bottom-iniciar-sesion ul {
+    width: 100%;
+    color: white;
+    font-size: 0.8rem;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+/** Iniciar sesion **/
+.wrapper-iniciar-sesion {
+    display: flex;
     flex-direction: column;
-    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .formulario-iniciar-sesion {    
-    padding: 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
     border-radius: 0.5rem;
     font-family: sans-serif;
+    width: 100%;
+}
+
+.titulo-formulario-iniciar-sesion {
+    color: rgb(231, 69, 69);
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 80%;
+    text-align: center;
 }
 
 .formulario-iniciar-sesion-container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    border: solid 1px var(--cls-border-form);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
 }
 
 .campo-formulario-iniciar-sesion {
@@ -50,6 +115,34 @@
     gap: 0.3rem;
 }
 
-.campo-formulario-iniciar-sesion input{
+.campo-formulario-iniciar-sesion label {
+    font-weight: bold;
+    color: var(--cls-color-form);
+}
+
+.campo-formulario-iniciar-sesion input {
     padding: 0.4rem 0.5rem;
+    border-radius: 0.3rem;
+    border: solid 1px var(--cls-border-form);
+}
+
+.campo-formulario-iniciar-sesion input::placeholder {
+    color: var(--cls-border-form);
+}
+
+.formulario-iniciar-sesion-btn-submit {
+    background-color: red;
+    padding: 0.5rem 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    border: solid 1px black;
+}
+
+.formulario-iniciar-sesion-olvidaste-tu-contrasenia {
+    text-decoration: underline 1px;
+    text-underline-offset: 4px;
+    font-size: 0.7rem;
+    margin: 0.3rem 0;
+    font-weight: 400;
 }
