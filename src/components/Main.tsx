@@ -5,8 +5,12 @@ import CardHome from './CardHome'
 export default function Main() {
     return (
         <div>
-            <Estatus></Estatus>
-            <CardHome></CardHome>
+            <Estatus/>
+            <div className='container-cards-group'>
+                <CardHome title="Hola" contenido="soy contenido" image="img 1.svg"/>
+                <CardHome/>
+                <CardHome/>
+            </div>
         </div>
     )
 }

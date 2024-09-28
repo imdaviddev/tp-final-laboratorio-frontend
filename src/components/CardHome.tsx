@@ -1,13 +1,25 @@
 import '../css/cards.css'
 
-export default function CardHome() {
+interface Props{
+
+    title: string | number // | Puede ser un tipo de dato O el otro 
+    contenido: string 
+    image: string      //? El signo de pregunta me permite o no enviar el tipo de dato
+}
+
+
+export default function CardHome(props:Props) { 
 
     return (
         <div className="container-card">
-            <img src="img 1.svg" alt="" className='card-image'/>
             <div className="card-text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque incidunt, commodi accusamus vitae ipsam velit quod quae, est ex blanditiis qui ipsa laborum fuga aliquam. Aliquam eligendi voluptatibus quibusdam doloremque?
+                <div className='card-title'>
+                    <b>{props.title}</b>
+                </div>
+                <div className='card-main'><b>{props.contenido}</b>
+                </div>
             </div>
+            <img src= {props.image} alt="" className='card-image' />
         </div>
     );
 }

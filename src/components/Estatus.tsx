@@ -1,5 +1,5 @@
 import TextField from '@mui/material/TextField';
-import ButtonConsultarEstado from '../components/Button';
+import ButtonConsultarEstado from './ButtonConsultarEstado';
 
 
 export default function Estatus() {
