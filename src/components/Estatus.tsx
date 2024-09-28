@@ -6,7 +6,6 @@ export default function Estatus() {
     return (
         <div className="container-img-status">
             <div className='welcome-header'>Bienvenidos a Amazona</div>
-
             <div className='container-status-group'>
                 <div className='container-status' color="secondary">
                     <TextField
