@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import IniciarSesionPage from '../pages/IniciarSesion/IniciarSesionPage';
 import SupervisonHomePage from '../pages/Supervision/SupervisionHomePage';
 import GerenciaHomePage from '../pages/gerencia/gerencia';
+import ReportesGerencia from '../pages/reportesGerencia/ReportesGerencia';
 import ReportesGerencia from '../pages/reportes/ReportesGerencia';
 
 const Router = () => {
