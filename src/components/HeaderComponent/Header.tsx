@@ -34,8 +34,21 @@ const NavbarSupervisor = () => {
   )
 }
 
+const NavbarGerencia = () => {
+  return (
+    <nav className="header-bottom">
+      <ul>
+        <li>Inicio</li>
+        <li>Estadisticas</li>
+        <li>Controles</li>
+      </ul>
+    </nav>
+
+  )
+}
+
 const roles: string[] = [
-  "Cliente", "Supervisor"
+  "Cliente", "Supervisor", "Gerente"
 ]
 
 interface Props {
@@ -55,6 +68,7 @@ const Header: React.FC<Props> = ({ rol }) => {
     </div>
     {rol == "Cliente" ? <NavbarCliente/> : null}
     {rol == "Supervisor" ? <NavbarSupervisor/> : null}
+    {rol == "Gerente" ? <NavbarGerencia/> : null}
   </div>
 }
 
