@@ -1,0 +1,14 @@
+.button-group{
+    display: flex;    
+    flex-direction: column;
+}
+.button-group button{
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    background-color: red;
+    border-style: none;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px gray;
+}
+
