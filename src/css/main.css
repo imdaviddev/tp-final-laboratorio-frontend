@@ -53,3 +53,15 @@
     box-shadow: 5px 5px 5px gray;
     z-index: 1; /* Asegúrate de que este contenido esté encima de la imagen borrosa */
 }
+
+.welcome-header {
+    margin-top: 45px;
+    display: flex;
+    color: red;
+    justify-content: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: italic;
+    font-size: 46px;
+    font-weight: bold; /* Para engrosar el texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombras */
+}
