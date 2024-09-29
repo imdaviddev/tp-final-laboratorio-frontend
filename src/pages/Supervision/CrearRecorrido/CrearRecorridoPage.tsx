@@ -16,6 +16,7 @@ const Titulo = styled.div`
 const TituloDescripcion = styled.p`
     font-size: 1rem;
     font-weight: 1.2rem;
+    text-align: center;
 `
 const ContainerControles = styled.div`
     background-color: #c4c1c1;
@@ -29,11 +30,13 @@ const ContainerControles = styled.div`
 
 const Button = styled.button`
     color: white;
-    background-color: #ec4848;
-    border-radius: 0.5rem;
+    background-color: #c33c3c;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 0 0 gray;
     height: min-content;
-    padding: 0.5rem 1.5rem;
+    padding: 0.2rem 1rem;
     border: solid 1px #9c9c9e;
+    font-size: 0.7rem;
 `
 
 const Row = styled.div`
@@ -51,6 +54,7 @@ const Controles = styled.div`
     flex-direction: row;
     justify-content: space-between;
     flex: 1;
+    gap: 0.5rem;
 `;
 
 const Container = styled.div`
@@ -81,6 +85,7 @@ const WrapperButtonControl = styled.div`
     flex-direction: row;
     align-items: center;
     border-radius: 0.5rem;
+    min-width: 200px;
     > p {
        text-align: center;
        flex: 1; 
@@ -146,6 +151,13 @@ const ListaPaquetesIngresados = () => {
     </WrapperListaPaquetes>
 }
 
+const Mapa = styled.div`
+    background-color: gray;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+`
+
 const CrearRecorridoPage = () => {
   return <>
     <TituloPage>
@@ -168,9 +180,33 @@ const CrearRecorridoPage = () => {
                 <ListaPaquetesIngresados/>                
             </Container>
             <Container>
+                <TituloDescripcion>
+                    Designar Conductor
+                </TituloDescripcion>
+                <ButtonControl texto="" accion={() => null} />
+                <TituloDescripcion style={{marginTop: '0.5rem'}}>
+                    Usted Eligio al conductor #04542 Leandro
+                </TituloDescripcion>
+
+                <TituloDescripcion style={{marginTop: '0.5rem'}}>
+                    Designar Vehiculo
+                </TituloDescripcion>
+                <ButtonControl texto="" accion={() => null} />
+                <TituloDescripcion style={{marginTop: '0.5rem'}}>
+                    Usted Eligio al vehiculo #c4m1on45
+                </TituloDescripcion>
             </Container>
             <Container>
-
+                <TituloDescripcion style={{marginBottom: '0.5rem'}}>
+                    Ruta Final
+                </TituloDescripcion>
+                <Mapa/>
+                <TituloDescripcion style={{marginTop: '0.5rem'}}>
+                    Total en KM: 75KM
+                </TituloDescripcion>
+                <TituloDescripcion>
+                    Total en Horas: 3HS
+                </TituloDescripcion>
             </Container>
         </Controles>
     
