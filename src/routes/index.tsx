@@ -3,8 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import IniciarSesionPage from '../pages/IniciarSesion/IniciarSesionPage';
 import SupervisonHomePage from '../pages/Supervision/SupervisionHomePage';
 import GerenciaHomePage from '../pages/gerencia/gerencia';
-import ReportesGerencia from '../pages/reportes/ReportesGerencia';
-import ControlesGerencia from '../pages/gerencia/controlesGerencia'
+import ReportesGerencia from '../pages/reportesGerencia/ReportesGerencia';
 
 const Router = () => {
   return <>
@@ -15,7 +14,6 @@ const Router = () => {
       <Route element={<SupervisonHomePage/>} path="/supervision" />
       <Route element={<GerenciaHomePage/>} path="/gerencia" />
       <Route element={<ReportesGerencia/>} path="/gerencia/reportes" />
-      <Route element={<ControlesGerencia/>} path="/gerencia/controles" />
     </Routes>
   </BrowserRouter>
   </>
