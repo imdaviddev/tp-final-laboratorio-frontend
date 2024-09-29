@@ -21,7 +21,7 @@ const SupervisonHomePage = () => {
         <div className="recorridos-en-curso">
           <div className="tarjeta-recorrido-en-curso">
             <div className="imagen-vehiculo">
-              <img src="../Imagenes/camionRojo.svg" width={"100%"} height={"100%"} />
+              <img src="3.png" width={"100%"} height={"100%"} />
             </div>
             <div className="informacion">
               <p>Recorrido {"#32"}</p>
@@ -30,7 +30,7 @@ const SupervisonHomePage = () => {
           </div>
           <div className="tarjeta-recorrido-en-curso">
             <div className="imagen-vehiculo">
-              <img src="../Imagenes/camionRojo.svg" width={"100%"} height={"100%"} />
+              <img src="3.png" width={"100%"} height={"100%"} />
             </div>
             <div className="informacion">
               <p>Recorrido {"#32"}</p>
