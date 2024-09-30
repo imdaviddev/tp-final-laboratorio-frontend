@@ -1,16 +1,14 @@
 import { useState } from 'react';
-import Header from '../../components/HeaderComponent/Header';
 import './supervision.css';
 
-const SupervisonHomePage = () => {
+const SupervisionHomePage = () => {
   const [verRecorrido, setVerRecorrido] = useState(false);
 
   const handlerVerRecorrido = () => {
     setVerRecorrido(verRecorrido => !verRecorrido)
   }
 
-  return <div className='page-container'>
-    <Header rol='Supervisor' /> {/** ESTO DEBERIA CAMBIARSE PARA MEJOR UTILIDAD DEL COMPONENTE */}
+  return <>
     <div className="wrapper-mensaje-bienvenida">
       <h1>Hola, Val</h1>
     </div>
@@ -46,8 +44,8 @@ const SupervisonHomePage = () => {
 
 
 
-  </div>
+  </>
 }
 
-export default SupervisonHomePage
+export default SupervisionHomePage
 
