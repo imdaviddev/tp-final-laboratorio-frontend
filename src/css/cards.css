@@ -5,6 +5,7 @@
     align-items: center;
 }
 .container-card{
+    margin: 15px;
     width: 45%;
     display: flex;
     border-radius: 15px;

@@ -1,9 +1,8 @@
-import { Header } from "../components"; //Exportar para ser mas sencillo de entender de donde proviene
 import Main from "../components/Main";
-
+import Header from "../components/HeaderComponent/Header";
 const Inicio = () => {
   return <>
-    <Header/>
+    <Header rol="Cliente"/>
     <Main/>
   </>
 }

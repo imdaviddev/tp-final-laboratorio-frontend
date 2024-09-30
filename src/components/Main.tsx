@@ -3,14 +3,33 @@ import Estatus from './Estatus'
 import CardHome from './CardHome'
 
 export default function Main() {
+    const cardData = [
+        {
+            title: "Lo mejor para tus encomiendas",
+            contenido: "Contamos con un equipo de profesionales capacitados para brindarte el mejor servicio",
+            image: "./Imagenes/imgDescInicio.svg"
+        },
+        {
+            title: "Conectados por todo el pais",
+            contenido: "Amazona realiza envios a todo el pais y dispone de sucursales donde podrás retirar tus paquetes",
+            image: "./Imagenes/camion.svg"
+        }
+    ];
+
     return (
         <div>
-            <Estatus/>
+            <Estatus />
             <div className='container-cards-group'>
-                <CardHome title="Hola" contenido="soy contenido" image="img 1.svg"/>
-                <CardHome/>
-                <CardHome/>
+                {cardData.map((card, index) => (
+                    <CardHome 
+                        key={index}
+                        title={card.title}
+                        contenido={card.contenido}
+                        image={card.image}
+                    />
+                ))}
             </div>
         </div>
     )
 }
+
