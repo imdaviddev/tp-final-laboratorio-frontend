@@ -16,6 +16,7 @@ const WrapperTabla = styled.div`
 const WrapperRow = styled.div`
   display: flex;
   flex-direction: row;
+  padding: 0.5rem;
   background-color: #d12c2c;
   color: white;
   font-weight: bold;
@@ -23,6 +24,7 @@ const WrapperRow = styled.div`
 `;
 
 const WrapperCol = styled.div`
+  text-align: center;
   padding: 0.5rem;
   flex: 1;  
 `;
@@ -42,7 +44,7 @@ const Tabla: React.FC<PropsTable> = ({ datos }) => {
             )}
 
             {datos.map((fila, rowIndex) => (
-                <WrapperRow key={rowIndex} style={{backgroundColor: "#7c7b7b", border: "solid 1px black", color: "#ffffff"}}>
+                <WrapperRow key={rowIndex}>
                     {Object.values(fila).map((valor, colIndex) => (
                         <WrapperCol key={colIndex}>{parser(valor.toString())}</WrapperCol>
                     ))}
@@ -52,25 +54,24 @@ const Tabla: React.FC<PropsTable> = ({ datos }) => {
 };
 
 
-const ConductoresPage = () => {
+const SupervisionVehiculosPage = () => {
     const datos = [
-        { id: 5226, nombre: "Miguel Angel", viajesRealizados: 68 },
-        { id: 3452, nombre: "Santiago Pérez", viajesRealizados: 102 },
-        { id: 9812, nombre: "Carla Gómez", viajesRealizados: 47 },
-        { id: 2765, nombre: "Laura Martínez", viajesRealizados: 86 },
-        { id: 4398, nombre: "Ricardo García", viajesRealizados: 120 },
-        { id: 6235, nombre: "Ana López", viajesRealizados: 54 }
+        { id: 1123, tipo: "Auto", viajesRealizados: 58 },
+        { id: 2356, tipo: "Camioneta", viajesRealizados: 94 },
+        { id: 3478, tipo: "Motocicleta", viajesRealizados: 72 },
+        { id: 4591, tipo: "Camión", viajesRealizados: 36 },
+        { id: 5129, tipo: "Auto", viajesRealizados: 123 }
     ]
 
     return <>
         <TituloPage>
-            Conductores
+            Vehiculos
         </TituloPage>
         <Tabla datos={datos} />
     </>
 }
 
-export default ConductoresPage;
+export default SupervisionVehiculosPage;
 
 
 const WrapperModal = styled.div`

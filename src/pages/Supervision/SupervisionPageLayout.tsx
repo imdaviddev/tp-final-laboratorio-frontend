@@ -11,13 +11,24 @@ const PageContainer = styled.div`
     font-family: sans-serif;
 `;
 
+const WrapperCenterItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  align-self: center;
+`
+
 
 const SupervisionPageLayout = () => {
   return <PageContainer>
     <Header rol="Supervisor"/>
 
     {/** Acá iran las diferentes areas de Supervision */}
-    <Outlet/>
+    <WrapperCenterItems>
+      <Outlet/>
+    </WrapperCenterItems>
 
   </PageContainer>
 }

@@ -4,8 +4,7 @@ import IniciarSesionPage from '../pages/IniciarSesion/IniciarSesionPage';
 import GerenciaHomePage from '../pages/gerencia/gerencia';
 import ReportesGerencia from '../pages/reportesGerencia/ReportesGerencia';
 import ControlesGerencia from '../pages/controlesGerencia/ControlesGerencia';
-import { CrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout } from '../pages/Supervision';
-import ConductoresPage from '../pages/Supervision/Conductores/Conductores';
+import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout, SupervisionReportesPage, SupervisionVehiculosPage } from '../pages/Supervision';
 
 const Router = () => {
   return <>
@@ -18,8 +17,10 @@ const Router = () => {
       <Route element={<ControlesGerencia/>} path="/gerencia/controles" />
       <Route element={<SupervisionPageLayout/>} path='/supervision'>
         <Route index element={<SupervisionHomePage/>} />
-        <Route element={<CrearRecorridoPage/>} path='crear-recorrido'/>  
-        <Route element={<ConductoresPage/>} path='conductores'/>  
+        <Route element={<SupervisionCrearRecorridoPage/>} path='crear-recorrido'/>  
+        <Route element={<SupervisionConductoresPage/>} path='conductores'/>
+        <Route element={<SupervisionVehiculosPage/>} path='vehiculos'/>
+        <Route element={<SupervisionReportesPage/>} path='reportes'/>
       </Route>      
     </Routes>
   </BrowserRouter>

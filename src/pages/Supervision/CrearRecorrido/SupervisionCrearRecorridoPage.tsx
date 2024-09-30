@@ -158,7 +158,7 @@ const Mapa = styled.div`
     border-radius: 0.5rem;
 `
 
-const CrearRecorridoPage = () => {
+const SupervisionCrearRecorridoPage = () => {
   return <>
     <TituloPage>
         Crear Recorrido
@@ -214,4 +214,4 @@ const CrearRecorridoPage = () => {
   </>
 }
     
-export default CrearRecorridoPage
+export default SupervisionCrearRecorridoPage
