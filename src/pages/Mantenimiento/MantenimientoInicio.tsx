@@ -3,7 +3,7 @@ import { TituloDescripcion, TituloPage } from '../ComponentsUI'
 import camionRojo from '../../../Imagenes/camion.svg';
 
 
-const ContainerGeneral = styled.div`
+export const ContainerGeneral = styled.div`
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -16,7 +16,7 @@ const ContainerGeneral = styled.div`
     width: 100%;
 `
 
-const FilaGeneral = styled.div`
+export const FilaGeneral = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,7 +27,7 @@ const FilaGeneral = styled.div`
   border-radius: 0.5rem;
 `
 
-const BoxGeneral = styled.div`
+export const BoxGeneral = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,7 @@ const BoxGeneral = styled.div`
   border-radius: 0.5rem;
 `
 
-const VerDetalle = () => {
+export const VerDetalle = () => {
   return <p style={{
     color: 'red',
     textDecoration: 'underline',
