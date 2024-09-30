@@ -5,7 +5,7 @@ import GerenciaHomePage from '../pages/gerencia/gerencia';
 import ReportesGerencia from '../pages/reportesGerencia/ReportesGerencia';
 import ControlesGerencia from '../pages/controlesGerencia/ControlesGerencia';
 import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout, SupervisionReportesPage, SupervisionVehiculosPage } from '../pages/Supervision';
-import MantenimientoPageLayout, { MantenimientoInicio } from '../pages/Mantenimiento';
+import MantenimientoPageLayout, { MantenimientoHistorial, MantenimientoInicio } from '../pages/Mantenimiento';
 import Mantenimientoingresos from '../pages/Mantenimiento/Mantenimientoingresos';
 import MantenimientoReparaciones from '../pages/Mantenimiento/MantenimientoReparaciones';
 
@@ -29,6 +29,7 @@ const Router = () => {
           <Route index element={<MantenimientoInicio/>}/>
           <Route element={<Mantenimientoingresos/>} path='ingresos'/>
           <Route element={<MantenimientoReparaciones/>} path='reparaciones'/>
+          <Route element={<MantenimientoHistorial/>} path='historial-de-tickets'/>
       </Route>
     </Routes>
   </BrowserRouter>

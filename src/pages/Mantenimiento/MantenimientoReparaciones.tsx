@@ -3,14 +3,14 @@ import { BoxGeneral, ContainerGeneral, FilaGeneral, TituloPage, VerDetalle } fro
 import { ColumnaGeneral } from './Mantenimientoingresos'
 import Camion from '../../../imagenes/camion.svg';
 
-const TituloGeneral = styled.div`
+export const TituloGeneral = styled.div`
   font-size: 1.2rem;
   font-weight: bold;
   color: red;
   width: 100%;
   text-align: center;
 `
-const ButtonGeneral = styled.div`
+export const ButtonGeneral = styled.div`
   padding: 0.5rem 1rem;
   color: white;
   background-color: red;
