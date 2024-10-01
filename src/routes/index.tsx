@@ -11,6 +11,11 @@ import MantenimientoReparaciones from '../pages/Mantenimiento/MantenimientoRepar
 import ConductorInicio from '../pages/Conductor/ConductorInicio';
 import ConductorRecorrido from '../pages/Conductor/ConductorRecorrido'
 import ConductorReportes from '../pages/Conductor/ConductorReportes';
+import AdministracionPageLayout from '../pages/Administracion/AdministracionPageLayout';
+import AdministracionInicio from '../pages/Administracion/AdministracionInicio';
+import AdministracionRepuestos from '../pages/Administracion/AdministracionRepuestos';
+import AdministracionDeProveedores from '../pages/Administracion/AdministracionDeProveedores';
+import AdministracionReportes from '../pages/Administracion/AdministracionReportes';
 
 const Router = () => {
   return <>
@@ -37,7 +42,12 @@ const Router = () => {
       <Route element={<ConductorInicio/>} path='/conductor'/>
       <Route element={<ConductorRecorrido/>} path='/conductor/recorridos'/>
       <Route element={<ConductorReportes/>} path='/conductor/reportes'/>
-
+      <Route element={<AdministracionPageLayout/>} path='/administracion'>
+          <Route index element={<AdministracionInicio/>} />
+          <Route element={<AdministracionRepuestos/>} path='repuestos'/>
+          <Route element={<AdministracionDeProveedores/>} path='proveedores'/>
+          <Route element={<AdministracionReportes/>} path='reportes'/>
+      </Route>
     </Routes>
   </BrowserRouter>
   </>

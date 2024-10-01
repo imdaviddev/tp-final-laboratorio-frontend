@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { camelCaseToNormal as parser } from "../../../utils";
 
 export const WrapperTabla = styled.div`
   display: flex;

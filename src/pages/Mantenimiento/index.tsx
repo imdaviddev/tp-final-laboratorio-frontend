@@ -5,7 +5,7 @@ import { styled } from 'styled-components';
 import Header from '../../components/HeaderComponent/Header';
 import { Outlet } from 'react-router-dom';
 
-const PageContainer = styled.div`
+export const PageContainer = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -14,7 +14,7 @@ const PageContainer = styled.div`
     font-family: sans-serif;
 `;
 
-const WrapperCenterItems = styled.div`
+export const WrapperCenterItems = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
