@@ -1,12 +1,21 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import React, { useState } from 'react';
+import { 
+  Button, 
+  Popover, 
+  Typography, 
+  List, 
+  ListItem, 
+  ListItemButton, 
+  ListItemText, 
+  Paper,
+  Box
+} from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 interface Package {
-  id: number
-  name: string
-  description: string
+  id: number;
+  name: string;
+  description: string;
 }
 
 const packages: Package[] = [
@@ -20,52 +29,110 @@ const packages: Package[] = [
   { id: 8, name: "Paquete H", description: "Contiene muestras médicas. Manipular con precaución." },
   { id: 9, name: "Paquete I", description: "Equipo deportivo. Tamaño grande." },
   { id: 10, name: "Paquete J", description: "Artículos de colección. Tratar con cuidado." },
-]
+];
+
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  padding: theme.spacing(2),
+  maxWidth: 300,
+}));
+
+const RedButton = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.palette.error.main,
+  color: theme.palette.common.white,
+  '&:hover': {
+    backgroundColor: theme.palette.error.dark,
+  },
+}));
+
+const PackageImage = styled('img')(({ theme }) => ({
+  width: '100%',
+  height: 'auto',
+  maxHeight: 120,
+  objectFit: 'cover',
+  marginBottom: theme.spacing(2),
+  borderStyle: 'none',
+  transition: 'transform 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.05)',
+  },
+  '&.small-image': {
+    maxWidth: 115,
+    maxHeight: 100,
+    display: 'block',
+    margin: '0 auto',
+  },
+}));
 
 function PackagePopover({ pkg }: { pkg: Package }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? `popover-${pkg.id}` : undefined;
 
   return (
-    <Popover open={isOpen} onOpenChange={setIsOpen}>
-      <PopoverTrigger asChild>
-        <Button variant="outline" className="w-full justify-start">
-          {pkg.name}
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-80">
-        <div className="grid gap-4">
-          <div className="space-y-2">
-            <h4 className="font-medium leading-none">{pkg.name}</h4>
-            <p className="text-sm text-red-500">{pkg.description}</p>
-          </div>
-          <div className="flex justify-center">
-            <Button 
-              className="bg-red-500 text-white hover:bg-red-600"
-              onClick={() => {
-                console.log(`Escanear QR para ${pkg.name}`)
-                setIsOpen(false)
-              }}
-            >
-              Escanear QR
-            </Button>
-          </div>
-        </div>
-      </PopoverContent>
-    </Popover>
-  )
+    <div>
+      <ListItemButton onClick={handleClick}>
+        <ListItemText primary={pkg.name} />
+      </ListItemButton>
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+      >
+        <StyledPaper>
+          <PackageImage
+            src="../../Imagenes/paquete.svg?height=120&width=300"
+            alt={`Imagen de ${pkg.name}`}
+            className="small-image"
+          />
+          <Typography variant="h6" component="h2" gutterBottom>
+            {pkg.name}
+          </Typography>
+          <Typography variant="body2" color="error" gutterBottom>
+            {pkg.description}
+          </Typography>
+          <RedButton
+            variant="contained"
+            fullWidth
+            onClick={() => {
+              console.log(`Escanear QR para ${pkg.name}`);
+              handleClose();
+            }}
+          >
+            Escanear QR
+          </RedButton>
+        </StyledPaper>
+      </Popover>
+    </div>
+  );
 }
 
 export default function Component() {
   return (
-    <div className="w-full max-w-sm mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Lista de Paquetes</h2>
-      <ScrollArea className="h-[400px]">
-        <div className="space-y-2">
-          {packages.map((pkg) => (
-            <PackagePopover key={pkg.id} pkg={pkg} />
-          ))}
-        </div>
-      </ScrollArea>
-    </div>
-  )
+    <Paper style={{ maxWidth: 400, margin: 'auto' }}>
+      <Typography variant="h4" component="h1" gutterBottom style={{ padding: 16 }}>
+        Lista de Paquetes
+      </Typography>
+      <List style={{ maxHeight: 400, overflow: 'auto' }}>
+        {packages.map((pkg) => (
+          <ListItem key={pkg.id} disablePadding>
+            <PackagePopover pkg={pkg} />
+          </ListItem>
+        ))}
+      </List>
+    </Paper>
+  );
 }
