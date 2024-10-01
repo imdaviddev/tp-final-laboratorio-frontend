@@ -191,3 +191,21 @@ export const VerDetalle = () => {
     textDecoration: 'underline',
   }}>ver detalle</p>
 }
+
+export const PageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: red;
+
+    font-family: sans-serif;
+`;
+
+export const WrapperCenterItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  align-self: center;
+`
