@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { TituloDescripcion, TituloPage } from '../ComponentsUI'
-import camionRojo from '../../../Imagenes/camion.svg';
+import camionRojo from '../../../public/camion.svg';
 
 
 export const ContainerGeneral = styled.div`

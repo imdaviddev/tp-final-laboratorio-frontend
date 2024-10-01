@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { BoxGeneral, ContainerGeneral, FilaGeneral, TituloPage, VerDetalle } from '../ComponentsUI'
-import Camion from '../../../Imagenes/camion.svg';
+import Camion from '../../../public/camion.svg';
 
 export const ColumnaGeneral = styled.div`
   display: flex;

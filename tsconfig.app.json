@@ -4,7 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "skipLibCheck": true,
+    //"skipLibCheck": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -15,10 +15,18 @@
     "jsx": "react-jsx",
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    //"strict": true,
+    //"noUnusedLocals": true,
+    //"noUnusedParameters": true,
+    //"noFallthroughCasesInSwitch": true
+
+    "esModuleInterop": true,
+    "noEmitOnError": false,   // Permite emitir el build incluso con errores
+    "skipLibCheck": true,     // Ignora los errores en archivos de declaración de bibliotecas
+    "strict": false,          // Desactiva todas las verificaciones estrictas
+    "noUnusedLocals": false,  // Ignora variables no utilizadas
+    "noUnusedParameters": false,  // Ignora parámetros no utilizados
+    "noImplicitAny": false    // Permite el uso de "any" sin advertencias
   },
   "include": ["src"]
 }

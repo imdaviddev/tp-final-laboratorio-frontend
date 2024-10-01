@@ -27,7 +27,7 @@
 }
 
 .header-top-iniciar-sesion .logo-amazona {
-    background-image: url("./Imagenes/LogoAmazona.png");
+    background-image: url("LogoAmazona.png");
     width: 10rem;
     height: 5rem;
     background-size: cover;

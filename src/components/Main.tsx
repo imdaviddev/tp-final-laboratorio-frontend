@@ -7,12 +7,12 @@ export default function Main() {
         {
             title: "Lo mejor para tus encomiendas",
             contenido: "Contamos con un equipo de profesionales capacitados para brindarte el mejor servicio",
-            image: "./Imagenes/imgDescInicio.svg"
+            image: "./src/imgDescInicio.svg"
         },
         {
             title: "Conectados por todo el pais",
             contenido: "Amazona realiza envios a todo el pais y dispone de sucursales donde podrás retirar tus paquetes",
-            image: "./Imagenes/camion.svg"
+            image: "./public/camion.svg"
         }
     ];
 

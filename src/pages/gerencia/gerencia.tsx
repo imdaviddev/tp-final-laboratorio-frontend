@@ -17,7 +17,7 @@ const GerenciaHomePage = () => {
                     <Recorrido numero="#047" />
                 </div>
             </div>
-            <img src="../../Imagenes/logoRecorridos.svg" alt="" className='LogoRecorridos'/>            
+            <img src="./src/logoRecorridos.svg" alt="" className='LogoRecorridos'/>            
 
         </div>
     </div>
