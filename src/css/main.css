@@ -1,0 +1,67 @@
+.nav-main {
+    border: 1px solid black;
+}
+
+.container-img-status {
+    position: relative; /* Esto es importante para que el pseudo-elemento ::before se posicione correctamente */
+    padding: 10px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-img-status::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./Imagenes/fondoMain.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px); /* Hace que el fondo se vea borroso */
+    z-index: -1; /* Envía la imagen de fondo detrás del contenido */
+    opacity: 0.7; /* Si quieres que la imagen sea semi-transparente */
+}
+
+.container-status-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-status-group button{
+    margin: 15px;
+    color: red;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.container-status {
+    height: 110px;
+    width: 350px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px gray;
+    z-index: 1; /* Asegúrate de que este contenido esté encima de la imagen borrosa */
+}
+
+.welcome-header {
+    margin-top: 45px;
+    display: flex;
+    color: red;
+    justify-content: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: italic;
+    font-size: 46px;
+    font-weight: bold; /* Para engrosar el texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombras */
+}
