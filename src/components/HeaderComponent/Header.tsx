@@ -101,23 +101,24 @@ const Header: React.FC<Props> = ({ rol }) => {
     <div className="header-top">
       <div className="logo-amazona"></div>
       <div className="perfil">
-        {rol=="Supervisor"? <p>Supervisor</p> : null}
-        {rol=="Mantenimiento"? <p>Mantenimiento</p> : null}
-        {rol=="Administracion"? <p>Administracion</p> : null}
-        {rol=="Gerente"? <p>Gerente</p> : null}
-        {rol=="Conductor"? <p>Conductor</p> : null}
+        {rol == "Supervisor" ? <p>Supervisor</p> : null}
+        {rol == "Mantenimiento" ? <p>Mantenimiento</p> : null}
+        {rol == "Administracion" ? <p>Administracion</p> : null}
+        {rol == "Gerente" ? <p>Gerente</p> : null}
+        {rol == "Conductor" ? <p>Conductor</p> : null}
 
         <div className="imagen-de-perfil">
-           <MdiAccountCircleOutline width={'100%'} height={'100%'} />
+          <MdiAccountCircleOutline width={'100%'} height={'100%'} />
         </div>
+
       </div>
     </div>
-    {rol == "Cliente" ? <NavbarCliente/> : null}
-    {rol == "Supervisor" ? <NavbarSupervisor/> : null}
-    {rol == "Gerente" ? <NavbarGerencia/> : null}
-    {rol == "Conductor" ? <NavBarConductor/> : null}
-    {rol == "Mantenimiento" ? <NavbarMantenimiento/> : null}
-    {rol == "Administracion" ? <NavbarAdministracion/> : null}
+    {rol == "Cliente" ? <NavbarCliente /> : null}
+    {rol == "Supervisor" ? <NavbarSupervisor /> : null}
+    {rol == "Gerente" ? <NavbarGerencia /> : null}
+    {rol == "Conductor" ? <NavBarConductor /> : null}
+    {rol == "Mantenimiento" ? <NavbarMantenimiento /> : null}
+    {rol == "Administracion" ? <NavbarAdministracion /> : null}
   </div>
 }
 

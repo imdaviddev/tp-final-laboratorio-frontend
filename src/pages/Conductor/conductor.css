@@ -35,8 +35,6 @@
     box-shadow: 5px 5px 5px 6px gray;
 }
 
-
-
 .descripction-recorrido {
     width: 350px;
     height: 200px;
@@ -50,7 +48,7 @@
     height: 150px;
 }
 
-.descripction-recorrido ul {
+.lista-recorrido {
     margin-left: 15px;
     display: flex;
     flex-direction: column;

@@ -1,4 +1,5 @@
 import Header from '../../components/HeaderComponent/Header';
+import { Button, RecorridoDetalle } from '../Conductor/ComponentsUI/index';
 import './conductor.css'
 
 
@@ -10,8 +11,8 @@ const CoductorRecorrido = () => {
         </div>
         <div className='container-conductor'>
             <div>
-                <button className='button-conductor'>Reporte Semanal</button>
-                <button className='button-conductor'>Reporte Mensual</button>
+                <Button>Reporte Semanal</Button>
+                <Button>Reporte Semanal</Button>
             </div>
             <br />
             <br />
@@ -19,21 +20,20 @@ const CoductorRecorrido = () => {
 
             <div className='container-recorrido-conductor'>
 
-
-                <div className='recorrido-detalle'>
+                <RecorridoDetalle>
                     <ul>
                         <li>Recorrido: #012</li>
                         <li>Fecha: 23/08/2024</li>
                     </ul>
                     <a href="#">ver detalle</a>
-                </div>
-                <div className='recorrido-detalle'>
+                </RecorridoDetalle>
+                <RecorridoDetalle>
                     <ul>
                         <li>Recorrido: #059</li>
                         <li>Fecha: 20/08/2024</li>
                     </ul>
                     <a href="#">ver detalle</a>
-                </div>
+                </RecorridoDetalle>
 
             </div>
         </div>
