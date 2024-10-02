@@ -41,7 +41,7 @@ const ConductorInicio = () => {
                     </div>
 
                     <button id="generarLista" className='button-conductor' onClick={handleGenerarListaClick}>
-                        Cargar Paquetes
+                        Entregar Paquetes
                     </button>
                 </div>
             </div>

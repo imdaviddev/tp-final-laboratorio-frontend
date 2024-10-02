@@ -11,11 +11,9 @@ const NavbarCliente = () => {
     <nav className="header-bottom">
       <ul>
         <li>Seguimiento</li>
-        <li>Sucursales</li>
         <li>Sobre Nosotros</li>
       </ul>
     </nav>
-
   )
 }
 
