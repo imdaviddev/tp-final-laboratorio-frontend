@@ -19,6 +19,19 @@ const NavbarCliente = () => {
   )
 }
 
+const NavBarConductor = () => {
+  return (
+    <nav className="header-bottom">
+      <ul>
+        <li>Inicio</li>
+        <li>Tus recorridos</li>
+        <li>Reportes</li>
+      </ul>
+    </nav>
+
+  )
+}
+
 
 const NavbarSupervisor = () => {
   return (
@@ -76,7 +89,7 @@ const NavbarAdministracion = () => {
 }
 
 const roles: string[] = [
-  "Cliente", "Supervisor", "Gerente", "Mantenimiento", "Administracion"
+  "Cliente", "Supervisor", "Gerente", "Mantenimiento", "Administracion", "Conductor"
 ]
 
 interface Props {
@@ -91,6 +104,9 @@ const Header: React.FC<Props> = ({ rol }) => {
         {rol=="Supervisor"? <p>Supervisor</p> : null}
         {rol=="Mantenimiento"? <p>Mantenimiento</p> : null}
         {rol=="Administracion"? <p>Administracion</p> : null}
+        {rol=="Gerente"? <p>Gerente</p> : null}
+        {rol=="Conductor"? <p>Conductor</p> : null}
+
         <div className="imagen-de-perfil">
            <MdiAccountCircleOutline width={'100%'} height={'100%'} />
         </div>
@@ -99,6 +115,7 @@ const Header: React.FC<Props> = ({ rol }) => {
     {rol == "Cliente" ? <NavbarCliente/> : null}
     {rol == "Supervisor" ? <NavbarSupervisor/> : null}
     {rol == "Gerente" ? <NavbarGerencia/> : null}
+    {rol == "Conductor" ? <NavBarConductor/> : null}
     {rol == "Mantenimiento" ? <NavbarMantenimiento/> : null}
     {rol == "Administracion" ? <NavbarAdministracion/> : null}
   </div>

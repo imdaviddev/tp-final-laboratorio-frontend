@@ -49,7 +49,6 @@ export default function BasicTabs() {
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Gastos" {...a11yProps(0)} />
           <Tab label="Recorridos" {...a11yProps(1)} />
-          <Tab label="Satisfaccion del cliente" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -71,17 +70,6 @@ export default function BasicTabs() {
           <div className='button-container'>
             <button> Ver recorridos Semanales</button>
             <button> Ver recorridos Mensuales</button>
-          </div>
-        </div>
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        <div className='container-reports'>
-          <div className='graph-container'>
-            <BasicLineChart />
-          </div>
-          <div className='button-container'>
-            <button> Ver puntuacion Semanal</button>
-            <button> Ver puntuacion Mensual</button>
           </div>
         </div>
       </CustomTabPanel>

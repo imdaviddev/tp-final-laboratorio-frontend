@@ -4,7 +4,7 @@ import './conductor.css'
 
 const CoductorRecorrido = () => {
     return <div className='page-container'>
-        <Header rol='Gerente' />
+        <Header rol='Conductor' />
         <div className="wrapper-mensaje-bienvenida">
             <h1>Tus recorridos</h1>
         </div>

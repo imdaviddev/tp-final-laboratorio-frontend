@@ -20,7 +20,7 @@ const ConductorInicio = () => {
 
     return (
         <div className='page-container'>
-            <Header rol='Gerente' />
+            <Header rol='Conductor' />
             <div className="wrapper-mensaje-bienvenida">
                 <h1>Hola, Amin</h1>
             </div>
