@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; // Importa useState
 import Header from '../../components/HeaderComponent/Header';
 import Component from '../../components/PestañaEmergente/PestañaEmergente'; // El componente que deseas mostrar
+import conductorInicio from '../../../public/conductorInicio.svg'
 import './conductor.css';
 import './conductorModal.css'
 
@@ -29,7 +30,7 @@ const ConductorInicio = () => {
 
                 <div className='container-recorrido-conductor'>
                     <div className='descripction-recorrido'>
-                        <img src="../../Imagenes/conductorInicio.svg" alt="Conductor Inicio" />
+                        <img src= {conductorInicio} alt="Conductor Inicio" />
                         <ul>
                             <li>Recorrido: #012</li>
                             <li>Vehículo: #c4m1on45</li>

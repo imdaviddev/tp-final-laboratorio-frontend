@@ -11,6 +11,7 @@ import {
   Box
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import paquete from '../../../public/paquete.svg';
 
 interface Package {
   id: number;
@@ -94,7 +95,7 @@ function PackagePopover({ pkg }: { pkg: Package }) {
       >
         <StyledPaper>
           <PackageImage
-            src="../../Imagenes/paquete.svg?height=120&width=300"
+            src={paquete}
             alt={`Imagen de ${pkg.name}`}
             className="small-image"
           />
