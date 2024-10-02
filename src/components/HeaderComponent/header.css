@@ -60,6 +60,13 @@
     justify-content: space-around;
 }
 
-.header-bottom ul li{
+.header-bottom ul li,
+.header-bottom ul a{
     font-size: 20px;
+}
+
+.header-bottom ul li:hover,
+.header-bottom ul a:hover{
+    cursor: pointer;
+    color: rgb(220, 220, 221);
 }
