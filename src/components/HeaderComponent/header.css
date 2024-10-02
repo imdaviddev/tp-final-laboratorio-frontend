@@ -8,12 +8,8 @@
 }
 
 .header-top .logo-amazona {
-    background-image: url("LogoAmazona.png");
     width: 10rem;
-    height: 5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 8rem;
 }
 
 .header-top .perfil {

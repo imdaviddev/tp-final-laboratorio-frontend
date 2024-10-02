@@ -79,9 +79,9 @@ function PackagePopover({ pkg }: { pkg: Package }) {
 
   return (
     <div>
-      <ListItemButton onClick={handleClick}>
+      <Button onClick={handleClick}>
         <ListItemText primary={pkg.name} />
-      </ListItemButton>
+      </Button>
       <Popover
         id={id}
         open={open}
