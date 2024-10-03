@@ -4,7 +4,7 @@ import { PageContainer, WrapperCenterItems } from "../ComponentsUI"
 
 const AdministracionPageLayout = () => {
     return <PageContainer>
-      <Header rol="Mantenimiento"/>  
+      <Header rol="Administracion"/>  
         <WrapperCenterItems>
             <Outlet/>
         </WrapperCenterItems>

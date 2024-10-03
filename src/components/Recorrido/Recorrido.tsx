@@ -1,4 +1,5 @@
 import './recorrido.css';
+import camionRojo from '../../../public/camionRojo.svg'
 
 interface Props{
 
@@ -8,7 +9,7 @@ interface Props{
 export default function Recorrido(props:Props) {
     return (
         <div className="recorrido">
-            <img src="../../Imagenes/camionRojo.svg" alt="" className='image-recorrido' />
+            <img src={camionRojo} alt="" className='image-recorrido' />
             <div className="desc-recorrido">
                 <div>
                     Recorrido {props.numero}

@@ -1,5 +1,5 @@
 import { BoxGeneral, ContainerGeneral, FilaGeneral, TituloDescripcion, TituloPage, VerDetalle } from '../ComponentsUI';
-import camionRojo from '../../../Imagenes/camionRojo.svg';
+import camionRojo from '../../../public/camionRojo.svg';
 
 const AdministracionInicio = () => {
   return <>
