@@ -9,5 +9,5 @@ import '@fontsource/inter';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router/>
-  </StrictMode>,
+  </StrictMode>
 )
