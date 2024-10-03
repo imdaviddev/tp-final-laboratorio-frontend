@@ -47,10 +47,17 @@ const NavbarSupervisor = () => {
   return (
     <nav className="header-bottom">
       <ul>
+<<<<<<< HEAD
         <Link to={supervision+""}>Inicio</Link>
         <Link to={supervision+"crear-recorrido"}>Crear Recorrido</Link>
         <Link to={supervision+"conductores"}>Conductores</Link>
         <Link to={supervision+"reportes"}>Reportes</Link>
+=======
+        <li>Inicio</li>
+        <li>Crear Recorrido</li>
+        <li>Conductores</li>
+        <li>Reportes</li>
+>>>>>>> 97e2b67a2a77060f10ad6ddf87807dce1349f02e
       </ul>
     </nav>
 
@@ -61,9 +68,15 @@ const NavbarGerencia = () => {
   return (
     <nav className="header-bottom">
       <ul>
+<<<<<<< HEAD
         <Link to={gerencia + ""}>Inicio</Link>
         <Link to={gerencia + "reportes"}>Estadisticas</Link>
         <Link to={gerencia + "controles"}>Controles</Link>
+=======
+        <li>Inicio</li>
+        <li>Estadisticas</li>
+        <li>Controles</li>
+>>>>>>> 97e2b67a2a77060f10ad6ddf87807dce1349f02e
       </ul>
     </nav>
 
@@ -74,10 +87,17 @@ const NavbarMantenimiento = () => {
   return (
     <nav className="header-bottom">
       <ul>
+<<<<<<< HEAD
         <Link to={mantenimiento+ ""}>Inicio</Link>
         <Link to={mantenimiento+ "ingresos"}>Ingresos</Link>
         <Link to={mantenimiento+ "reparaciones"}>Reparaciones</Link>
         <Link to={mantenimiento+ "historial-de-tickets"}>Historial de Tickets</Link>
+=======
+        <li>Inicio</li>
+        <li>Ingresos</li>
+        <li>Reparaciones</li>
+        <li>Historial de Tickets</li>
+>>>>>>> 97e2b67a2a77060f10ad6ddf87807dce1349f02e
       </ul>
     </nav>
 
@@ -88,10 +108,17 @@ const NavbarAdministracion = () => {
   return (
     <nav className="header-bottom">
       <ul>
+<<<<<<< HEAD
         <Link to={administracion+ ""}>Inicio</Link>
         <Link to={administracion+ "repuestos"}>Repuestos</Link>
         <Link to={administracion+ "proveedores"}>Proveedores</Link>
         <Link to={administracion+ "reportes"}>Reportes</Link>
+=======
+        <li>Inicio</li>
+        <li>Repuestos</li>
+        <li>Proveedores</li>
+        <li>Reportes</li>
+>>>>>>> 97e2b67a2a77060f10ad6ddf87807dce1349f02e
       </ul>
     </nav>
 
@@ -99,7 +126,11 @@ const NavbarAdministracion = () => {
 }
 
 const roles: string[] = [
+<<<<<<< HEAD
   "Cliente", "Supervisor", "Gerente", "Mantenimiento", "Administracion", "Conductor"
+=======
+  "Cliente", "Supervisor", "Gerente", "Mantenimiento", "Administracion"
+>>>>>>> 97e2b67a2a77060f10ad6ddf87807dce1349f02e
 ]
 
 interface Props {
@@ -109,6 +140,7 @@ interface Props {
 const Header: React.FC<Props> = ({ rol }) => {
   return <div className="header">
     <div className="header-top">
+<<<<<<< HEAD
       <img src={logoAmazona} className="logo-amazona"/>
       <div className="perfil">
         {rol == "Supervisor" ? <p>Supervisor</p> : null}
@@ -129,6 +161,23 @@ const Header: React.FC<Props> = ({ rol }) => {
     {rol == "Conductor" ? <NavBarConductor /> : null}
     {rol == "Mantenimiento" ? <NavbarMantenimiento /> : null}
     {rol == "Administracion" ? <NavbarAdministracion /> : null}
+=======
+      <div className="logo-amazona"></div>
+      <div className="perfil">
+        {rol=="Supervisor"? <p>Supervisor</p> : null}
+        {rol=="Mantenimiento"? <p>Mantenimiento</p> : null}
+        {rol=="Administracion"? <p>Administracion</p> : null}
+        <div className="imagen-de-perfil">
+           <MdiAccountCircleOutline width={'100%'} height={'100%'} />
+        </div>
+      </div>
+    </div>
+    {rol == "Cliente" ? <NavbarCliente/> : null}
+    {rol == "Supervisor" ? <NavbarSupervisor/> : null}
+    {rol == "Gerente" ? <NavbarGerencia/> : null}
+    {rol == "Mantenimiento" ? <NavbarMantenimiento/> : null}
+    {rol == "Administracion" ? <NavbarAdministracion/> : null}
+>>>>>>> 97e2b67a2a77060f10ad6ddf87807dce1349f02e
   </div>
 }
 
