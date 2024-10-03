@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import { BoxGeneral, ContainerGeneral, FilaGeneral, TituloPage, VerDetalle } from '../ComponentsUI'
 import { ColumnaGeneral } from './Mantenimientoingresos'
-import Camion from '../../../imagenes/camion.svg';
+import Camion from '../../../public/camion.svg';
 
 export const TituloGeneral = styled.div`
   font-size: 1.2rem;

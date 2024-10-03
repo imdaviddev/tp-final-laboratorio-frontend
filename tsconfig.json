@@ -10,7 +10,5 @@
     "lib": ["dom", "es2015"],
     "module": "esnext",
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true
   }
 }

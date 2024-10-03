@@ -1,6 +1,6 @@
 import { BoxGeneral, ContainerGeneral, FilaGeneral, TituloPage, VerDetalle } from "../ComponentsUI"
 import { ColumnaGeneral, TituloGeneral } from "./Mantenimientoingresos"
-import Camion from '../../../imagenes/camion.svg';
+import Camion from '../../../public/camion.svg';
 
 const MantenimientoHistorial = () => {
   return <>

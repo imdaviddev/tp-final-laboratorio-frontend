@@ -8,6 +8,9 @@ import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionH
 import MantenimientoPageLayout, { MantenimientoHistorial, MantenimientoInicio } from '../pages/Mantenimiento';
 import Mantenimientoingresos from '../pages/Mantenimiento/Mantenimientoingresos';
 import MantenimientoReparaciones from '../pages/Mantenimiento/MantenimientoReparaciones';
+import ConductorInicio from '../pages/Conductor/ConductorInicio';
+import ConductorRecorrido from '../pages/Conductor/ConductorRecorrido'
+import ConductorReportes from '../pages/Conductor/ConductorReportes';
 import AdministracionPageLayout from '../pages/Administracion/AdministracionPageLayout';
 import AdministracionInicio from '../pages/Administracion/AdministracionInicio';
 import AdministracionRepuestos from '../pages/Administracion/AdministracionRepuestos';
@@ -36,6 +39,9 @@ const Router = () => {
           <Route element={<MantenimientoReparaciones/>} path='reparaciones'/>
           <Route element={<MantenimientoHistorial/>} path='historial-de-tickets'/>
       </Route>
+      <Route element={<ConductorInicio/>} path='/conductor'/>
+      <Route element={<ConductorRecorrido/>} path='/conductor/recorridos'/>
+      <Route element={<ConductorReportes/>} path='/conductor/reportes'/>
       <Route element={<AdministracionPageLayout/>} path='/administracion'>
           <Route index element={<AdministracionInicio/>} />
           <Route element={<AdministracionRepuestos/>} path='repuestos'/>

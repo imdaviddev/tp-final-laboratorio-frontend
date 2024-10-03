@@ -1,5 +1,5 @@
 import { BoxGeneral, ContainerGeneral, FilaGeneral, TituloDescripcion, TituloPage, VerDetalle } from '../ComponentsUI';
-import repuesto from '../../../Imagenes/camion.svg'; // hay que modificar esto.
+import repuesto from '../../../public/camion.svg'; // hay que modificar esto.
 import { ButtonGeneral } from '../Mantenimiento/MantenimientoReparaciones';
 
 const AdministracionRepuestos = () => {
