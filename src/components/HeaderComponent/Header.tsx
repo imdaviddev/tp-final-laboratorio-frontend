@@ -4,7 +4,7 @@ import type { SVGProps } from 'react';
 import logoAmazona from '../../../public/LogoAmazona.png'
 import { Link } from "react-router-dom";
 
-const apiURL: string = import.meta.env.VITE_API_URL;
+const apiURL: string = import.meta.env.REACT_APP_API_URL;
 
 
 const conductores = `${apiURL}/conductor/`;
