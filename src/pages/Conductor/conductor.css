@@ -1,63 +1,6 @@
-.container-conductor {
-    margin-top: 125px;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.container-conductor p {
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 20px;
-    border-radius: 15px;
-    color: white;
-    background: linear-gradient(to top,
-            rgb(106, 23, 23),
-            rgb(126, 30, 30),
-            rgb(142, 32, 32),
-            rgb(156, 21, 21) 40%,
-            rgb(192, 21, 21) 50%,
-            rgb(255, 29, 29),
-            rgb(253, 89, 89));
-}
-
-.container-recorrido-conductor {
-    width: 450px;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
-    box-shadow: 5px 5px 5px 6px gray;
-}
-
-.descripction-recorrido {
-    width: 350px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.descripction-recorrido img {
+img {
     width: 150px;
     height: 150px;
-}
-
-.lista-recorrido {
-    margin-left: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.descripction-recorrido a {
-    margin-top: 15px;
-    text-decoration: underline;
 }
 
 .button-conductor {
@@ -70,13 +13,3 @@
     box-shadow: 5px 5px 5px gray;
 }
 
-.recorrido-detalle{
-    margin: 15px;
-    width: 350px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px gray;
-
-}

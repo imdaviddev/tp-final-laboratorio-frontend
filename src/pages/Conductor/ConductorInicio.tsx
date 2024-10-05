@@ -4,17 +4,17 @@ import Component from '../../components/PestañaEmergente/PestañaEmergente'; //
 import conductorInicio from '../../../public/conductorInicio.svg'
 import './conductor.css';
 import './conductorModal.css'
+import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, ContainerDetalle, DescHijo } from './ComponentsUI';
+import Detalle from './Components/Detalle'
 
 const ConductorInicio = () => {
     // Estado para manejar la visibilidad del componente
     const [mostrarComponent, setMostrarComponent] = useState(false);
 
-    // Función para manejar el clic del botón
     const handleGenerarListaClick = () => {
         setMostrarComponent(true); // Cambia el estado a true para mostrar el componente
     };
 
-    // Función para cerrar el modal
     const handleCloseModal = () => {
         setMostrarComponent(false); // Cambia el estado a false para ocultar el componente
     };
@@ -22,30 +22,31 @@ const ConductorInicio = () => {
     return (
         <div className='page-container'>
             <Header rol='Conductor' />
-            <div className="wrapper-mensaje-bienvenida">
-                <h1>Hola, Amin</h1>
-            </div>
-            <div className='container-conductor'>
-                <p><b>Tenes un recorrido asignado</b></p>
 
-                <div className='container-recorrido-conductor'>
-                    <div className='descripction-recorrido'>
-                        <img src= {conductorInicio} alt="Conductor Inicio" />
-                        <ul>
-                            <li>Recorrido: #012</li>
-                            <li>Vehículo: #c4m1on45</li>
-                            <li>paquetes a entregar: 20</li>
-                            <li>KM a recorrer: 80</li>
-                            <li>Horario estimado: 4hs</li>
+            <ContainerPadre>
+
+                <MensajeBienvenida>Bienvenido, Amin</MensajeBienvenida>
+
+                <ContainerHijo>
+                    <DescHijo>Recorrido en curso</DescHijo>
+                    <ContainerDetalle>
+                        <img src={conductorInicio} alt="Conductor Inicio" />
+
+                        <RecorridoDetalle>
+                            <Detalle tipo="Recorrido" valor="#012"></Detalle>
+                            <Detalle tipo="Vehículo" valor="#c4m1on45"></Detalle>
+                            <Detalle tipo="paquetes a entregar" valor="20"></Detalle>
+                            <Detalle tipo="KM a recorrer" valor="80"></Detalle>
+                            <Detalle tipo="Horario estimado" valor="4hs"></Detalle>
                             <a href="#">Ver información</a>
-                        </ul>
-                    </div>
+                        </RecorridoDetalle>
+                    </ContainerDetalle>
 
                     <button id="generarLista" className='button-conductor' onClick={handleGenerarListaClick}>
                         Entregar Paquetes
                     </button>
-                </div>
-            </div>
+                </ContainerHijo>
+            </ContainerPadre>
 
             {/* Renderizado condicional del modal con fondo oscuro */}
             {mostrarComponent && (

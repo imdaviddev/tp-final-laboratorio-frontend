@@ -1,20 +1,22 @@
 import Header from '../../components/HeaderComponent/Header';
 import BasicBars from '../../components/reportesGerencia/BasicBars';
+import { MensajeBienvenida, ContainerPadre, ContainerHijo, DescHijo, Reportes } from './ComponentsUI';
 import './conductor.css'
 
 
 const ConductorReportes = () => {
     return <div className='page-container'>
         <Header rol='Conductor' />
-        <div className="wrapper-mensaje-bienvenida">
-            <h1>Reportes</h1>
-        </div>
-        <div className='container-conductor'>
-            <p><b>Recorridos realizados (en km)</b></p>
-            <div className='reportes-conductor'>
-                <BasicBars></BasicBars>
-            </div>
-        </div>
+        <ContainerPadre>
+            <MensajeBienvenida>Reportes</MensajeBienvenida>
+            <ContainerHijo>
+                <DescHijo>Recorridos realizados (en KM)</DescHijo>
+
+                <Reportes>
+                    <BasicBars></BasicBars> {/* GRAFICO DE BARRAS, ¿SE PODRIA GENERALIZAR EL ESTILO?*/}
+                </Reportes>
+            </ContainerHijo>
+        </ContainerPadre>
     </div>
 
 }
