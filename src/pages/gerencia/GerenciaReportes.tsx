@@ -1,10 +1,8 @@
-import Header from '../../components/HeaderComponent/Header';
 import { MensajeBienvenida, ContainerPadre, ContainerHijo, Container } from '../ComponentsUI';
 import BasicTabs from '../../components/reportesGerencia/BasicTabs';
 
 const ReportesGerencia = () => {
-    return <div className='page-container'>
-        <Header rol='Gerente' />
+    return <>
         <ContainerPadre>
             <MensajeBienvenida>Reporte de Gastos</MensajeBienvenida>
             <ContainerHijo>
@@ -13,7 +11,8 @@ const ReportesGerencia = () => {
                 </Container>
             </ContainerHijo>
         </ContainerPadre>
-    </div>
+    </>
+
 }
 
 export default ReportesGerencia;
