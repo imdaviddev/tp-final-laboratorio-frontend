@@ -22,7 +22,6 @@ const cardData = [
   }
 ];
 
-
 const Inicio = () => {
 
   return (
@@ -41,9 +40,19 @@ const Inicio = () => {
           </StatusTextField>
 
           <ButtonStatus>
-            <Button variant="contained" color="success">  {/* CAMBIAR EL COLOR DEL BOTON*/}
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: 'white',
+                color: 'red',
+                '&:hover': {
+                  backgroundColor: '#f5f5f5' // Color cuando haces hover
+                }
+              }}
+            >
               Consultar Estado
             </Button>
+
           </ButtonStatus>
 
         </ContainerStatus>
@@ -60,7 +69,6 @@ const Inicio = () => {
         ))}
       </ContainerCardGroup>
     </PageContainer>
-
   )
 }
 
