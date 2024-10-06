@@ -1,17 +1,14 @@
-.nav-main {
-    border: 1px solid black;
-}
+import { styled } from "styled-components"
 
-.container-img-status {
-    position: relative; /* Esto es importante para que el pseudo-elemento ::before se posicione correctamente */
+export const ContainerImgFondo = styled.div`
+    position: relative;
     padding: 10px;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
 
-.container-img-status::before {
+    &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -25,23 +22,28 @@
     filter: blur(5px); /* Hace que el fondo se vea borroso */
     z-index: -1; /* Envía la imagen de fondo detrás del contenido */
     opacity: 0.7; /* Si quieres que la imagen sea semi-transparente */
-}
+`
 
-.container-status-group{
+export const BienvenidoInicio =styled.div`
+    margin-top: 45px;
+    display: flex;
+    color: red;
+    justify-content: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: italic;
+    font-size: 46px;
+    font-weight: bold; /* Para engrosar el texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombras */
+`
+
+export const ContainerStatus =styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.container-status-group button{
-    margin: 15px;
-    color: red;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px gray;
-}
+`
 
-.container-status {
+export const StatusTextField = styled.div`
     height: 110px;
     width: 350px;
     padding: 20px;
@@ -52,16 +54,21 @@
     border-radius: 15px;
     box-shadow: 5px 5px 5px gray;
     z-index: 1; /* Asegúrate de que este contenido esté encima de la imagen borrosa */
-}
+`
 
-.welcome-header {
-    margin-top: 45px;
-    display: flex;
+export const ButtonStatus = styled.div`
+    margin: 15px;
     color: red;
-    justify-content: center;
-    font-family: "Bebas Neue", sans-serif;
-    font-style: italic;
-    font-size: 46px;
-    font-weight: bold; /* Para engrosar el texto */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombras */
-}
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px gray;
+`
+
+//Tarjetas del inicio
+
+export const ContainerCardGroup = styled.div`
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`

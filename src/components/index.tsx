@@ -1,9 +1,7 @@
 //Archivo barril 
 
-import ButtonConsultarEstado from "./ButtonConsultarEstado";
-import CardHome from "./CardHome";
+import CardHome from "../pages/inicio/Components/CardHome";
 
 export {
-    ButtonConsultarEstado,
     CardHome
 }

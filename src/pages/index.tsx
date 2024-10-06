@@ -1,4 +1,4 @@
-import Inicio from "./Inicio";
+import Inicio from "./inicio/Inicio";
 import IniciarSesionPage from "./IniciarSesion/IniciarSesionPage";
 
 export {

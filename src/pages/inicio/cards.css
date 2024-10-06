@@ -1,44 +1,56 @@
-.container-cards-group{
+.container-cards-group {
     margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.container-card{
+
+.container-card {
     margin: 15px;
     width: 45%;
     display: flex;
     border-radius: 15px;
     box-shadow: 5px 5px 5px 5px gray;
 
-
+    @media (max-width: 1024px) {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+    }
 }
 
 .card-image {
     margin-top: 10px;
     width: 180px;
     height: 180px;
+
+    @media (max-width: 600px) {
+        margin-top: 0px;
+        width: 120px;
+        height: 180px;
+    }
 }
 
 .card-text {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    flex: 1; /* Esto hace que el contenedor ocupe el espacio restante junto a la imagen */
+    flex: 1;
     font-family: "Dosis", sans-serif;
 
 }
 
-.card-title{
+.card-title {
     text-transform: uppercase;
     font-style: italic;
     font-size: 20px;
     color: red;
 }
 
-.card-main{
+.card-main {
     color: red;
     font-style: italic;
     font-size: 16px;

@@ -1,5 +1,3 @@
-import '../css/cards.css'
-
 interface Props{
 
     title: string | number // | Puede ser un tipo de dato O el otro 
