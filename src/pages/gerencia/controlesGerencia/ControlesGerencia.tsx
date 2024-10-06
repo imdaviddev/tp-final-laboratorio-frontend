@@ -1,6 +1,6 @@
-import Header from '../../components/HeaderComponent/Header';
+import Header from '../../../components/HeaderComponent/Header';
 import './controlesGerencia.css';
-import VerticalTabs from '../../components/controlesGerencia/VerticalTabs';
+import VerticalTabs from '../../../components/controlesGerencia/VerticalTabs';
 
 const ControlesGerencia = () => {
     return <div className='page-container'>

@@ -1,6 +1,6 @@
-import Header from '../../components/HeaderComponent/Header';
+import Header from '../../../components/HeaderComponent/Header';
 import './reportesGerencia.css';
-import BasicTabs from '../../components/reportesGerencia/BasicTabs';
+import BasicTabs from '../../../components/reportesGerencia/BasicTabs';
 
 const ReportesGerencia = () => {
     return <div className='page-container'>
