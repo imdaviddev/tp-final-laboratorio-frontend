@@ -1,9 +1,9 @@
 import Inicio from '../pages/inicio/Inicio';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import IniciarSesionPage from '../pages/IniciarSesion/IniciarSesionPage';
+
 import { GerenciaHomePage, GerenciaControles, GerenciaReportes, GerenciaPageLayout } from '../pages/gerencia'
 import { ConductorInicio, ConductorRecorrido, ConductorReportes, ConductorPageLayout } from '../pages/Conductor';
-
 import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout, SupervisionReportesPage, SupervisionVehiculosPage } from '../pages/Supervision';
 import MantenimientoPageLayout, { MantenimientoHistorial, MantenimientoInicio } from '../pages/Mantenimiento';
 import Mantenimientoingresos from '../pages/Mantenimiento/Mantenimientoingresos';

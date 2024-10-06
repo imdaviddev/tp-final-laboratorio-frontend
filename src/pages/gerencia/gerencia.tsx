@@ -17,7 +17,6 @@ const GerenciaHomePage = () => {
             </ContainerHijo>
         </ContainerPadre>
     </>
-
 }
 
 export default GerenciaHomePage;
