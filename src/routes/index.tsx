@@ -45,11 +45,10 @@ const Router = () => {
 
         <Route element={<ConductorPageLayout />} path='/conductor'>
           <Route index element={<ConductorInicio />} />
-          <Route element={<ConductorReportes />} path='/reportes' />
-          <Route element={<ConductorRecorrido />} path='/recorridos' />
+          <Route element={<ConductorReportes />} path='reportes' />
+          <Route element={<ConductorRecorrido />} path='recorridos' />
 
         </Route>
-
 
         <Route element={<AdministracionPageLayout />} path='/administracion'>
           <Route index element={<AdministracionInicio />} />
