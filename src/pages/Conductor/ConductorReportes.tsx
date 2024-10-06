@@ -1,12 +1,10 @@
-import Header from '../../components/HeaderComponent/Header';
 import BasicBars from '../../components/reportesGerencia/BasicBars';
 import { MensajeBienvenida, ContainerPadre, ContainerHijo, DescHijo, Reportes } from '.';
 import './css/conductor.css'
 
 
 const ConductorReportes = () => {
-    return <div className='page-container'>
-        <Header rol='Conductor' />
+    return <>
         <ContainerPadre>
             <MensajeBienvenida>Reportes</MensajeBienvenida>
             <ContainerHijo>
@@ -17,7 +15,8 @@ const ConductorReportes = () => {
                 </Reportes>
             </ContainerHijo>
         </ContainerPadre>
-    </div>
+    </>
+
 
 }
 

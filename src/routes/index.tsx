@@ -1,17 +1,14 @@
 import { Inicio } from '../pages';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import IniciarSesionPage from '../pages/IniciarSesion/IniciarSesionPage';
-import GerenciaHomePage from '../pages/gerencia/gerencia';
-import ReportesGerencia from '../pages/gerencia/ReportesGerencia';
-import ControlesGerencia from '../pages/gerencia/ControlesGerencia';
+import {GerenciaHomePage, GerenciaControles, GerenciaReportes} from '../pages/gerencia'
+import { ConductorInicio ,ConductorRecorrido, ConductorReportes, ConductorPageLayout } from '../pages/Conductor';
 
 import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout, SupervisionReportesPage, SupervisionVehiculosPage } from '../pages/Supervision';
 import MantenimientoPageLayout, { MantenimientoHistorial, MantenimientoInicio } from '../pages/Mantenimiento';
 import Mantenimientoingresos from '../pages/Mantenimiento/Mantenimientoingresos';
 import MantenimientoReparaciones from '../pages/Mantenimiento/MantenimientoReparaciones';
-import ConductorInicio from '../pages/Conductor/ConductorInicio';
-import ConductorRecorrido from '../pages/Conductor/ConductorRecorrido'
-import ConductorReportes from '../pages/Conductor/ConductorReportes';
+
 import AdministracionPageLayout from '../pages/Administracion/AdministracionPageLayout';
 import AdministracionInicio from '../pages/Administracion/AdministracionInicio';
 import AdministracionRepuestos from '../pages/Administracion/AdministracionRepuestos';
@@ -24,9 +21,8 @@ const Router = () => {
     <Routes>
       <Route element={<Inicio />} path="/" />
       <Route element={<IniciarSesionPage />} path="/iniciar-sesion" />
-      <Route element={<GerenciaHomePage/>} path="/gerencia" />
-      <Route element={<ReportesGerencia/>} path="/gerencia/reportes" />
-      <Route element={<ControlesGerencia/>} path="/gerencia/controles" />
+      <Route element={<GerenciaHomePage/>} path="/gerencia"/>
+      
       <Route element={<SupervisionPageLayout/>} path='/supervision'>
         <Route index element={<SupervisionHomePage/>} />
         <Route element={<SupervisionCrearRecorridoPage/>} path='crear-recorrido'/>  
@@ -40,9 +36,14 @@ const Router = () => {
           <Route element={<MantenimientoReparaciones/>} path='reparaciones'/>
           <Route element={<MantenimientoHistorial/>} path='historial-de-tickets'/>
       </Route>
-      <Route element={<ConductorInicio/>} path='/conductor'/>
-      <Route element={<ConductorRecorrido/>} path='/conductor/recorridos'/>
-      <Route element={<ConductorReportes/>} path='/conductor/reportes'/>
+      <Route element={<ConductorPageLayout/>} path='/conductor'>
+        <Route index element ={<ConductorInicio/>}/>
+        <Route element={<ConductorReportes/>} path='/reportes'/>
+        <Route element={<ConductorRecorrido/>} path='/recorridos'/>
+    
+      </Route>
+
+
       <Route element={<AdministracionPageLayout/>} path='/administracion'>
           <Route index element={<AdministracionInicio/>} />
           <Route element={<AdministracionRepuestos/>} path='repuestos'/>
