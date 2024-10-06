@@ -8,7 +8,6 @@ import camion from '../../../public/camion.svg'
 import imgInicio from '../../../public/imgDescInicio.svg'
 import './css/cards.css'
 
-
 const cardData = [
   {
     title: "Lo mejor para tus encomiendas",

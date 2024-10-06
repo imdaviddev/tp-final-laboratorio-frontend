@@ -4,6 +4,7 @@ import IniciarSesionPage from '../pages/IniciarSesion/IniciarSesionPage';
 import GerenciaHomePage from '../pages/gerencia/gerencia';
 import ReportesGerencia from '../pages/gerencia/ReportesGerencia';
 import ControlesGerencia from '../pages/gerencia/ControlesGerencia';
+
 import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout, SupervisionReportesPage, SupervisionVehiculosPage } from '../pages/Supervision';
 import MantenimientoPageLayout, { MantenimientoHistorial, MantenimientoInicio } from '../pages/Mantenimiento';
 import Mantenimientoingresos from '../pages/Mantenimiento/Mantenimientoingresos';
