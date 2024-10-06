@@ -1,12 +1,10 @@
-import Header from '../../components/HeaderComponent/Header';
 import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, DescHijo, Button } from '.';
 import Detalle from './Components/Detalle';
 import './css/conductor.css'
 
 
 const CoductorRecorrido = () => {
-    return <div className='page-container'>
-        <Header rol='Conductor' />
+    return <>
         <ContainerPadre>
 
             <MensajeBienvenida>Tus recorridos</MensajeBienvenida>
@@ -31,7 +29,7 @@ const CoductorRecorrido = () => {
 
             </ContainerHijo>
         </ContainerPadre>
-    </div>
+    </>
 
 }
 

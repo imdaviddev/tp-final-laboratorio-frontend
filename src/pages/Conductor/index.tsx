@@ -1,5 +1,8 @@
 import { styled } from "styled-components"
-
+import ConductorInicio from "./ConductorInicio"
+import ConductorReportes from "./ConductorReportes"
+import ConductorRecorrido from "./ConductorRecorrido"
+import ConductorPageLayout from "./ConductorPageLayout"
 
 export const MensajeBienvenida = styled.div`
   margin-top: 35px;
@@ -111,3 +114,10 @@ export const Reportes = styled.div`
         width: 350px
     }
 `
+
+export {
+  ConductorInicio,
+  ConductorRecorrido,
+  ConductorReportes,
+  ConductorPageLayout
+}
