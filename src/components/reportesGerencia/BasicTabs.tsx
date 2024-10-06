@@ -4,6 +4,8 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import BasicPie from './BasicPie';
 import BasicBars from './BasicBars';
+import { Boton } from '../../pages/ComponentsUI/Botones';
+import { ButtonGroup, Container, Reportes } from '../../pages/ComponentsUI';
 
 
 interface TabPanelProps {
@@ -51,26 +53,26 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <div className='container-reports'>
-          <div className='graph-container'>
-            <BasicPie />
-          </div>
-          <div className='button-container'>
-            <button> Ver Gastos Semanales</button>
-            <button> Ver Gastos Mensuales</button>
-          </div>
-        </div>
+        <Reportes>
+          <BasicPie />
+        </Reportes>
+        <Container>
+          <ButtonGroup>
+            <Boton> Ver Gastos Semanales</Boton>
+            <Boton> Ver Gastos Mensuales</Boton>
+          </ButtonGroup>
+        </Container>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <div className='container-reports'>
-          <div className='graph-container'>
-            <BasicBars />
-          </div>
-          <div className='button-container'>
-            <button> Ver recorridos Semanales</button>
-            <button> Ver recorridos Mensuales</button>
-          </div>
-        </div>
+        <Reportes>
+          <BasicBars />
+        </Reportes>
+        <Container>
+          <ButtonGroup>
+            <Boton> Ver recorridos Semanales</Boton>
+            <Boton> Ver recorridos Mensuales</Boton>
+          </ButtonGroup>
+        </Container>
       </CustomTabPanel>
     </Box>
   );

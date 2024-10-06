@@ -1,5 +1,5 @@
 import Header from '../../components/HeaderComponent/Header';
-import { MensajeBienvenida, ContainerPadre, ContainerHijo } from '../ComponentsUI';
+import { MensajeBienvenida, ContainerPadre, ContainerHijo, Container } from '../ComponentsUI';
 import BasicTabs from '../../components/reportesGerencia/BasicTabs';
 
 const ReportesGerencia = () => {
@@ -8,9 +8,9 @@ const ReportesGerencia = () => {
         <ContainerPadre>
             <MensajeBienvenida>Reporte de Gastos</MensajeBienvenida>
             <ContainerHijo>
-                    <div className='container-graphs'>
-                        <BasicTabs></BasicTabs>
-                    </div>
+                <Container>
+                    <BasicTabs></BasicTabs>
+                </Container>
             </ContainerHijo>
         </ContainerPadre>
     </div>

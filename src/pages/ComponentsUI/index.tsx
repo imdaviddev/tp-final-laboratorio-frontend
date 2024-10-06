@@ -292,3 +292,15 @@ export const DescHijo = styled.div`
 export const ButtonGroup = styled.div`
     display: flex;
 `
+
+export const Reportes = styled.div`
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: 450px;
+
+    @media (max-width: 600px) {
+        width: 350px
+    }
+`

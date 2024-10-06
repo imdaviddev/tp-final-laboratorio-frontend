@@ -8,7 +8,6 @@ const ControlesGerencia = () => {
         <Container>
             <MensajeBienvenida>Registros de Flota</MensajeBienvenida>
         </Container>
-
         <VerticalTabs/> {/*Menu vertical, contiene Graficos*/}
     </div>
 }
