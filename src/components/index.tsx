@@ -1,6 +1,6 @@
 //Archivo barril 
 
-import CardHome from "./CardHome";
+import CardHome from "../pages/inicio/Components/CardHome";
 
 export {
     CardHome

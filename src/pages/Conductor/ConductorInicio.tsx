@@ -4,7 +4,7 @@ import Component from '../../components/PestañaEmergente/PestañaEmergente'; //
 import conductorInicio from '../../../public/conductorInicio.svg'
 import './conductor.css';
 import './conductorModal.css'
-import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, ContainerDetalle, DescHijo } from './ComponentsUI';
+import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, ContainerDetalle, DescHijo } from '.';
 import Detalle from './Components/Detalle'
 
 const ConductorInicio = () => {
