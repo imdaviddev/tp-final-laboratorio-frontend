@@ -1,25 +1,23 @@
 import Header from '../../components/HeaderComponent/Header';
 import Recorrido from '../../components/Recorrido/Recorrido';
-import './gerencia.css';
+import { MensajeBienvenida, ContainerPadre, ContainerHijo, ContainerDetalle, DescHijo } from '../ComponentsUI';
+import logoRecorridos from '../../../public/logoRecorridos.svg'
 
 const GerenciaHomePage = () => {
     return <div className='page-container'>
         <Header rol='Gerente' />
-        <div className="wrapper-mensaje-bienvenida">
-            <h1>Hola, Val</h1>
-        </div>
-        <div className='container'>
-            <div className='recorridos-container'>
-                <div className='description-recorridos'><p><b>Se registraron 30 recorridos exitosos durante esta semana</b></p></div>
-                <div className='recorridos'>
-                    <Recorrido numero="#049" />
-                    <Recorrido numero="#048" />
-                    <Recorrido numero="#047" />
-                </div>
-            </div>
-            <img src="./src/logoRecorridos.svg" alt="" className='LogoRecorridos'/>            
+        <ContainerPadre>
+            <MensajeBienvenida>Hola, Val</MensajeBienvenida>
 
-        </div>
+            <ContainerHijo>
+            <DescHijo>Recorridos durante esta semana</DescHijo>
+                <ContainerDetalle>
+                        <Recorrido numero="#049" />
+                        <Recorrido numero="#048" />
+                        <Recorrido numero="#047" />
+                </ContainerDetalle>
+            </ContainerHijo>   
+        </ContainerPadre>
     </div>
 }
 

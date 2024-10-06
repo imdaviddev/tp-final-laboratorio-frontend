@@ -1,7 +1,7 @@
 import Header from '../../components/HeaderComponent/Header';
 import BasicBars from '../../components/reportesGerencia/BasicBars';
 import { MensajeBienvenida, ContainerPadre, ContainerHijo, DescHijo, Reportes } from '.';
-import './conductor.css'
+import './css/conductor.css'
 
 
 const ConductorReportes = () => {

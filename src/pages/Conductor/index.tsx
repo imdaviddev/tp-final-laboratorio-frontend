@@ -27,7 +27,6 @@ export const MensajeBienvenida = styled.div`
     width: 250px;
     font-size: 18px;
   }
-
 `
 
 export const DescHijo = styled.div`

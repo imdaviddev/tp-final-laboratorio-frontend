@@ -2,8 +2,10 @@ import React, { useState } from 'react'; // Importa useState
 import Header from '../../components/HeaderComponent/Header';
 import Component from '../../components/PestañaEmergente/PestañaEmergente'; // El componente que deseas mostrar
 import conductorInicio from '../../../public/conductorInicio.svg'
-import './conductor.css';
-import './conductorModal.css'
+
+import './css/conductor.css'
+import './css/conductorModal.css'
+
 import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, ContainerDetalle, DescHijo } from '.';
 import Detalle from './Components/Detalle'
 

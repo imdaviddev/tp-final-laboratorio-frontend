@@ -1,7 +1,7 @@
 import Header from '../../components/HeaderComponent/Header';
 import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, DescHijo, Button } from '.';
 import Detalle from './Components/Detalle';
-import './conductor.css'
+import './css/conductor.css'
 
 
 const CoductorRecorrido = () => {

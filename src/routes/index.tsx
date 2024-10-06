@@ -2,8 +2,9 @@ import { Inicio } from '../pages';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import IniciarSesionPage from '../pages/IniciarSesion/IniciarSesionPage';
 import GerenciaHomePage from '../pages/gerencia/gerencia';
-import ReportesGerencia from '../pages/gerencia/reportesGerencia/ReportesGerencia';
-import ControlesGerencia from '../pages/gerencia/controlesGerencia/ControlesGerencia';
+import ReportesGerencia from '../pages/gerencia/ReportesGerencia';
+import ControlesGerencia from '../pages/gerencia/ControlesGerencia';
+
 import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout, SupervisionReportesPage, SupervisionVehiculosPage } from '../pages/Supervision';
 import MantenimientoPageLayout, { MantenimientoHistorial, MantenimientoInicio } from '../pages/Mantenimiento';
 import Mantenimientoingresos from '../pages/Mantenimiento/Mantenimientoingresos';
