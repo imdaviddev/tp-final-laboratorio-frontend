@@ -6,7 +6,7 @@ import { ContainerImgFondo, BienvenidoInicio } from './index'
 import { PageContainer } from "../ComponentsUI";
 import camion from '../../../public/camion.svg'
 import imgInicio from '../../../public/imgDescInicio.svg'
-import './cards.css'
+import './css/cards.css'
 
 
 const cardData = [

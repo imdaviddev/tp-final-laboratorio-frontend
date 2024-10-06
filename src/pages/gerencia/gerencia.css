@@ -1,22 +1,5 @@
-.container{
-    display:  flex;
-    justify-content: space-around;
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.recorridos-container{
-    background-color: rgb(232, 217, 213);
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px gray;
-}
-
-.description-recorridos p{
-    margin: 15px;
-    font-family: 34px;
-    font-style: italic;
-}
-
-.LogoRecorridos{
-    height: 450px;
-    width: 450px;
-}
-
-

@@ -17,6 +17,5 @@ export default function Recorrido(props:Props) {
                 <a href="#">Ver detalle</a>
             </div>
         </div>
-    )
-    
+    )   
 }

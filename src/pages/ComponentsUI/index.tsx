@@ -209,3 +209,86 @@ export const WrapperCenterItems = styled.div`
   max-width: 600px;
   align-self: center;
 `
+
+export const MensajeBienvenida = styled.div`
+  margin-top: 35px;
+  margin-bottom: 35px;
+  padding: 20px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px gray;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  /* Estilos para pantallas pequeñas (móviles) */
+  @media (max-width: 600px) {
+    width: 250px;
+    font-size: 18px;
+  }
+`
+
+//Centra todo lo disponible de la pagina ¿Se puede mejorar?
+export const ContainerPadre = styled.div`
+    margin-top: 125px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+
+//Contiene bordes de sombra y los datos en si del recorrido
+export const ContainerHijo = styled.div`
+    height: 375px;
+    width: 450px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px 6px gray;
+
+    @media (max-width: 600px) {
+        width: 350px
+    }
+`
+
+export const ContainerDetalle = styled.div`
+    width: 350px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
+export const DescHijo = styled.div`
+  margin-bottom: 25px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: red;
+  background-color: #f9f9f9;
+  border: 1px solid #C90035; /* Bordecito bonito con el terciario */
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Para que no se extienda demasiado en pantallas grandes */
+`
+
+export const ButtonGroup = styled.div`
+    display: flex;
+`

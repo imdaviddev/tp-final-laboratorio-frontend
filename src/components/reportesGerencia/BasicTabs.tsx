@@ -4,7 +4,6 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import BasicPie from './BasicPie';
 import BasicBars from './BasicBars';
-import BasicLineChart from './BasicLineChart';
 
 
 interface TabPanelProps {

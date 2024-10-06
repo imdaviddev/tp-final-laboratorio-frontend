@@ -4,6 +4,8 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import BasicBars from '../reportesGerencia/BasicBars';
+import { Boton } from '../../pages/ComponentsUI/Botones';
+import { ButtonGroup, Container } from '../../pages/ComponentsUI/index'
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -60,23 +62,28 @@ export default function VerticalTabs() {
         <Tab label="Consumo de gasolina" {...a11yProps(0)} />
         <Tab label="Frecuencia de Reparaciones" {...a11yProps(1)} />
       </Tabs>
+
       <TabPanel value={value} index={0}>
-        <div className='container'>
-        <div className='button-group'>
-            <button>Ver consumo semanal</button>
-            <button>Ver consumo Mensual</button>
-        </div>
-        <div className='graph-container'><BasicBars/></div>
-        </div>
+        <Container>
+          <ButtonGroup>
+            <Boton>Ver consumo semanal</Boton>
+            <Boton>Ver consumo Mensual</Boton>
+          </ButtonGroup>
+        </Container>
+
+        <div className='graph-container'><BasicBars /></div>
       </TabPanel>
+
       <TabPanel value={value} index={1}>
-      <div className='container'>
-        <div className='button-group'>
-            <button>Ver reparaciones semanales</button>
-            <button>Ver reparaciones Mensuales</button>
-        </div>
-        <div className='graph-container'><BasicBars/></div>
-        </div>
+        <Container>
+          <ButtonGroup>
+            <Boton>Ver reparaciones semanales</Boton>
+            <Boton>Ver reparaciones Mensuales</Boton>
+          </ButtonGroup>
+
+          <div className='graph-container'><BasicBars /></div>
+        </Container>
+        
       </TabPanel>
     </Box>
   );
