@@ -3,7 +3,7 @@ import { styled } from "styled-components"
 export const ContainerImgFondo = styled.div`
     position: relative;
     padding: 10px;
-    height: 300px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,11 +15,10 @@ export const ContainerImgFondo = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../public/fondoMain.jpeg');
+    background-image: url('../../public/fondoInicio.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(5px); /* Hace que el fondo se vea borroso */
     z-index: -1; /* Envía la imagen de fondo detrás del contenido */
     opacity: 0.7; /* Si quieres que la imagen sea semi-transparente */
 `
@@ -27,13 +26,13 @@ export const ContainerImgFondo = styled.div`
 export const BienvenidoInicio =styled.div`
     margin-top: 45px;
     display: flex;
-    color: red;
+    color: white;
     justify-content: center;
     font-family: "Bebas Neue", sans-serif;
     font-style: italic;
     font-size: 46px;
     font-weight: bold; /* Para engrosar el texto */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombras */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9); /* Sombras */
 `
 
 export const ContainerStatus =styled.div`

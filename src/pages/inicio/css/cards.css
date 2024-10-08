@@ -7,11 +7,10 @@
 
 .container-card {
     margin: 15px;
-    width: 45%;
+    width: 55%;
     display: flex;
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px 5px gray;
-
+    border-radius: 10px;
+    background-color: #eeeded;
     @media (max-width: 1024px) {
         padding: 10px;
         flex-direction: column;
@@ -46,13 +45,13 @@
 .card-title {
     text-transform: uppercase;
     font-style: italic;
-    font-size: 20px;
+    font-size: 26px;
     color: red;
 }
 
 .card-main {
     color: red;
     font-style: italic;
-    font-size: 16px;
+    font-size: 18px;
     margin: 15px;
 }
