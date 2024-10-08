@@ -1,11 +1,10 @@
 import React, { useState } from 'react'; // Importa useState
 import Component from '../../components/PestañaEmergente/PestañaEmergente'; // El componente que deseas mostrar
-import conductorInicio from '../../../public/conductorInicio.svg'
 
 import './css/conductor.css'
 import './css/conductorModal.css'
 
-import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, ContainerDetalle, DescHijo } from '.';
+import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, ImgConductorInicio,ContainerImgDetalle, DescHijo } from '.';
 import Detalle from './Components/Detalle'
 
 const ConductorInicio = () => {
@@ -26,18 +25,18 @@ const ConductorInicio = () => {
 
             <ContainerHijo>
                 <DescHijo>Recorrido en curso</DescHijo>
-                <ContainerDetalle>
-                    <img src={conductorInicio} alt="Conductor Inicio" />
+                <ContainerImgDetalle>
+                        <ImgConductorInicio></ImgConductorInicio>
+                        <RecorridoDetalle>
+                            <Detalle tipo="Recorrido" valor="#012"></Detalle>
+                            <Detalle tipo="Vehículo" valor="#c4m1on45"></Detalle>
+                            <Detalle tipo="Paquetes" valor="20"></Detalle>
+                            <Detalle tipo="KM a recorrer" valor="80"></Detalle>
+                            <Detalle tipo="Horario estimado" valor="4hs"></Detalle>
+                            <a href="#">Ver información</a>
+                        </RecorridoDetalle>
+                    </ContainerImgDetalle>
 
-                    <RecorridoDetalle>
-                        <Detalle tipo="Recorrido" valor="#012"></Detalle>
-                        <Detalle tipo="Vehículo" valor="#c4m1on45"></Detalle>
-                        <Detalle tipo="paquetes a entregar" valor="20"></Detalle>
-                        <Detalle tipo="KM a recorrer" valor="80"></Detalle>
-                        <Detalle tipo="Horario estimado" valor="4hs"></Detalle>
-                        <a href="#">Ver información</a>
-                    </RecorridoDetalle>
-                </ContainerDetalle>
 
                 <button id="generarLista" className='button-conductor' onClick={handleGenerarListaClick}>
                     Entregar Paquetes

@@ -33,7 +33,7 @@ export const MensajeBienvenida = styled.div`
 `
 
 export const DescHijo = styled.div`
-  margin-bottom: 25px;
+  margin-top: 15px;
   padding: 15px;
   display: flex;
   align-items: center;
@@ -76,12 +76,33 @@ export const ContainerHijo = styled.div`
 `
 //Centra El detalle e imagen del recorrido
 export const ContainerDetalle = styled.div`
-    width: 350px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 200px;
+  padding-top: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto; /* Permite el scroll vertical cuando el contenido excede la altura */
+
+  
 `
+
+export const ContainerImgDetalle = styled.div`
+  display: flex;
+  align-items: center;
+`
+export const ImgConductorInicio = styled.div`
+  background-image: url("../../../public/conductorInicio.svg");
+  background-size: cover; 
+  background-position: center; 
+  width: 160px; 
+  height: 160px; 
+
+  @media (max-width: 600px) {
+    width: 100px; 
+    height: 100px; 
+    }
+`;
 
 export const Button = styled.button`
     padding: 15px;
@@ -94,13 +115,19 @@ export const Button = styled.button`
 `
 
 export const RecorridoDetalle = styled.div`
-    margin: 15px;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 10px;
+  margin: 5px;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border:1px solid black;
+  border-radius: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+
 `
 //Estilo para los reportes, podria verse de otra forma
 export const Reportes = styled.div`

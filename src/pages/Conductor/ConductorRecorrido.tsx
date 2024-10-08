@@ -1,5 +1,5 @@
-import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, DescHijo, Button } from '.';
-import Detalle from './Components/Detalle';
+import { MensajeBienvenida, ContainerPadre, ContainerHijo, DescHijo } from '.';
+import BasicTabs from './Components/BasicTabs';
 import './css/conductor.css'
 
 
@@ -8,25 +8,9 @@ const CoductorRecorrido = () => {
         <ContainerPadre>
 
             <MensajeBienvenida>Tus recorridos</MensajeBienvenida>
-
             <ContainerHijo>
                 <DescHijo>Reporte de rutas</DescHijo>
-                <RecorridoDetalle>
-                    <Detalle tipo="Recorrido" valor="#064"></Detalle>
-                    <Detalle tipo="Fecha" valor="25/08/2024"></Detalle>
-                    <a href="#">ver detalle</a>
-                </RecorridoDetalle>
-                <RecorridoDetalle>
-                    <Detalle tipo="Recorrido" valor="#059"></Detalle>
-                    <Detalle tipo="Fecha" valor="20/08/2024"></Detalle>
-                    <a href="#">ver detalle</a>
-                </RecorridoDetalle>
-
-                <div>
-                    <Button>Reporte Semanal</Button>
-                    <Button>Reporte Semanal</Button>
-                </div>
-
+                <BasicTabs></BasicTabs>
             </ContainerHijo>
         </ContainerPadre>
     </>
