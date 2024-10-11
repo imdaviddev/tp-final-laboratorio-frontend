@@ -1,12 +1,24 @@
-import { MensajeBienvenida, Container } from '../ComponentsUI';
-import VerticalTabs from '../../components/controlesGerencia/VerticalTabs';
+import { MensajeBienvenida, ContainerPadre, ContainerHijo, Container } from '../ComponentsUI';
+import BasicTabs from '../../components/BasicTabs/BasicTabs';
+
+//Consumo de gasolina semanal y mensual
+//reparaciones semanales y mensuales
 
 const ControlesGerencia = () => {
     return <>
-        <Container>
+        <ContainerPadre>
             <MensajeBienvenida>Registros de Flota</MensajeBienvenida>
-        </Container>
-        <VerticalTabs /> {/*Menu vertical, contiene Graficos*/}
+            <ContainerHijo>
+                <Container>
+                    <BasicTabs
+                        subdesc="Consumo"
+                        subdesc2do="Reparaciones"
+                        descripcionBoton="Consumos" 
+                        descripcionBoton2do="Reparaciones"
+                    />
+                </Container>
+            </ContainerHijo>
+        </ContainerPadre>
     </>
 
 }

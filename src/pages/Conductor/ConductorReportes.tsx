@@ -1,4 +1,4 @@
-import BasicBars from '../../components/reportesGerencia/BasicBars';
+import BasicBars from '../../components/Graphs/BasicBars';
 import { MensajeBienvenida, ContainerPadre, ContainerHijo, DescHijo, Reportes } from '.';
 import './css/conductor.css'
 

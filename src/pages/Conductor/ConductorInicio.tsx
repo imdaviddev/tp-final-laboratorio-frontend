@@ -1,11 +1,11 @@
 import React, { useState } from 'react'; // Importa useState
-import Component from '../../components/PestañaEmergente/PestañaEmergente'; // El componente que deseas mostrar
+import ListaPaquetes from '../../components/ListaPaquetes'; // El componente que deseas mostrar
 
 import './css/conductor.css'
 import './css/conductorModal.css'
 
 import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, ImgConductorInicio,ContainerImgDetalle, DescHijo } from '.';
-import Detalle from './Components/Detalle'
+import Detalle from '../../components/Detalle'
 
 const ConductorInicio = () => {
     // Estado para manejar la visibilidad del componente
@@ -49,7 +49,7 @@ const ConductorInicio = () => {
             mostrarComponent && (
                 <div className='modal-overlay' onClick={handleCloseModal}>
                     <div className='modal-content' onClick={e => e.stopPropagation()}>
-                        <Component />
+                        <ListaPaquetes />
                         <button className="close-button" onClick={handleCloseModal}>Cerrar</button>
                     </div>
                 </div>

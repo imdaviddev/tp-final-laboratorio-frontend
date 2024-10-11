@@ -82,9 +82,8 @@ export const ContainerDetalle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-y: auto; /* Permite el scroll vertical cuando el contenido excede la altura */
-
-  
+  overflow-y: auto;
+ 
 `
 
 export const ContainerImgDetalle = styled.div`

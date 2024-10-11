@@ -1,5 +1,5 @@
 import { MensajeBienvenida, ContainerPadre, ContainerHijo, Container } from '../ComponentsUI';
-import BasicTabs from '../../components/reportesGerencia/BasicTabs';
+import BasicTabs from '../../components/BasicTabs/BasicTabs';
 
 const ReportesGerencia = () => {
     return <>
@@ -7,12 +7,16 @@ const ReportesGerencia = () => {
             <MensajeBienvenida>Reporte de Gastos</MensajeBienvenida>
             <ContainerHijo>
                 <Container>
-                    <BasicTabs></BasicTabs>
+                    <BasicTabs 
+                    subdesc="Gastos"
+                    subdesc2do="Recorridos" 
+                    descripcionBoton="Gastos" 
+                    descripcionBoton2do="Recorridos"
+                    />
                 </Container>
             </ContainerHijo>
         </ContainerPadre>
     </>
-
 }
 
 export default ReportesGerencia;
