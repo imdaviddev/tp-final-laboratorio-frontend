@@ -1,0 +1,19 @@
+{
+    "/usuarios": "/usuarios",
+
+    "/conductores": "/conductores",
+
+    "/paquetes": "/paquetes",
+    "/paquetes/estados": "/paquetesEstados",
+
+    "/vehiculos": "/vehiculos",
+    "/vehiculos/estados": "/vehiculosEstados",
+
+    "/repuestos": "/repuestos",
+
+    "/proveedores": "/proveedores",
+    "/catalogos": "/catalogos",
+
+    "/tickets": "/tickets",
+    "/tickets/estados": "/ticketsEstados"
+}

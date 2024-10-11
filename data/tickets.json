@@ -1,0 +1,72 @@
+{
+    "tickets": [
+      {
+        "id_ticket": 1,
+        "nombre_usuario": "tecnico01",
+        "descripcion_problemas": "El vehículo presenta ruidos extraños al acelerar.",
+        "fecha_creacion": "2024-10-01",
+        "fecha_finalizacion": "2024-10-05",
+        "estado": "CERRADO",
+        "tipo": "REPARACION",
+        "matricula": "ABC123",
+        "costoTotal": 1500.00,
+        "descripcion_reparaciones": "Cambio de bujías y ajuste de motor. Se observó que el problema estaba relacionado con un mal funcionamiento en el sistema de encendido."
+      },
+      {
+        "id_ticket": 2,
+        "nombre_usuario": "tecnico01",
+        "descripcion_problemas": "Frenos que no responden adecuadamente.",
+        "fecha_creacion": "2024-10-03",
+        "fecha_finalizacion": null,
+        "estado": "EN CURSO",
+        "tipo": "MANTENIMIENTO",
+        "matricula": "DEF456",
+        "costoTotal": 800.00,
+        "descripcion_reparaciones": "Revisión completa del sistema de frenos. Se recomienda cambiar las pastillas de freno y revisar los discos."
+      },
+      {
+        "id_ticket": 3,
+        "nombre_usuario": "tecnico01",
+        "descripcion_problemas": "Problemas con el sistema de iluminación.",
+        "fecha_creacion": "2024-10-04",
+        "fecha_finalizacion": null,
+        "estado": "NUEVO",
+        "tipo": "REPARACION",
+        "matricula": "GHI789",
+        "costoTotal": 500.00,
+        "descripcion_reparaciones": "Reemplazo de bombillas quemadas y revisión del sistema eléctrico. Se identificó un cortocircuito que podría causar problemas futuros."
+      },
+      {
+        "id_ticket": 4,
+        "nombre_usuario": "supervisor01",
+        "descripcion_problemas": "Revisión de mantenimiento general.",
+        "fecha_creacion": "2024-10-02",
+        "fecha_finalizacion": null,
+        "estado": "NUEVO",
+        "tipo": "MANTENIMIENTO",
+        "matricula": "JKL012",
+        "costoTotal": 300.00,
+        "descripcion_reparaciones": "Revisión de todos los fluidos y filtros. Se sugiere cambiar el aceite de motor y revisar el filtro de aire."
+      },
+      {
+        "id_ticket": 5,
+        "nombre_usuario": "conductor01",
+        "descripcion_problemas": "El vehículo no arranca.",
+        "fecha_creacion": "2024-10-05",
+        "fecha_finalizacion": null,
+        "estado": "NUEVO",
+        "tipo": "REPARACION",
+        "matricula": "MNO345",
+        "costoTotal": 1200.00,
+        "descripcion_reparaciones": "Revisión del sistema de arranque. Se determinó que la batería está descargada y necesita ser reemplazada."
+      }
+    ],
+
+    "ticketsEstados": [
+        "NUEVO",
+        "EN CURSO",
+        "CERRADO",
+        "RESUELTO"
+    ]
+  }
+  

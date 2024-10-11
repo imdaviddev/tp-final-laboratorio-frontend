@@ -1,0 +1,40 @@
+{
+    "conductores": [
+      {
+        "id": 1,
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "dni": "12345678",
+        "rol": "CONDUCTOR"
+      },
+      {
+        "id": 2,
+        "nombre": "Carlos",
+        "apellido": "García",
+        "dni": "23456789",
+        "rol": "CONDUCTOR"
+      },
+      {
+        "id": 3,
+        "nombre": "Laura",
+        "apellido": "López",
+        "dni": "34567890",
+        "rol": "CONDUCTOR"
+      },
+      {
+        "id": 4,
+        "nombre": "Marta",
+        "apellido": "Fernández",
+        "dni": "45678901",
+        "rol": "CONDUCTOR"
+      },
+      {
+        "id": 5,
+        "nombre": "Luis",
+        "apellido": "Rodríguez",
+        "dni": "56789012",
+        "rol": "CONDUCTOR"
+      }
+    ]
+  }
+  

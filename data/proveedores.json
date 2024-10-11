@@ -1,0 +1,156 @@
+{
+    "proveedores": [
+      {
+        "id_proveedor": 1,
+        "nombre_empresa": "Logística Express",
+        "mail": "contacto@logisticaexpress.com",
+        "telefono": "+54 11 1234-5678"
+      },
+      {
+        "id_proveedor": 2,
+        "nombre_empresa": "Transportes del Norte",
+        "mail": "info@transportesnorte.com",
+        "telefono": "+54 11 2345-6789"
+      },
+      {
+        "id_proveedor": 3,
+        "nombre_empresa": "Distribuciones Globales",
+        "mail": "ventas@distribucionesglobales.com",
+        "telefono": "+54 341 3456-7890"
+      },
+      {
+        "id_proveedor": 4,
+        "nombre_empresa": "Cargas Rápidas",
+        "mail": "soporte@cargasrapidas.com",
+        "telefono": "+54 261 4567-8901"
+      },
+      {
+        "id_proveedor": 5,
+        "nombre_empresa": "Envíos Nacionales",
+        "mail": "atencion@enviosnacionales.com",
+        "telefono": "+54 11 5678-9012"
+      }
+    ],
+
+    "repuestos": [
+        {
+        "id_repuesto": 1,
+        "id_catalogo": 1,
+        "nombre": "Aceite de motor",
+        "stock": 50,
+        "stock_minimo": 10,
+        "cant_a_comprar": 20,
+        "costo": 15.75,
+        "descripcion": "Aceite de motor de alta calidad para vehículos."
+        },
+        {
+        "id_repuesto": 2,
+        "id_catalogo": 1,
+        "nombre": "Filtro de aire",
+        "stock": 30,
+        "stock_minimo": 5,
+        "cant_a_comprar": 10,
+        "costo": 8.50,
+        "descripcion": "Filtro de aire para mejorar la calidad del aire en el motor."
+        },
+        {
+        "id_repuesto": 3,
+        "id_catalogo": 2,
+        "nombre": "Batería",
+        "stock": 20,
+        "stock_minimo": 3,
+        "cant_a_comprar": 5,
+        "costo": 120.00,
+        "descripcion": "Batería de larga duración para vehículos."
+        },
+        {
+        "id_repuesto": 4,
+        "id_catalogo": 2,
+        "nombre": "Frenos de disco",
+        "stock": 15,
+        "stock_minimo": 2,
+        "cant_a_comprar": 5,
+        "costo": 45.00,
+        "descripcion": "Frenos de disco de alto rendimiento."
+        },
+        {
+        "id_repuesto": 5,
+        "id_catalogo": 3,
+        "nombre": "Lámpara LED",
+        "stock": 100,
+        "stock_minimo": 20,
+        "cant_a_comprar": 30,
+        "costo": 10.00,
+        "descripcion": "Lámpara LED de repuesto para faros."
+        },
+        {
+        "id_repuesto": 6,
+        "id_catalogo": 1,
+        "nombre": "Correa de distribución",
+        "stock": 25,
+        "stock_minimo": 5,
+        "cant_a_comprar": 10,
+        "costo": 50.00,
+        "descripcion": "Correa de distribución para motor."
+        },
+        {
+        "id_repuesto": 7,
+        "id_catalogo": 2,
+        "nombre": "Discos de freno",
+        "stock": 40,
+        "stock_minimo": 10,
+        "cant_a_comprar": 15,
+        "costo": 75.00,
+        "descripcion": "Discos de freno para mejorar la seguridad."
+        },
+        {
+        "id_repuesto": 8,
+        "id_catalogo": 3,
+        "nombre": "Bombilla de faro",
+        "stock": 60,
+        "stock_minimo": 15,
+        "cant_a_comprar": 25,
+        "costo": 5.00,
+        "descripcion": "Bombilla de repuesto para faros delanteros."
+        },
+        {
+        "id_repuesto": 9,
+        "id_catalogo": 1,
+        "nombre": "Filtro de aceite",
+        "stock": 35,
+        "stock_minimo": 5,
+        "cant_a_comprar": 12,
+        "costo": 12.00,
+        "descripcion": "Filtro de aceite para mantener el motor limpio."
+        },
+        {
+        "id_repuesto": 10,
+        "id_catalogo": 3,
+        "nombre": "Reflector",
+        "stock": 20,
+        "stock_minimo": 5,
+        "cant_a_comprar": 5,
+        "costo": 8.00,
+        "descripcion": "Reflector de seguridad para vehículos."
+        }
+    ],      
+
+    "catalogos": [
+        {
+          "id_catalogo": 1,
+          "id_proveedor": 1,
+          "mes_vigencia": 12
+        },
+        {
+          "id_catalogo": 2,
+          "id_proveedor": 1,
+          "mes_vigencia": 10
+        },
+        {
+          "id_catalogo": 3,
+          "id_proveedor": 2,
+          "mes_vigencia": 8
+        }
+    ]
+  }
+  
