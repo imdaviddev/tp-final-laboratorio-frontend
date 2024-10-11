@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import BasicPie from './BasicPie';
 import BasicBars from './BasicBars';
+import ContainerGrafico from '../ContainerGrafico';
 import { Boton } from '../../pages/ComponentsUI/Botones';
 import { ButtonGroup, Container, Reportes } from '../../pages/ComponentsUI';
 import { tabStyles, commonTabSx } from '../../constants/styles';
@@ -48,22 +49,22 @@ export default function BasicTabs() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs 
-          value={value} 
-          onChange={handleChange} 
-          aria-label="basic tabs example" 
-          centered 
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+          centered
           TabIndicatorProps={{
             style: { backgroundColor: tabStyles.indicatorColor },
           }}
         >
           <Tab label="Gastos" {...a11yProps(0)} sx={commonTabSx} />
-          <Tab label="Recorridos" {...a11yProps(1)} sx={commonTabSx}/>
+          <Tab label="Recorridos" {...a11yProps(1)} sx={commonTabSx} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
         <Reportes>
-          <BasicPie />
+          <ContainerGrafico tamanio="350" grafico={<BasicPie />}/>
         </Reportes>
         <Container>
           <ButtonGroup>
@@ -74,7 +75,7 @@ export default function BasicTabs() {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <Reportes>
-          <BasicBars />
+        <ContainerGrafico tamanio="350" grafico={<BasicBars />}/>
         </Reportes>
         <Container>
           <ButtonGroup>

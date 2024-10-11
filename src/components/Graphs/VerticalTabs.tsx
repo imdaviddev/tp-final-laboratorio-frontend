@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import BasicBars from './BasicBars';
 import { Boton } from '../../pages/ComponentsUI/Botones';
 import { ButtonGroup, Container } from '../../pages/ComponentsUI/index'
+import ContainerGrafico from '../ContainerGrafico';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -70,8 +71,7 @@ export default function VerticalTabs() {
             <Boton>Ver consumo Mensual</Boton>
           </ButtonGroup>
         </Container>
-
-        <div className='graph-container'><BasicBars /></div>
+        <ContainerGrafico tamanio="400" grafico={<BasicBars/>} />
       </TabPanel>
 
       <TabPanel value={value} index={1}>
@@ -80,10 +80,8 @@ export default function VerticalTabs() {
             <Boton>Ver reparaciones semanales</Boton>
             <Boton>Ver reparaciones Mensuales</Boton>
           </ButtonGroup>
-
-          <div className='graph-container'><BasicBars /></div>
+          <ContainerGrafico tamanio="400" grafico={<BasicBars/>}/>
         </Container>
-        
       </TabPanel>
     </Box>
   );
