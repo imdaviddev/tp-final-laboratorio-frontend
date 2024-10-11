@@ -1,0 +1,462 @@
+{
+    "usuarios": [
+        {
+          "nombre_usuario": "admin01",
+          "dni": "12345678",
+          "nombre": "Pedro",
+          "apellido": "Gómez",
+          "rol": "ADMINISTRADOR",
+          "password": "adminPass123"
+        },
+        {
+          "nombre_usuario": "supervisor01",
+          "dni": "23456789",
+          "nombre": "Ana",
+          "apellido": "Martínez",
+          "rol": "SUPERVISOR",
+          "password": "supervisorPass456"
+        },
+        {
+          "nombre_usuario": "tecnico01",
+          "dni": "34567890",
+          "nombre": "Luis",
+          "apellido": "Fernández",
+          "rol": "TECNICO_MANTENIMIENTO",
+          "password": "tecnicoPass789"
+        },
+        {
+          "nombre_usuario": "tecnico02",
+          "dni": "45678901",
+          "nombre": "Sara",
+          "apellido": "Ramírez",
+          "rol": "TECNICO_MANTENIMIENTO",
+          "password": "tecnicoPass321"
+        },
+        {
+          "nombre_usuario": "conductor01",
+          "dni": "56789012",
+          "nombre": "Juan",
+          "apellido": "Pérez",
+          "rol": "CONDUCTOR",
+          "password": "conductorPass654"
+        },
+        {
+          "nombre_usuario": "conductor02",
+          "dni": "67890123",
+          "nombre": "Carlos",
+          "apellido": "García",
+          "rol": "CONDUCTOR",
+          "password": "conductorPass987"
+        },
+        {
+          "nombre_usuario": "conductor03",
+          "dni": "78901234",
+          "nombre": "Laura",
+          "apellido": "López",
+          "rol": "CONDUCTOR",
+          "password": "conductorPass456"
+        },
+        {
+          "nombre_usuario": "conductor04",
+          "dni": "89012345",
+          "nombre": "Marta",
+          "apellido": "Fernández",
+          "rol": "CONDUCTOR",
+          "password": "conductorPass123"
+        },
+        {
+          "nombre_usuario": "conductor05",
+          "dni": "90123456",
+          "nombre": "Luis",
+          "apellido": "Rodríguez",
+          "rol": "CONDUCTOR",
+          "password": "conductorPass321"
+        }
+    ],    
+    "roles": [
+      {
+        "id": 1,
+        "nombre": "GERENTE"
+      },
+      {
+        "id": 2,
+        "nombre": "ADMINISTRADOR"
+      },
+      {
+        "id": 3,
+        "nombre": "SUPERVISOR"
+      },
+      {
+        "id": 4,
+        "nombre": "TECNICO_MANTENIMIENTO"
+      },
+      {
+        "id": 5,
+        "nombre": "CONDUCTOR"
+      }
+    ],    
+    
+    "conductores": [
+      {
+        "id": 1,
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "dni": "12345678",
+        "rol": "CONDUCTOR"
+      },
+      {
+        "id": 2,
+        "nombre": "Carlos",
+        "apellido": "García",
+        "dni": "23456789",
+        "rol": "CONDUCTOR"
+      },
+      {
+        "id": 3,
+        "nombre": "Laura",
+        "apellido": "López",
+        "dni": "34567890",
+        "rol": "CONDUCTOR"
+      },
+      {
+        "id": 4,
+        "nombre": "Marta",
+        "apellido": "Fernández",
+        "dni": "45678901",
+        "rol": "CONDUCTOR"
+      },
+      {
+        "id": 5,
+        "nombre": "Luis",
+        "apellido": "Rodríguez",
+        "dni": "56789012",
+        "rol": "CONDUCTOR"
+      }
+    ],
+
+    "proveedores": [
+      {
+        "id_proveedor": 1,
+        "nombre_empresa": "Logística Express",
+        "mail": "contacto@logisticaexpress.com",
+        "telefono": "+54 11 1234-5678"
+      },
+      {
+        "id_proveedor": 2,
+        "nombre_empresa": "Transportes del Norte",
+        "mail": "info@transportesnorte.com",
+        "telefono": "+54 11 2345-6789"
+      },
+      {
+        "id_proveedor": 3,
+        "nombre_empresa": "Distribuciones Globales",
+        "mail": "ventas@distribucionesglobales.com",
+        "telefono": "+54 341 3456-7890"
+      },
+      {
+        "id_proveedor": 4,
+        "nombre_empresa": "Cargas Rápidas",
+        "mail": "soporte@cargasrapidas.com",
+        "telefono": "+54 261 4567-8901"
+      },
+      {
+        "id_proveedor": 5,
+        "nombre_empresa": "Envíos Nacionales",
+        "mail": "atencion@enviosnacionales.com",
+        "telefono": "+54 11 5678-9012"
+      }
+    ],
+
+    "repuestos": [
+        {
+        "id_repuesto": 1,
+        "id_catalogo": 1,
+        "nombre": "Aceite de motor",
+        "stock": 50,
+        "stock_minimo": 10,
+        "cant_a_comprar": 20,
+        "costo": 15.75,
+        "descripcion": "Aceite de motor de alta calidad para vehículos."
+        },
+        {
+        "id_repuesto": 2,
+        "id_catalogo": 1,
+        "nombre": "Filtro de aire",
+        "stock": 30,
+        "stock_minimo": 5,
+        "cant_a_comprar": 10,
+        "costo": 8.50,
+        "descripcion": "Filtro de aire para mejorar la calidad del aire en el motor."
+        },
+        {
+        "id_repuesto": 3,
+        "id_catalogo": 2,
+        "nombre": "Batería",
+        "stock": 20,
+        "stock_minimo": 3,
+        "cant_a_comprar": 5,
+        "costo": 120.00,
+        "descripcion": "Batería de larga duración para vehículos."
+        },
+        {
+        "id_repuesto": 4,
+        "id_catalogo": 2,
+        "nombre": "Frenos de disco",
+        "stock": 15,
+        "stock_minimo": 2,
+        "cant_a_comprar": 5,
+        "costo": 45.00,
+        "descripcion": "Frenos de disco de alto rendimiento."
+        },
+        {
+        "id_repuesto": 5,
+        "id_catalogo": 3,
+        "nombre": "Lámpara LED",
+        "stock": 100,
+        "stock_minimo": 20,
+        "cant_a_comprar": 30,
+        "costo": 10.00,
+        "descripcion": "Lámpara LED de repuesto para faros."
+        },
+        {
+        "id_repuesto": 6,
+        "id_catalogo": 1,
+        "nombre": "Correa de distribución",
+        "stock": 25,
+        "stock_minimo": 5,
+        "cant_a_comprar": 10,
+        "costo": 50.00,
+        "descripcion": "Correa de distribución para motor."
+        },
+        {
+        "id_repuesto": 7,
+        "id_catalogo": 2,
+        "nombre": "Discos de freno",
+        "stock": 40,
+        "stock_minimo": 10,
+        "cant_a_comprar": 15,
+        "costo": 75.00,
+        "descripcion": "Discos de freno para mejorar la seguridad."
+        },
+        {
+        "id_repuesto": 8,
+        "id_catalogo": 3,
+        "nombre": "Bombilla de faro",
+        "stock": 60,
+        "stock_minimo": 15,
+        "cant_a_comprar": 25,
+        "costo": 5.00,
+        "descripcion": "Bombilla de repuesto para faros delanteros."
+        },
+        {
+        "id_repuesto": 9,
+        "id_catalogo": 1,
+        "nombre": "Filtro de aceite",
+        "stock": 35,
+        "stock_minimo": 5,
+        "cant_a_comprar": 12,
+        "costo": 12.00,
+        "descripcion": "Filtro de aceite para mantener el motor limpio."
+        },
+        {
+        "id_repuesto": 10,
+        "id_catalogo": 3,
+        "nombre": "Reflector",
+        "stock": 20,
+        "stock_minimo": 5,
+        "cant_a_comprar": 5,
+        "costo": 8.00,
+        "descripcion": "Reflector de seguridad para vehículos."
+        }
+    ],      
+
+    "catalogos": [
+        {
+          "id_catalogo": 1,
+          "id_proveedor": 1,
+          "mes_vigencia": 12
+        },
+        {
+          "id_catalogo": 2,
+          "id_proveedor": 1,
+          "mes_vigencia": 10
+        },
+        {
+          "id_catalogo": 3,
+          "id_proveedor": 2,
+          "mes_vigencia": 8
+        }
+    ],
+
+    "tickets": [
+      {
+        "id_ticket": 1,
+        "nombre_usuario": "tecnico01",
+        "descripcion_problemas": "El vehículo presenta ruidos extraños al acelerar.",
+        "fecha_creacion": "2024-10-01",
+        "fecha_finalizacion": "2024-10-05",
+        "estado": "CERRADO",
+        "tipo": "REPARACION",
+        "matricula": "ABC123",
+        "costoTotal": 1500.00,
+        "descripcion_reparaciones": "Cambio de bujías y ajuste de motor. Se observó que el problema estaba relacionado con un mal funcionamiento en el sistema de encendido."
+      },
+      {
+        "id_ticket": 2,
+        "nombre_usuario": "tecnico01",
+        "descripcion_problemas": "Frenos que no responden adecuadamente.",
+        "fecha_creacion": "2024-10-03",
+        "fecha_finalizacion": null,
+        "estado": "EN CURSO",
+        "tipo": "MANTENIMIENTO",
+        "matricula": "DEF456",
+        "costoTotal": 800.00,
+        "descripcion_reparaciones": "Revisión completa del sistema de frenos. Se recomienda cambiar las pastillas de freno y revisar los discos."
+      },
+      {
+        "id_ticket": 3,
+        "nombre_usuario": "tecnico01",
+        "descripcion_problemas": "Problemas con el sistema de iluminación.",
+        "fecha_creacion": "2024-10-04",
+        "fecha_finalizacion": null,
+        "estado": "NUEVO",
+        "tipo": "REPARACION",
+        "matricula": "GHI789",
+        "costoTotal": 500.00,
+        "descripcion_reparaciones": "Reemplazo de bombillas quemadas y revisión del sistema eléctrico. Se identificó un cortocircuito que podría causar problemas futuros."
+      },
+      {
+        "id_ticket": 4,
+        "nombre_usuario": "supervisor01",
+        "descripcion_problemas": "Revisión de mantenimiento general.",
+        "fecha_creacion": "2024-10-02",
+        "fecha_finalizacion": null,
+        "estado": "NUEVO",
+        "tipo": "MANTENIMIENTO",
+        "matricula": "JKL012",
+        "costoTotal": 300.00,
+        "descripcion_reparaciones": "Revisión de todos los fluidos y filtros. Se sugiere cambiar el aceite de motor y revisar el filtro de aire."
+      },
+      {
+        "id_ticket": 5,
+        "nombre_usuario": "conductor01",
+        "descripcion_problemas": "El vehículo no arranca.",
+        "fecha_creacion": "2024-10-05",
+        "fecha_finalizacion": null,
+        "estado": "NUEVO",
+        "tipo": "REPARACION",
+        "matricula": "MNO345",
+        "costoTotal": 1200.00,
+        "descripcion_reparaciones": "Revisión del sistema de arranque. Se determinó que la batería está descargada y necesita ser reemplazada."
+      }
+    ],
+    "ticketsEstados": [
+      {
+        "id": 1,
+        "nombre": "NUEVO"
+      },
+      {
+        "id": 2,
+        "nombre": "EN CURSO"
+      },
+      {
+        "id": 3,
+        "nombre": "CERRADO"
+      },
+      {
+        "id": 4,
+        "nombre": "RESUELTO"
+      }
+    ],
+
+    "paquetes": [
+      {
+        "id_paquete": 1,
+        "id_viaje": 101,
+        "id_conductor": 1,
+        "matricula": "ABC123",
+        "descripcion": "Electrodoméstico",
+        "estado": "EN VIAJE",
+        "peso_kg": 25.5,
+        "nombre_cliente": "María López",
+        "volumen": 0.75,
+        "localidad": "Buenos Aires",
+        "direccion_entrega": "Av. Corrientes 1234"
+      },
+      {
+        "id_paquete": 2,
+        "id_viaje": 102,
+        "id_conductor": 2,
+        "matricula": "DEF456",
+        "descripcion": "Muebles",
+        "estado": "ASIGNADO",
+        "peso_kg": 50.0,
+        "nombre_cliente": "Jorge Pérez",
+        "volumen": 1.2,
+        "localidad": "Córdoba",
+        "direccion_entrega": "Calle San Martín 567"
+      },
+      {
+        "id_paquete": 3,
+        "id_viaje": 103,
+        "id_conductor": 3,
+        "matricula": "GHI789",
+        "descripcion": "Ropa",
+        "estado": "NO ENTREGADO",
+        "peso_kg": 10.0,
+        "nombre_cliente": "Ana Gómez",
+        "volumen": 0.4,
+        "localidad": "Rosario",
+        "direccion_entrega": "Bv. Oroño 890"
+      },
+      {
+        "id_paquete": 4,
+        "id_viaje": 104,
+        "id_conductor": 1,
+        "matricula": "JKL012",
+        "descripcion": "Electrónica",
+        "estado": "ENTREGADO",
+        "peso_kg": 5.2,
+        "nombre_cliente": "Pedro Fernández",
+        "volumen": 0.3,
+        "localidad": "Mendoza",
+        "direccion_entrega": "Av. Mitre 4321"
+      },
+      {
+        "id_paquete": 5,
+        "id_viaje": 105,
+        "id_conductor": 2,
+        "matricula": "MNO345",
+        "descripcion": "Juguetes",
+        "estado": "SIN ASIGNAR",
+        "peso_kg": 8.0,
+        "nombre_cliente": "Lucía Ramírez",
+        "volumen": 0.5,
+        "localidad": "La Plata",
+        "direccion_entrega": "Calle 12 456"
+      }
+    ],
+    "paquetesEstados": [
+      {
+        "id": 1,
+        "nombre": "ASIGNADO"
+      },
+      {
+        "id": 2,
+        "nombre": "SIN ASIGNAR"
+      },
+      {
+        "id": 3,
+        "nombre": "EN VIAJE"
+      },
+      {
+        "id": 4,
+        "nombre": "ENTREGADO"
+      },
+      {
+        "id": 5,
+        "nombre": "NO ENTREGADO"
+      }
+    ] 
+}
+  

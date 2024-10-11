@@ -1,0 +1,77 @@
+{
+    "paquetes": [
+      {
+        "id_paquete": 1,
+        "id_viaje": 101,
+        "id_conductor": 1,
+        "matricula": "ABC123",
+        "descripcion": "Electrodoméstico",
+        "estado": "EN VIAJE",
+        "peso_kg": 25.5,
+        "nombre_cliente": "María López",
+        "volumen": 0.75,
+        "localidad": "Buenos Aires",
+        "direccion_entrega": "Av. Corrientes 1234"
+      },
+      {
+        "id_paquete": 2,
+        "id_viaje": 102,
+        "id_conductor": 2,
+        "matricula": "DEF456",
+        "descripcion": "Muebles",
+        "estado": "ASIGNADO",
+        "peso_kg": 50.0,
+        "nombre_cliente": "Jorge Pérez",
+        "volumen": 1.2,
+        "localidad": "Córdoba",
+        "direccion_entrega": "Calle San Martín 567"
+      },
+      {
+        "id_paquete": 3,
+        "id_viaje": 103,
+        "id_conductor": 3,
+        "matricula": "GHI789",
+        "descripcion": "Ropa",
+        "estado": "NO ENTREGADO",
+        "peso_kg": 10.0,
+        "nombre_cliente": "Ana Gómez",
+        "volumen": 0.4,
+        "localidad": "Rosario",
+        "direccion_entrega": "Bv. Oroño 890"
+      },
+      {
+        "id_paquete": 4,
+        "id_viaje": 104,
+        "id_conductor": 1,
+        "matricula": "JKL012",
+        "descripcion": "Electrónica",
+        "estado": "ENTREGADO",
+        "peso_kg": 5.2,
+        "nombre_cliente": "Pedro Fernández",
+        "volumen": 0.3,
+        "localidad": "Mendoza",
+        "direccion_entrega": "Av. Mitre 4321"
+      },
+      {
+        "id_paquete": 5,
+        "id_viaje": 105,
+        "id_conductor": 2,
+        "matricula": "MNO345",
+        "descripcion": "Juguetes",
+        "estado": "SIN ASIGNAR",
+        "peso_kg": 8.0,
+        "nombre_cliente": "Lucía Ramírez",
+        "volumen": 0.5,
+        "localidad": "La Plata",
+        "direccion_entrega": "Calle 12 456"
+      }
+    ],
+    "paquetesEstados": [
+        "ASIGNADO",
+        "SIN ASIGNAR",
+        "EN VIAJE",
+        "ENTREGADO",
+        "NO ENTREGADO"
+    ]
+  }
+  
