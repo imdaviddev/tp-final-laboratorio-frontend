@@ -210,6 +210,7 @@ export const WrapperCenterItems = styled.div`
   align-self: center;
 `
 
+//Mensaje de inicio para todas las pestañas
 export const MensajeBienvenida = styled.div`
   margin-top: 35px;
   margin-bottom: 35px;
@@ -231,7 +232,7 @@ export const MensajeBienvenida = styled.div`
     transform: scale(1.05);
   }
 
-  /* Estilos para pantallas pequeñas (móviles) */
+  /* Estilos para pantallas celulares */
   @media (max-width: 600px) {
     width: 250px;
     font-size: 18px;

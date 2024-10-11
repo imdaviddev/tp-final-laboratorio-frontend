@@ -1,5 +1,5 @@
 import { MensajeBienvenida, Container } from '../ComponentsUI';
-import VerticalTabs from '../../components/controlesGerencia/VerticalTabs';
+import VerticalTabs from '../../components/Graphs/VerticalTabs';
 
 const ControlesGerencia = () => {
     return <>

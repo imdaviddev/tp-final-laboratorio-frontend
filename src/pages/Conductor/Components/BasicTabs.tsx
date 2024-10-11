@@ -3,7 +3,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { RecorridoDetalle, ContainerDetalle } from '../index';
-import Detalle from './Detalle';
+import { tabStyles, commonTabSx } from '../../../constants/styles';
+import Detalle from '../../../components/Detalle';
 
 
 interface TabPanelProps {
@@ -45,35 +46,17 @@ export default function BasicTabs() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered TabIndicatorProps={{
-            style: {
-              backgroundColor: 'red', // Cambia el borde inferior de la pestaña activa a rojo
-            },
-          }}>
-          <Tab 
-            label="Semanales" 
-            {...a11yProps(0)} 
-            sx={{
-              '&:hover': {
-                color: 'red', // Color rojo cuando el mouse pasa por encima
-              },
-              '&.Mui-selected': {
-                color: 'red', // Cambia el color del texto cuando la pestaña está seleccionada
-              },
-            }} 
-          />
-          <Tab 
-            label="Mensuales" 
-            {...a11yProps(1)} 
-            sx={{
-              '&:hover': {
-                color: 'red', // Color rojo cuando el mouse pasa por encima
-              },
-              '&.Mui-selected': {
-                color: 'red', // Cambia el color del texto cuando la pestaña está seleccionada
-              },
-            }} 
-          />
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+          centered
+          TabIndicatorProps={{
+            style: { backgroundColor: tabStyles.indicatorColor },
+          }}
+        >
+          <Tab label="Semanales" {...a11yProps(0)} sx={commonTabSx} />
+          <Tab label="Mensuales" {...a11yProps(1)} sx={commonTabSx} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>

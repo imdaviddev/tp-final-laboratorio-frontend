@@ -5,7 +5,7 @@ import './css/conductor.css'
 import './css/conductorModal.css'
 
 import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, ImgConductorInicio,ContainerImgDetalle, DescHijo } from '.';
-import Detalle from './Components/Detalle'
+import Detalle from '../../components/Detalle'
 
 const ConductorInicio = () => {
     // Estado para manejar la visibilidad del componente

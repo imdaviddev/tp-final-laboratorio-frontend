@@ -1,6 +1,6 @@
 import camionRojo from '../../public/camionRojo.svg'
 import { styled } from "styled-components"
-import Detalle from '../pages/Conductor/Components/Detalle';
+import Detalle from './Detalle';
 
 
 interface Props {
@@ -9,7 +9,8 @@ interface Props {
 }
 
 const RecorridoContainer = styled.div`
-     margin: 5px;
+    margin: 5px;
+    padding: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -32,7 +33,6 @@ const DescRecorrido = styled.div`
     align-items: center;
     flex-direction: column;
 `
-
 
 export default function Recorrido(props: Props) {
     return (

@@ -3,7 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import BasicBars from '../reportesGerencia/BasicBars';
+import BasicBars from './BasicBars';
 import { Boton } from '../../pages/ComponentsUI/Botones';
 import { ButtonGroup, Container } from '../../pages/ComponentsUI/index'
 

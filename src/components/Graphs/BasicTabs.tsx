@@ -6,6 +6,7 @@ import BasicPie from './BasicPie';
 import BasicBars from './BasicBars';
 import { Boton } from '../../pages/ComponentsUI/Botones';
 import { ButtonGroup, Container, Reportes } from '../../pages/ComponentsUI';
+import { tabStyles, commonTabSx } from '../../constants/styles';
 
 
 interface TabPanelProps {
@@ -47,9 +48,17 @@ export default function BasicTabs() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Gastos" {...a11yProps(0)} />
-          <Tab label="Recorridos" {...a11yProps(1)} />
+        <Tabs 
+          value={value} 
+          onChange={handleChange} 
+          aria-label="basic tabs example" 
+          centered 
+          TabIndicatorProps={{
+            style: { backgroundColor: tabStyles.indicatorColor },
+          }}
+        >
+          <Tab label="Gastos" {...a11yProps(0)} sx={commonTabSx} />
+          <Tab label="Recorridos" {...a11yProps(1)} sx={commonTabSx}/>
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
