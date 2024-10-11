@@ -2,12 +2,12 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import BasicPie from './BasicPie';
-import BasicBars from './BasicBars';
-import ContainerGrafico from '../ContainerGrafico';
-import { Boton } from '../../pages/ComponentsUI/Botones';
-import { ButtonGroup, Container, Reportes } from '../../pages/ComponentsUI';
-import { tabStyles, commonTabSx } from '../../constants/styles';
+import BasicPie from '../../../components/Graphs/BasicPie';
+import BasicBars from '../../../components/Graphs/BasicBars';
+import ContainerGrafico from '../../../components/ContainerGrafico';
+import { Boton } from '../../ComponentsUI/Botones';
+import { ButtonGroup, Container, Reportes } from '../../ComponentsUI';
+import { tabStyles, commonTabSx } from '../../../constants/styles';
 
 
 interface TabPanelProps {

@@ -1,5 +1,5 @@
 import { MensajeBienvenida, ContainerPadre, ContainerHijo, Container } from '../ComponentsUI';
-import BasicTabs from '../../components/Graphs/BasicTabs';
+import BasicTabs from './Components/BasicTabs';
 
 const ReportesGerencia = () => {
     return <>
