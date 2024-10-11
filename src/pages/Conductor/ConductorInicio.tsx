@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; // Importa useState
-import Component from '../../components/PestañaEmergente/PestañaEmergente'; // El componente que deseas mostrar
+import ListaPaquetes from '../../components/ListaPaquetes'; // El componente que deseas mostrar
 
 import './css/conductor.css'
 import './css/conductorModal.css'
@@ -49,7 +49,7 @@ const ConductorInicio = () => {
             mostrarComponent && (
                 <div className='modal-overlay' onClick={handleCloseModal}>
                     <div className='modal-content' onClick={e => e.stopPropagation()}>
-                        <Component />
+                        <ListaPaquetes />
                         <button className="close-button" onClick={handleCloseModal}>Cerrar</button>
                     </div>
                 </div>
