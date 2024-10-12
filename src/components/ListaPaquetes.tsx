@@ -1,4 +1,5 @@
-import { Typography, List, ListItem, Paper } from '@mui/material';
+import { List, ListItem, Paper } from '@mui/material';
+import {DescHijo} from '../pages/ComponentsUI/index'
 import PaquetePopup from './PaquetePopup'
 import usePaquetestore from '../store/paquetesContext';
 import { useEffect, useState } from "react";
@@ -16,12 +17,10 @@ const ListaPaquetes = () => {
 
   return (
     <Paper style={{ maxWidth: 400, margin: 'auto' }}>
-      <Typography variant="h4" component="h1" gutterBottom style={{ padding: 16 }}>
-        Lista de Paquetes
-      </Typography>
+      <DescHijo>Lista de Paquetes</DescHijo>
       {paquetes.length == 0 ?
         <p>No hay paquetes asignados... </p> :
-        <List style={{ maxHeight: 450, overflow: 'auto' }}>
+        <List style={{ maxHeight: 400, overflow: 'auto' }}>
           {paquetes.map((paquete) => (
             <ListItem key={paquete.id_paquete} disablePadding>
               <PaquetePopup paquete={paquete} />

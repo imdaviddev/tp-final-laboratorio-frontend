@@ -2,6 +2,8 @@ import Recorrido from '../../components/Recorrido';
 import { MensajeBienvenida, ContainerPadre, ContainerHijo, ContainerDetalle, DescHijo } from '../ComponentsUI';
 import logoRecorridos from '../../../public/logoRecorridos.svg'
 import { styled } from "styled-components"
+import useRecorridostore from '../../store/recorridosContext';
+import { useEffect } from 'react';
 
 const Prueba = styled.div`
     display: flex;
@@ -18,6 +20,15 @@ const Prueba = styled.div`
 `
 
 const GerenciaHomePage = () => {
+
+    const { recorridos, obtenerRecorridos, hasFetched } = useRecorridostore();
+
+    useEffect(() => {
+        if (!hasFetched) {
+            obtenerRecorridos();
+        }
+    }, [obtenerRecorridos, hasFetched]);
+
     return <>
         <ContainerPadre>
             <MensajeBienvenida>Hola, Val</MensajeBienvenida>
@@ -26,11 +37,13 @@ const GerenciaHomePage = () => {
                 <DescHijo>Recorridos durante esta semana</DescHijo>
                 <ContainerDetalle>
                     <Prueba>
-                        <Recorrido numero="#069" />
-                        <Recorrido numero="#048" />
-                        <Recorrido numero="#049" />
-                        <Recorrido numero="#051" />
-                        <Recorrido numero="#052" />
+                        {recorridos.map((recorrido) => (
+                            <Recorrido 
+                                key={recorrido.id_viaje}
+                                id_viaje={recorrido.id_viaje}
+                                estado={recorrido.estado.nombre}
+                            />
+                        ))}
                     </Prueba>
                 </ContainerDetalle>
             </ContainerHijo>

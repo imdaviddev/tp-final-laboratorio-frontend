@@ -1,10 +1,8 @@
 import { StyledPaper, RedButton, PackageImage } from '../constants/styles'
 import paqueteImg from '../../public/paquete.svg';
 import React, { useState } from 'react';
-import { Button, Popover, Typography, ListItemText } from '@mui/material';
+import { Button, Popover, ListItemText } from '@mui/material';
 import Detalle from '../components/Detalle';
-
-
 
 export default function PackagePopover({ paquete }) {
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
