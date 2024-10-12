@@ -1,7 +1,7 @@
 import { List, ListItem, Paper } from '@mui/material';
-import {DescHijo} from '../pages/ComponentsUI/index'
+import {DescHijo} from '../../../pages/ComponentsUI/index'
 import PaquetePopup from './PaquetePopup'
-import usePaquetestore from '../store/paquetesContext';
+import usePaquetestore from '../../../store/paquetesContext';
 import { useEffect, useState } from "react";
 
 

@@ -2,6 +2,7 @@ import camionRojo from '../../public/camionRojo.svg'
 import { styled } from "styled-components"
 import Detalle from './Detalle';
 import { Boton } from '../pages/ComponentsUI/Botones';
+import {Link} from 'react-router-dom'
 
 
 const RecorridoContainer = styled.div`
@@ -38,7 +39,7 @@ export default function Recorrido(props) {
                <Detalle tipo="Recorrido" valor={props.id_viaje}></Detalle>
                <Detalle tipo="estado" valor={props.estado}></Detalle>
      
-                <Boton>Ver Detalle</Boton>
+                <Boton><Link to={`recorrido/${props.id_viaje}`}>Ver Detalle</Link></Boton>
             </DescRecorrido>
         </RecorridoContainer>
 

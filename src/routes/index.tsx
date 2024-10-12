@@ -2,6 +2,8 @@ import Inicio from '../pages/inicio/Inicio';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import IniciarSesionPage from '../pages/IniciarSesion/IniciarSesionPage';
 
+import RecorridoDetails from '../components/RecorridoDetails'
+
 import { GerenciaHomePage, GerenciaControles, GerenciaReportes, GerenciaPageLayout } from '../pages/gerencia'
 import { ConductorInicio, ConductorRecorrido, ConductorReportes, ConductorPageLayout } from '../pages/Conductor';
 import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout, SupervisionReportesPage, SupervisionVehiculosPage } from '../pages/Supervision';
@@ -24,6 +26,7 @@ const Router = () => {
 
         <Route element={<GerenciaPageLayout />} path="/gerencia">
           <Route index element={<GerenciaHomePage />} />
+          <Route element={<RecorridoDetails/>} path='recorrido/:id'/>
           <Route element={<GerenciaControles />} path='controles' />
           <Route element={<GerenciaReportes />} path='reportes' />
         </Route>
