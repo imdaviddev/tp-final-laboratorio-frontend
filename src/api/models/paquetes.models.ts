@@ -25,3 +25,16 @@ export interface IPaqueteCreate {
     direccion_entrega: string;
 }
 
+export interface IPaqueteUpdate {
+    id: number
+    estado: string;
+}
+
+export enum Estado {
+    SIN_ASIGNAR = "SIN ASIGNAR",
+    ASIGNADO = "ASIGNADO",
+    EN_VIAJE = "EN VIAJE",
+    ENTREGADO = "ENTREGADO",
+    NO_ENTREGADO = "NO ENTREGADO",
+}
+
