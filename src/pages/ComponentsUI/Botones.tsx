@@ -12,3 +12,15 @@ export const Boton = styled.button`
     box-shadow: 0 2px 0 0 gray;
     height: min-content;
 `
+
+export const BotonAgregarAbrirModal = styled.button`
+    border: none;
+    background-color: #e91e1e;
+    color: white;
+    padding: 0.5rem 2.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0px 5px 3px 0px #a4a4a4;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+`

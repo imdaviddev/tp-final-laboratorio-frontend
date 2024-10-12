@@ -22,15 +22,16 @@ const WrapperCenterItems = styled.div`
 
 
 const SupervisionPageLayout = () => {
-  return <PageContainer>
-    <Header rol="Supervisor"/>
 
-    {/** Acá iran las diferentes areas de Supervision */}
+  return <>
+  <PageContainer>
+    <Header rol="Supervisor"/>
     <WrapperCenterItems>
       <Outlet/>
     </WrapperCenterItems>
 
   </PageContainer>
+  </>
 }
 
 export default SupervisionPageLayout

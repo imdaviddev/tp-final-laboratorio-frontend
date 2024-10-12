@@ -19,10 +19,10 @@ export const WrapperRow = styled.div`
   color: white;
   font-weight: bold;
   border-radius: 0.2rem;
+  padding: 1rem; 
 `;
 
 export const WrapperCol = styled.div`
-  padding: 0.5rem;
   flex: 1;  
 `;
 
@@ -35,7 +35,7 @@ export const Tabla: React.FC<PropsTable> = ({ datos }) => {
             {datos.length > 0 && (
                 <WrapperRow>
                     {Object.keys(datos[0]).map((col, index) => (
-                        <WrapperCol key={index}>{parser(col)}</WrapperCol>
+                        <WrapperCol key={index}>{col.toUpperCase()}</WrapperCol>
                     ))}
                 </WrapperRow>
             )}
