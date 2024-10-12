@@ -28,7 +28,7 @@ export async function createPaquete(paquete: IPaqueteCreate): Promise<IPaquete> 
 
 export async function updatePaquete(paquete: IPaqueteUpdate): Promise<IPaquete> {
     try {
-      const response = await axios.put<IPaquete>(`${API_URL}/${paquete.id}`, paquete, {
+      const response = await axios.put<IPaquete>(`${API_URL}/${paquete.id_paquete}`, paquete, {
         headers: {
           'Content-Type': 'application/json',
         },

@@ -1,16 +1,12 @@
 import { StyledPaper, RedButton, PackageImage } from '../constants/styles'
-import paquete from '../../public/paquete.svg';
+import paqueteImg from '../../public/paquete.svg';
 import React, { useState } from 'react';
-import {Button, Popover, Typography, ListItemText} from '@mui/material';
+import { Button, Popover, Typography, ListItemText } from '@mui/material';
+import Detalle from '../components/Detalle';
 
 
-interface Package {
-    id: number;
-    name: string;
-    description: string;
-}
 
-export default function PackagePopover({ pkg }: { pkg: Package }) {
+export default function PackagePopover({ paquete }) {
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -22,13 +18,14 @@ export default function PackagePopover({ pkg }: { pkg: Package }) {
     };
 
     const open = Boolean(anchorEl);
-    const id = open ? `popover-${pkg.id}` : undefined;
+    const id = open ? `popover-${paquete.id_paquete}` : undefined;
 
     return (
         <div>
             <Button onClick={handleClick}>
-                <ListItemText primary={pkg.name} />
+                <ListItemText primary={`Paquete NRO: ${paquete.id_paquete}`} />
             </Button>
+
             <Popover
                 id={id}
                 open={open}
@@ -41,21 +38,21 @@ export default function PackagePopover({ pkg }: { pkg: Package }) {
             >
                 <StyledPaper>
                     <PackageImage
-                        src={paquete}
-                        alt={`Imagen de ${pkg.name}`}
+                        src={paqueteImg}
+                        alt={`Imagen de ${paquete.id_paquete}`}
                         className="small-image"
                     />
-                    <Typography variant="h6" component="h2" gutterBottom>
-                        {pkg.name}
-                    </Typography>
-                    <Typography variant="body2" color="error" gutterBottom>
-                        {pkg.description}
-                    </Typography>
+                    <Detalle tipo="KG" valor={paquete.peso_kg} />
+                    <Detalle tipo="Descripcion" valor={paquete.descripcion} />
+                    <Detalle tipo="Cliente" valor={paquete.nombre_cliente} />
+                    <Detalle tipo="Direccion" valor={paquete.direccion_entrega} />
+                    <Detalle tipo="Volumen" valor={paquete.volumen} />
+
                     <RedButton
                         variant="contained"
                         fullWidth
                         onClick={() => {
-                            console.log(`Escanear QR para ${pkg.name}`);
+                            console.log(`Escanear QR para ${paquete.id_paquete}`);
                             handleClose();
                         }}
                     >

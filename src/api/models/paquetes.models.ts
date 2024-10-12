@@ -26,7 +26,7 @@ export interface IPaqueteCreate {
 }
 
 export interface IPaqueteUpdate {
-    id: number
+    id_paquete: number
     estado: string;
 }
 
