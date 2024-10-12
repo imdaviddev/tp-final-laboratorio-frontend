@@ -1,0 +1,61 @@
+{
+    "viajes": [
+        {
+            "id_viaje": 1,
+            "id_conductor": 1,
+            "matricula": "dsfdf",
+            "estado": {
+                "id": 2,
+                "nombre": "EN CURSO"
+            },
+            "f_asignacion": "2024-10-01T10:00:00Z",
+            "f_inicio": "2024-10-01T10:15:00Z",
+            "costo": 2323,
+            "f_finalizacion": ""
+        },
+        {
+            "id_viaje": 2,
+            "id_conductor": 2,
+            "matricula": "abc123",
+            "estado": {
+                "id": 1,
+                "nombre": "ASIGNADO"
+            },
+            "f_asignacion": "2024-10-01T11:00:00Z",
+            "f_inicio": "",
+            "costo": 1500,
+            "f_finalizacion": ""
+        },
+        {
+            "id_viaje": 3,
+            "id_conductor": 3,
+            "matricula": "xyz456",
+            "estado": {
+                "id": 3,
+                "nombre": "FINALIZADO"
+            },
+            "f_asignacion": "2024-10-01T09:00:00Z",
+            "f_inicio": "2024-10-01T09:15:00Z",
+            "costo": 1800,
+            "f_finalizacion": "2024-10-01T09:45:00Z"
+        }
+    ],
+    "estadosViajes": [
+        {
+            "id": 1,
+            "nombre": "ASIGNADO"
+        },
+        {
+            "id": 2,
+            "nombre": "EN CURSO"
+        },
+        {
+            "id": 3,
+            "nombre": "FINALIZADO"
+        },
+        {
+            "id": 4,
+            "nombre": "NO FINALIZADO"
+        }
+    ]
+}
