@@ -242,12 +242,13 @@ export const MensajeBienvenida = styled.div`
 //Centra todo lo disponible de la pagina ¿Se puede mejorar?
 export const ContainerPadre = styled.div`
     margin-top: 125px;
-    height: 250px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `
+
 
 //Contiene bordes de sombra y los datos en si del recorrido
 export const ContainerHijo = styled.div`

@@ -1,74 +1,63 @@
 import { styled } from 'styled-components'
-import { BoxGeneral, ContainerGeneral, FilaGeneral, TituloDescripcion, TituloPage } from '../ComponentsUI'
-import camionRojo from '../../../public/camion.svg';
+import { ContainerPadre, MensajeBienvenida, DescHijo } from '../ComponentsUI';
+import Ticket from './Components/Ticket';
 
-export const VerDetalle = () => {
-  return <p style={{
-    color: 'red',
-    textDecoration: 'underline',
-  }}>ver detalle</p>
-}
+const ContainerTickets = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  min-height: 50vh;
+  min-width: 100vh;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-bottom: 50px;
+
+  /* Estilos para pantallas celulares y tablets*/
+  @media (max-width: 800px) {
+  min-height: 50vh
+  }
+`
+const Tickets = [
+  {
+    id: "aaa1",
+    name: "sff1",
+    matricula: "asdadf1",
+    estado: "mantenimiento"
+  },
+  {
+    id: "aaa1",
+    name: "sff1",
+    matricula: "asdadf1",
+    estado: "mantenimiento"
+  },
+  {
+    id: "aaa1",
+    name: "sff1",
+    matricula: "asdadf1",
+    estado: "mantenimiento"
+  }
+];
+
 
 const MantenimientoInicio = () => {
 
   return <>
-    <TituloPage>
-        Hola, Melina
-    </TituloPage>
-    <ContainerGeneral>
-         <TituloDescripcion style={{fontWeight: 'bold', fontSize: '1.3rem'}}>
-           Ultimos Ingresos
-         </TituloDescripcion>
-        <FilaGeneral>
-          <BoxGeneral>
-            <img src={camionRojo} alt="Camión Rojo" style={{ width: '100%', height: '100%' }} />
-          </BoxGeneral>
-          <BoxGeneral>
-             <div style={{marginBottom: '1rem'}}>
-              <p>Vehiculo: #c4m10l2</p>
-              <p>Diagnostico VTV vencida</p>
-            </div>
-            <VerDetalle/>
-          </BoxGeneral>
-        </FilaGeneral>
-        <FilaGeneral>
-          <BoxGeneral>
-            <img src={camionRojo} alt="Camión Rojo" style={{ width: '100%', height: '100%' }} />
-          </BoxGeneral>
-          <BoxGeneral>
-             <div style={{marginBottom: '1rem'}}>
-              <p>Vehiculo: #c4m10l2</p>
-              <p>Diagnostico VTV vencida</p>
-            </div>
-            <VerDetalle/>
-          </BoxGeneral>
-        </FilaGeneral>
-        <FilaGeneral>
-          <BoxGeneral>
-            <img src={camionRojo} alt="Camión Rojo" style={{ width: '100%', height: '100%' }} />
-          </BoxGeneral>
-          <BoxGeneral>
-             <div style={{marginBottom: '1rem'}}>
-              <p>Vehiculo: #c4m10l2</p>
-              <p>Diagnostico VTV vencida</p>
-            </div>
-            <VerDetalle/>
-          </BoxGeneral>
-        </FilaGeneral>
-        <FilaGeneral>
-          <BoxGeneral>
-            <img src={camionRojo} alt="Camión Rojo" style={{ width: '100%', height: '100%' }} />
-          </BoxGeneral>
-          <BoxGeneral>
-             <div style={{marginBottom: '1rem'}}>
-              <p>Vehiculo: #c4m10l2</p>
-              <p>Diagnostico VTV vencida</p>
-            </div>
-            <VerDetalle/>
-          </BoxGeneral>
-        </FilaGeneral>
-    </ContainerGeneral>
-    
+    <ContainerPadre>
+      <MensajeBienvenida>Hola, Melina</MensajeBienvenida>
+      <DescHijo>En curso</DescHijo>
+      <ContainerTickets>
+        {Tickets.map((ticket) => (
+          <Ticket key={ticket.id} {...ticket}></Ticket>
+        ))}
+      </ContainerTickets>
+      <DescHijo>Cerrados</DescHijo>
+      <ContainerTickets>
+        {Tickets.map((ticket) => (
+          <Ticket key={ticket.id} {...ticket}></Ticket>
+        ))}
+      </ContainerTickets>
+    </ContainerPadre>
   </>
 }
 
