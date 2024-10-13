@@ -93,8 +93,6 @@ export default function BasicTabs(props) {
             )
           ))}
         </ContainerTickets>
-
-
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <ContainerTickets>

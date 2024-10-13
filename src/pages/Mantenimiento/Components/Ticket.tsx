@@ -4,7 +4,6 @@ import { Boton } from '../../ComponentsUI/Botones'
 import { ButtonGroup } from '../../ComponentsUI';
 import camionRojo from '../../../../public/camion-mantenimiento.svg';
 
-
 const Ticket = (props) => {
 
     const ContainerTicket = styled.div`
@@ -48,13 +47,13 @@ const Ticket = (props) => {
 
     return (
         <ContainerTicket>
-            <NameTicket> Ticket {props.name}</NameTicket>
+            <NameTicket> Ticket {props.id_ticket}</NameTicket>
             <ContainerDescTicket>
                 <ImgTicket></ImgTicket>
                 <DescTicket>
                     <DescGroup>
                         <Detalle tipo={"Matricula"} valor={props.matricula}></Detalle>
-                        <Detalle tipo={"Tipo"} valor={props.estado}></Detalle>
+                        <Detalle tipo={"Tipo"} valor={props.tipo}></Detalle>
                     </DescGroup>
                     <ButtonGroup>
                         <Boton>Ver Detalle</Boton>

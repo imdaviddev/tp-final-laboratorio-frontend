@@ -47,18 +47,6 @@
         "matricula": "JKL012",
         "costoTotal": 300.00,
         "descripcion_reparaciones": "Revisión de todos los fluidos y filtros. Se sugiere cambiar el aceite de motor y revisar el filtro de aire."
-      },
-      {
-        "id_ticket": 5,
-        "nombre_usuario": "conductor01",
-        "descripcion_problemas": "El vehículo no arranca.",
-        "fecha_creacion": "2024-10-05",
-        "fecha_finalizacion": null,
-        "estado": "EN CURSO",
-        "tipo": "REPARACION",
-        "matricula": "MNO345",
-        "costoTotal": 1200.00,
-        "descripcion_reparaciones": "Revisión del sistema de arranque. Se determinó que la batería está descargada y necesita ser reemplazada."
       }
     ],
 
