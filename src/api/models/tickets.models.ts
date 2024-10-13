@@ -5,7 +5,7 @@ export interface ITicket {
     fecha_creacion: string
     fecha_finalizacion: string
     estado: Estado
-    tipo: Tipo
+    tipo: TipoTicket
     matricula: string
     costoTotal: number
     descripcion_reparaciones: string
@@ -15,6 +15,11 @@ export interface ITicketCreate {
     matricula: string
     descripcion_problemas: string
     nombre_usuario: string
+    tipo: TipoTicket
+}
+
+export type TipoTicket = {
+    id: number
     tipo: Tipo
 }
 

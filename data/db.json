@@ -389,6 +389,95 @@
       "costoTotal": 1200,
       "descripcion_reparaciones": "Revisión del sistema de arranque. Se determinó que la batería está descargada y necesita ser reemplazada.",
       "id": "5615"
+    },
+    {
+      "id": "4c36",
+      "matricula": "F12F4",
+      "descripcion_problemas": "",
+      "nombre_usuario": "",
+      "tipo": "Mantenimiento",
+      "motivo": "PORQUESI",
+      "tecnico": "Luca"
+    },
+    {
+      "id": "d56a",
+      "matricula": "",
+      "descripcion_problemas": "",
+      "nombre_usuario": "",
+      "tipo": ""
+    },
+    {
+      "id": "336d",
+      "matricula": "",
+      "descripcion_problemas": "",
+      "nombre_usuario": "",
+      "tipo": "Reparacion"
+    },
+    {
+      "id": "558f",
+      "matricula": "",
+      "descripcion_problemas": "",
+      "nombre_usuario": "",
+      "tipo": ""
+    },
+    {
+      "id": "57e7",
+      "matricula": "",
+      "descripcion_problemas": "",
+      "nombre_usuario": "",
+      "tipo": ""
+    },
+    {
+      "id": "73c7",
+      "matricula": "",
+      "descripcion_problemas": "",
+      "nombre_usuario": "",
+      "tipo": ""
+    },
+    {
+      "id": "b7fa"
+    },
+    {
+      "id": "8604"
+    },
+    {
+      "id": "42dc"
+    },
+    {
+      "id": "23e3"
+    },
+    {
+      "id": "262b"
+    },
+    {
+      "id": "bcb3",
+      "matricula": "",
+      "descripcion_problemas": "",
+      "nombre_usuario": "",
+      "tipo": {
+        "id": 0,
+        "tipo": "Mantenimiento"
+      }
+    },
+    {
+      "id": "edee",
+      "matricula": "F12F4",
+      "descripcion_problemas": "PORQUESI",
+      "nombre_usuario": "Luca",
+      "tipo": {
+        "id": 0,
+        "tipo": "Mantenimiento"
+      }
+    },
+    {
+      "id": "0241",
+      "matricula": "F12F4",
+      "descripcion_problemas": "PORQUESI",
+      "nombre_usuario": "Luca",
+      "tipo": {
+        "id": 0,
+        "tipo": "Mantenimiento"
+      }
     }
   ],
   "ticketsEstados": [
