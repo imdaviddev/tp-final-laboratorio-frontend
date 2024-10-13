@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; // Importa useState
-import ListaPaquetes from '../../components/ListaPaquetes'; // El componente que deseas mostrar
+import ListaPaquetes from './Components/ListaPaquetes'; // El componente que deseas mostrar
 
 import './css/conductor.css'
 import './css/conductorModal.css'
