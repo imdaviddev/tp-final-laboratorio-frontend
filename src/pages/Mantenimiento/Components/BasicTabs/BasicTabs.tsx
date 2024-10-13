@@ -7,6 +7,9 @@ import a11yProps from './a11yProps'
 import CustomTabPanel from './CustomTabPanel';
 import { styled } from 'styled-components'
 import Ticket from '../../Components/Ticket';
+import useTicketstore from '../../../../store/ticketsContext';
+import { useEffect } from 'react';
+import { Estado } from '../../../../api/models/tickets.models';
 
 export const ContainerTickets = styled.div`
   display: flex;
@@ -50,28 +53,16 @@ export const ContainerTickets = styled.div`
   }
 `
 
-const Tickets = [
-  {
-    id: "aaa1",
-    name: "sff1",
-    matricula: "asdadf1",
-    estado: "mantenimiento"
-  },
-  {
-    id: "aaa1",
-    name: "sff1",
-    matricula: "asdadf1",
-    estado: "mantenimiento"
-  },
-  {
-    id: "aaa1",
-    name: "sff1",
-    matricula: "asdadf1",
-    estado: "mantenimiento"
-  }
-];
-
 export default function BasicTabs(props) {
+
+  const { Tickets, obtenerTickets, hasFetched } = useTicketstore();
+
+  useEffect(() => {
+    if (!hasFetched) {
+      obtenerTickets();
+    }
+  }, [obtenerTickets, hasFetched]);
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -97,15 +88,20 @@ export default function BasicTabs(props) {
       <CustomTabPanel value={value} index={0}>
         <ContainerTickets>
           {Tickets.map((ticket) => (
-            <Ticket key={ticket.id} {...ticket}></Ticket>
+            ticket.estado === Estado.EN_CURSO && (
+              <Ticket key={ticket.id_ticket} {...ticket}></Ticket>
+            )
           ))}
         </ContainerTickets>
+
 
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <ContainerTickets>
           {Tickets.map((ticket) => (
-            <Ticket key={ticket.id} {...ticket}></Ticket>
+            ticket.estado !== Estado.EN_CURSO && (
+              <Ticket key={ticket.id_ticket} {...ticket}></Ticket>
+            )
           ))}
         </ContainerTickets>
       </CustomTabPanel>
