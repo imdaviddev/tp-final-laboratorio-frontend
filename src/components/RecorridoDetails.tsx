@@ -1,23 +1,39 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useRecorridostore from "../store/recorridosContext";
+import { useParams } from "react-router-dom";
+import Detalle from "./Detalle";
+import { IRecorrido } from "../api/models/recorridos.models";
 
-const RecorridoDetails = (props) => {
-    const { recorridos, obtenerRecorridos, hasFetched } = useRecorridostore();
+const RecorridoDetails = () => {
+
+
+    const { obtenerRecorrido, obtenerRecorridos } = useRecorridostore();
+    const [recorridoParticular, setRecorridoParticular] = useState<IRecorrido>();
+    const { recorridoId } = useParams();
 
     useEffect(() => {
-        if (!hasFetched) {
-            obtenerRecorridos();
-        }
-    }, [obtenerRecorridos, hasFetched]);
+        obtenerRecorridos()
+            .then(() => {
+                obtenerRecorrido(parseInt(recorridoId))
+                    .then(promise => setRecorridoParticular(promise))
+                    .catch(error => console.log(error))
+            })
 
-    // Usar find si quieres mostrar solo uno
-    const recorrido = recorridos.find(recorrido => recorrido.id_viaje === props.id_viaje);
-    
+    }, [recorridoParticular]);
+
+    if (recorridoParticular == null) {
+        return (
+            <div>Cargando...</div>
+        )
+    }
+
     return (
         <div>
-            {recorrido ? <h2>{props.id_viaje}</h2> : <p>No se encontró el recorrido</p>}
+            <Detalle tipo={recorridoParticular.id_viaje} valor={recorridoParticular.estado.nombre} />
         </div>
+
     );
 }
 
 export default RecorridoDetails;
+

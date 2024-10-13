@@ -4,23 +4,33 @@ import { createRecorrido, getRecorridos } from '../api/services/recorridos.servi
 
 type recorridostore = {
   recorridos: IRecorrido[];
-  hasFetched: boolean; 
+  hasFetched: boolean;
   obtenerRecorridos: () => Promise<void>;
+  obtenerRecorrido: (recorridoId: number) => Promise<IRecorrido>;
   crearRecorrido: (newRecorrido: IRecorridoCreate) => Promise<void>;
 };
 
 const useRecorridostore = create<recorridostore>((set, get) => ({
   recorridos: [],
-  hasFetched: false, 
+  hasFetched: false,
 
   obtenerRecorridos: async () => {
-    if (get().hasFetched) return; 
+    if (get().hasFetched) return;
 
     try {
       const data = await getRecorridos();
-      set({ recorridos: data, hasFetched: true }); 
+      set({ recorridos: data, hasFetched: true });
     } catch (error) {
       console.error('Failed to fetch Recorridos:', error);
+    }
+  },
+
+  obtenerRecorrido: async (recorridoId: number) => {
+    try {
+      //const data = await getRecorridoById(recorridoId); OPCION POR API
+      return get().recorridos.find(r => r.id_viaje === recorridoId);
+    } catch (error) {
+      console.error('Failed to fetch Recorrido:', error);
     }
   },
 

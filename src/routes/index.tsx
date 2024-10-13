@@ -26,7 +26,7 @@ const Router = () => {
 
         <Route element={<GerenciaPageLayout />} path="/gerencia">
           <Route index element={<GerenciaHomePage />} />
-          <Route element={<RecorridoDetails/>} path='recorrido/:id'/>
+          <Route element={<RecorridoDetails/>} path='recorridos/:recorridoId'/>
           <Route element={<GerenciaControles />} path='controles' />
           <Route element={<GerenciaReportes />} path='reportes' />
         </Route>

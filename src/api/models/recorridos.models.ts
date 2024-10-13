@@ -2,7 +2,7 @@ export interface IRecorrido {
     id_viaje: number;
     id_conductor: number;
     matricula: string;
-    estado: Estado; 
+    estado: EstadoPaquete; 
     f_asignacion: string; 
     f_inicio: string; 
     costo: number;
@@ -16,10 +16,16 @@ export enum Estado {
     NO_FINALIZADO = "NO FINALIZADO",
 }
 
+export type EstadoPaquete = {
+    id: number;
+    nombre: Estado;
+}
+
+
 export interface IRecorridoCreate {
     id_conductor: number;
     matricula: string;
-    estado: Estado; 
+    estado: EstadoPaquete; 
     f_asignacion: string; 
     f_inicio: string; 
     costo: number;

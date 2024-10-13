@@ -24,11 +24,9 @@ const GerenciaHomePage = () => {
     const { recorridos, obtenerRecorridos, hasFetched } = useRecorridostore();
 
     useEffect(() => {
-        if (!hasFetched) {
-            obtenerRecorridos();
-        }
+        if (!hasFetched) obtenerRecorridos();
     }, [obtenerRecorridos, hasFetched]);
-
+    
     return <>
         <ContainerPadre>
             <MensajeBienvenida>Hola, Val</MensajeBienvenida>

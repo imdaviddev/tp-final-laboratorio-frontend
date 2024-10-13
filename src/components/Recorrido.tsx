@@ -39,7 +39,7 @@ export default function Recorrido(props) {
                <Detalle tipo="Recorrido" valor={props.id_viaje}></Detalle>
                <Detalle tipo="estado" valor={props.estado}></Detalle>
      
-                <Boton><Link to={`recorrido/${props.id_viaje}`}>Ver Detalle</Link></Boton>
+                <Boton><Link to={`recorridos/${props.id_viaje}`}>Ver Detalle</Link></Boton>
             </DescRecorrido>
         </RecorridoContainer>
 

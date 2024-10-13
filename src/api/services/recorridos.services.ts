@@ -13,6 +13,15 @@ export async function getRecorridos(): Promise<IRecorrido[]> {
     }
 }
 
+// export async function getRecorridoById(): Promise<IRecorrido[]> {
+//     try {
+//         const response = await axios.get<IRecorrido[]>(API_URL);
+//         return response.data;
+//     } catch (error) {
+//         throw new Error('Error al obtener los recorridos');
+//     }
+// }
+
 export async function createRecorrido(recorrido: IRecorridoCreate): Promise<IRecorrido> {
     try {
         const response = await axios.post<IRecorrido>(API_URL, recorrido, {
