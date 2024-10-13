@@ -74,9 +74,8 @@ const NavbarMantenimiento = () => {
   return (
     <nav className="header-bottom">
       <ul>
-        <Link to={mantenimiento+ ""}>Inicio</Link>
-        <Link to={mantenimiento+ "ingresos"}>Ingresos</Link>
-        <Link to={mantenimiento+ "reparaciones"}>Reparaciones</Link>
+        <Link to={mantenimiento+ ""}>Mis Tickets</Link>
+        <Link to={mantenimiento+ "ingresos"}>Ingresar Ticket</Link>
         <Link to={mantenimiento+ "historial-de-tickets"}>Historial de Tickets</Link>
       </ul>
     </nav>
