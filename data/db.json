@@ -496,65 +496,137 @@
       "nombre": "NO ENTREGADO"
     }
   ],
-
-
   "viajes": [
     {
-        "id_viaje": 1,
-        "id_conductor": 1,
-        "matricula": "dsfdf",
-        "estado": {
-            "id": 2,
-            "nombre": "EN CURSO"
-        },
-        "f_asignacion": "2024-10-01T10:00:00Z",
-        "f_inicio": "2024-10-01T10:15:00Z",
-        "costo": 2323,
-        "f_finalizacion": ""
-    },
-    {
-        "id_viaje": 2,
-        "id_conductor": 2,
-        "matricula": "abc123",
-        "estado": {
-            "id": 1,
-            "nombre": "ASIGNADO"
-        },
-        "f_asignacion": "2024-10-01T11:00:00Z",
-        "f_inicio": "",
-        "costo": 1500,
-        "f_finalizacion": ""
-    },
-    {
-        "id_viaje": 3,
-        "id_conductor": 3,
-        "matricula": "xyz456",
-        "estado": {
-            "id": 3,
-            "nombre": "FINALIZADO"
-        },
-        "f_asignacion": "2024-10-01T09:00:00Z",
-        "f_inicio": "2024-10-01T09:15:00Z",
-        "costo": 1800,
-        "f_finalizacion": "2024-10-01T09:45:00Z"
-    }
-],
-"estadosViajes": [
-    {
-        "id": 1,
-        "nombre": "ASIGNADO"
-    },
-    {
+      "id_viaje": 1,
+      "id_conductor": 1,
+      "matricula": "dsfdf",
+      "estado": {
         "id": 2,
         "nombre": "EN CURSO"
+      },
+      "f_asignacion": "2024-10-01T10:00:00Z",
+      "f_inicio": "2024-10-01T10:15:00Z",
+      "costo": 2323,
+      "f_finalizacion": ""
     },
     {
+      "id_viaje": 2,
+      "id_conductor": 2,
+      "matricula": "abc123",
+      "estado": {
+        "id": 1,
+        "nombre": "ASIGNADO"
+      },
+      "f_asignacion": "2024-10-01T11:00:00Z",
+      "f_inicio": "",
+      "costo": 1500,
+      "f_finalizacion": ""
+    },
+    {
+      "id_viaje": 3,
+      "id_conductor": 3,
+      "matricula": "xyz456",
+      "estado": {
         "id": 3,
         "nombre": "FINALIZADO"
+      },
+      "f_asignacion": "2024-10-01T09:00:00Z",
+      "f_inicio": "2024-10-01T09:15:00Z",
+      "costo": 1800,
+      "f_finalizacion": "2024-10-01T09:45:00Z"
     },
     {
-        "id": 4,
-        "nombre": "NO FINALIZADO"
+      "id": "7058",
+      "id_conductor": "3",
+      "matricula": "GHI789",
+      "estado": "ASIGNADO",
+      "f_asignacion": "2024-10-14T08:53:02.610Z",
+      "f_inicio": "",
+      "costo": 0
     }
-]
+  ],
+  "estadosViajes": [
+    {
+      "id": 1,
+      "nombre": "ASIGNADO"
+    },
+    {
+      "id": 2,
+      "nombre": "EN CURSO"
+    },
+    {
+      "id": 3,
+      "nombre": "FINALIZADO"
+    },
+    {
+      "id": 4,
+      "nombre": "NO FINALIZADO"
+    }
+  ],
+  "vehiculos": [
+    {
+      "matricula": "ABC123",
+      "marca": "Ford",
+      "modelo": "Transit",
+      "fecha_ingreso": "2022-05-12",
+      "estado": "APTO PARA CIRCULAR",
+      "peso_admitido": 3500,
+      "volumen_admitido": 12.5,
+      "km_recorridos": 15200,
+      "anio": 2019
+    },
+    {
+      "matricula": "DEF456",
+      "marca": "Mercedes",
+      "modelo": "Sprinter",
+      "fecha_ingreso": "2021-08-25",
+      "estado": "MANTENIMIENTO",
+      "peso_admitido": 4000,
+      "volumen_admitido": 15,
+      "km_recorridos": 18500,
+      "anio": 2020
+    },
+    {
+      "matricula": "GHI789",
+      "marca": "Volkswagen",
+      "modelo": "Crafter",
+      "fecha_ingreso": "2023-01-14",
+      "estado": "EN REPARACIÓN",
+      "peso_admitido": 3500,
+      "volumen_admitido": 14.2,
+      "km_recorridos": 10000,
+      "anio": 2021
+    },
+    {
+      "matricula": "JKL012",
+      "marca": "Iveco",
+      "modelo": "Daily",
+      "fecha_ingreso": "2020-11-03",
+      "estado": "NO APTO PARA CIRCULAR",
+      "peso_admitido": 3800,
+      "volumen_admitido": 13,
+      "km_recorridos": 22000,
+      "anio": 2018
+    },
+    {
+      "matricula": "MNO345",
+      "marca": "Renault",
+      "modelo": "Master",
+      "fecha_ingreso": "2021-06-20",
+      "estado": "APTO PARA CIRCULAR",
+      "peso_admitido": 3200,
+      "volumen_admitido": 11.8,
+      "km_recorridos": 16000,
+      "anio": 2019
+    }
+  ],
+  "vehiculosEstados": [
+    "NO APTO PARA CIRCULAR",
+    "APTO PARA CIRCULAR",
+    "EN VIAJE",
+    "EN REPARACIÓN",
+    "MANTENIMIENTO",
+    "DESHABILITADO"
+  ]
 }

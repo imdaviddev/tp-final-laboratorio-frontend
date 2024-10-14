@@ -1,5 +1,6 @@
 export interface IPaquete {
-    id_paquete: number;
+    id: number;
+//  id_paquete: number;
     id_viaje: number | null;
     id_conductor:  number | null;
     matricula: string | null;
@@ -25,3 +26,15 @@ export interface IPaqueteCreate {
     direccion_entrega: string;
 }
 
+export interface IPaqueteUpdate {
+    id: number,
+    estado: string  
+}
+
+export enum EstadoPaquete {
+    "ASIGNADO",
+    "SIN ASIGNAR",
+    "EN VIAJE",
+    "ENTREGADO",
+    "NO ENTREGADO"
+}

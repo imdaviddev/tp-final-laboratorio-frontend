@@ -1,13 +1,7 @@
-import { styled } from "styled-components";
 import useConductorestore from "../../store/conductoresContext";
-import { BotonModalForm, Campo, ModalCampoContainer, ModalContainer, ModalWrapper, TituloCampo, TituloModal } from "../../ui/RegisterModal";
+import { BotonModalForm, Campo, FormContainer, ModalCampoContainer, ModalContainer, ModalWrapper, TituloCampo, TituloModal } from "../../ui/RegisterModal";
 import { useState } from "react";
 
-const FormContainer = styled.form`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-`;
 
 interface PropsRegister {
     cancelHandler: () => void;
