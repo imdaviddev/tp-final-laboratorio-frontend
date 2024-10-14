@@ -17,7 +17,7 @@ export const TituloGeneral = styled.div`
   font-weight: bold;
 `
 
-const Mantenimientoingresos = () => {
+const MantenimientoIngresos = () => {
   return (
     <ContainerPadre>
       <MensajeBienvenida>Nuevo Ingreso</MensajeBienvenida>
@@ -26,4 +26,4 @@ const Mantenimientoingresos = () => {
   )
 }
 
-export default Mantenimientoingresos
+export default MantenimientoIngresos

@@ -3,6 +3,8 @@ import Detalle from '../../../components/Detalle'
 import { Boton } from '../../ComponentsUI/Botones'
 import { ButtonGroup } from '../../ComponentsUI';
 import camionRojo from '../../../../public/camion-mantenimiento.svg';
+import {Link} from 'react-router-dom'
+
 const ContainerTicket = styled.div`
 display: flex;
 flex-direction: column;
@@ -55,8 +57,8 @@ const Ticket = (props) => {
                         <Detalle tipo={"Tipo"} valor={props.tipo}></Detalle>
                     </DescGroup>
                     <ButtonGroup>
-                        <Boton>Ver Detalle</Boton>
-                        <Boton>Cerrar Ticket</Boton>
+                        <Boton><Link to={`tickets/detalle/${props.id_ticket}`}></Link>Ver Detalle</Boton>
+                        <Boton><Link to={`tickets/${props.id_ticket}`}>Cerrar Ticket</Link></Boton>
                     </ButtonGroup>
                 </DescTicket>
             </ContainerDescTicket>

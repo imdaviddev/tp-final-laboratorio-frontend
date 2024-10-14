@@ -1,5 +1,6 @@
 import MantenimientoInicio from "./MantenimientoInicio";
 import MantenimientoHistorial from "./MantenimientoHistorial";
+import MantenimientoIngresos from "./Mantenimientoingresos";
 
 import { styled } from 'styled-components';
 import Header from '../../components/HeaderComponent/Header';
@@ -39,7 +40,7 @@ const MantenimientoPageLayout = () => {
 
 export {
     MantenimientoInicio,
-    MantenimientoHistorial
+    MantenimientoHistorial,
+    MantenimientoIngresos,
+    MantenimientoPageLayout
 }
-
-export default MantenimientoPageLayout
