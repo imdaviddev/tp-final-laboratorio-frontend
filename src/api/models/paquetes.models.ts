@@ -1,4 +1,6 @@
 export interface IPaquete {
+    id: number;
+//  id_paquete: number;
     id_paquete: number;
     id_viaje: number | null;
     id_conductor:  number | null;
@@ -26,8 +28,16 @@ export interface IPaqueteCreate {
 }
 
 export interface IPaqueteUpdate {
-    id_paquete: number
-    estado: string;
+    id: number,
+    estado: string  
+}
+
+export enum EstadoPaquete {
+    "ASIGNADO",
+    "SIN ASIGNAR",
+    "EN VIAJE",
+    "ENTREGADO",
+    "NO ENTREGADO"
 }
 
 export enum Estado {

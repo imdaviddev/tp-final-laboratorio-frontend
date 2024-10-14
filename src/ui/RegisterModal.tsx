@@ -2,6 +2,8 @@ import { styled } from "styled-components";
 
 export const ModalWrapper = styled.div`
     width: 100vw;
+    min-height: 100vh;
+    padding: 2rem 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -11,6 +13,7 @@ export const ModalWrapper = styled.div`
     top: 0;
     left: 0;
     background: #10101078;
+    overflow-y: auto;
 `
 
 export const ModalContainer = styled.div`
@@ -86,4 +89,12 @@ export const Campo = styled.input`
     border: solid 1px white;
     letter-spacing: 1px;
     outline: none; 
+    cursor: pointer;
+    max-width: 230px;
+`
+
+export const FormContainer = styled.form`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 `

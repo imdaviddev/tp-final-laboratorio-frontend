@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { IConductor, IConductorCreate, IConductorUpdate } from '../api/models/conductores.models';
 import { createConductor, getConductores, updateConductor } from '../api/services/conductor.services';
 
-type Conductorestore = {
+type ConductorStore = {
   conductores: IConductor[];
   hasFetched: boolean; 
   obtenerConductores: () => Promise<void>;
@@ -10,7 +10,7 @@ type Conductorestore = {
   actualizarConductor: (updatedConductor: IConductorUpdate) => Promise<void>;
 };
 
-const useConductorestore = create<Conductorestore>((set, get) => ({
+const useConductorestore = create<ConductorStore>((set, get) => ({
   conductores: [],
   hasFetched: false, 
 
