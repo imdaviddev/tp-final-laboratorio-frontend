@@ -5,7 +5,7 @@ export interface ITicket {
     fecha_creacion: string
     fecha_finalizacion: string
     estado: Estado
-    tipo: TipoTicket
+    tipo: Tipo | string,
     matricula: string
     costoTotal: number
     descripcion_reparaciones: string
@@ -15,23 +15,16 @@ export interface ITicketCreate {
     matricula: string
     descripcion_problemas: string
     nombre_usuario: string
-    tipo: TipoTicket
-}
-
-export type TipoTicket = {
-    id: number
-    tipo: Tipo
+    tipo: Tipo | string
 }
 
 export enum Estado {
     EN_CURSO = "EN CURSO",
     SIN_SOLUCION = "SIN SOLUCION",
     RESUELTO = "RESUELTO"
-
 }
 
 export enum Tipo {
-    MANTENIMIENTO = "Mantenimiento",
-    REPARACION = "Reparacion"
-
+    MANTENIMIENTO = "MANTENIMIENTO",
+    REPARACION = "REPARACION"
 }
