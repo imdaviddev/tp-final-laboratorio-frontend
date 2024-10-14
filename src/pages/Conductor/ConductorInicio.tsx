@@ -1,10 +1,10 @@
 import React, { useState } from 'react'; // Importa useState
-import ListaPaquetes from '../../components/ListaPaquetes'; // El componente que deseas mostrar
+import ListaPaquetes from './Components/ListaPaquetes'; // El componente que deseas mostrar
 
 import './css/conductor.css'
 import './css/conductorModal.css'
-
-import { RecorridoDetalle, MensajeBienvenida, ContainerPadre, ContainerHijo, ImgConductorInicio,ContainerImgDetalle, DescHijo } from '.';
+import {ContainerPadre, ContainerHijo, MensajeBienvenida, DescHijo } from '../ComponentsUI/index'
+import { RecorridoDetalle, ImgConductorInicio, ContainerImgDetalle } from '.';
 import Detalle from '../../components/Detalle'
 
 const ConductorInicio = () => {

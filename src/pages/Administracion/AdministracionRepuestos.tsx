@@ -1,6 +1,6 @@
 import { BoxGeneral, ContainerGeneral, FilaGeneral, TituloDescripcion, TituloPage, VerDetalle } from '../ComponentsUI';
 import repuesto from '../../../public/camion.svg'; // hay que modificar esto.
-import { ButtonGeneral } from '../Mantenimiento/MantenimientoReparaciones';
+import { Boton } from '../ComponentsUI/Botones';
 
 const AdministracionRepuestos = () => {
   return <>
@@ -56,9 +56,9 @@ const AdministracionRepuestos = () => {
           <VerDetalle/>
         </BoxGeneral>
       </FilaGeneral>
-      <ButtonGeneral style={{borderRadius: '0.3rem'}}>
+      <Boton style={{borderRadius: '0.3rem'}}>
         CAMBIAR UMBRAL
-      </ButtonGeneral>
+      </Boton>
   </ContainerGeneral>
 </>
 }

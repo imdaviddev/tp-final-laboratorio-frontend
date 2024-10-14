@@ -1,6 +1,7 @@
 import useConductorestore from "../../store/conductoresContext";
 import { BotonModalForm, Campo, FormContainer, ModalCampoContainer, ModalContainer, ModalWrapper, TituloCampo, TituloModal } from "../../ui/RegisterModal";
 import { useState } from "react";
+import { styled } from "styled-components";
 
 
 interface PropsRegister {

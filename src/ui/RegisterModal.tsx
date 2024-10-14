@@ -4,6 +4,7 @@ export const ModalWrapper = styled.div`
     width: 100vw;
     min-height: 100vh;
     padding: 2rem 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -96,4 +97,4 @@ export const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-`;
+`

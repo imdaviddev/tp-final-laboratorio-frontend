@@ -1,6 +1,7 @@
 export interface IPaquete {
     id: number;
 //  id_paquete: number;
+    id_paquete: number;
     id_viaje: number | null;
     id_conductor:  number | null;
     matricula: string | null;
@@ -38,3 +39,12 @@ export enum EstadoPaquete {
     "ENTREGADO",
     "NO ENTREGADO"
 }
+
+export enum Estado {
+    SIN_ASIGNAR = "SIN ASIGNAR",
+    ASIGNADO = "ASIGNADO",
+    EN_VIAJE = "EN VIAJE",
+    ENTREGADO = "ENTREGADO",
+    NO_ENTREGADO = "NO ENTREGADO",
+}
+

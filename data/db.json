@@ -146,6 +146,13 @@
       "apellido": "El Pibe",
       "dni": "43221555",
       "rol": "CONDUCTOR"
+    },
+    {
+      "id": "955d",
+      "nombre": "Luca",
+      "apellido": "Velazquez",
+      "dni": "44509626",
+      "rol": "CONDUCTOR"
     }
   ],
   "proveedores": [
@@ -382,6 +389,69 @@
       "costoTotal": 1200,
       "descripcion_reparaciones": "Revisión del sistema de arranque. Se determinó que la batería está descargada y necesita ser reemplazada.",
       "id": "5615"
+    },
+    {
+      "id": "defb",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "0129",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "98b9",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "2e7c",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "5228",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "2920",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "7236",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "e920",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca",
+      "tipo": "Reparacion"
+    },
+    {
+      "id": "325d",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca",
+      "tipo": "MANTENIMIENTO"
+    },
+    {
+      "id": "05ce",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca",
+      "tipo": "MANTENIMIENTO"
     }
   ],
   "ticketsEstados": [
@@ -508,7 +578,8 @@
       "f_asignacion": "2024-10-01T10:00:00Z",
       "f_inicio": "2024-10-01T10:15:00Z",
       "costo": 2323,
-      "f_finalizacion": ""
+      "f_finalizacion": "",
+      "id": "47f3"
     },
     {
       "id_viaje": 2,
@@ -521,7 +592,8 @@
       "f_asignacion": "2024-10-01T11:00:00Z",
       "f_inicio": "",
       "costo": 1500,
-      "f_finalizacion": ""
+      "f_finalizacion": "",
+      "id": "c187"
     },
     {
       "id_viaje": 3,
@@ -534,33 +606,35 @@
       "f_asignacion": "2024-10-01T09:00:00Z",
       "f_inicio": "2024-10-01T09:15:00Z",
       "costo": 1800,
-      "f_finalizacion": "2024-10-01T09:45:00Z"
+      "f_finalizacion": "2024-10-01T09:45:00Z",
+      "id": "68eb"
     },
     {
-      "id": "7058",
-      "id_conductor": "3",
-      "matricula": "GHI789",
+      "id": "ecd8",
+      "id_conductor": "2",
+      "matricula": "JKL012",
       "estado": "ASIGNADO",
-      "f_asignacion": "2024-10-14T08:53:02.610Z",
+      "f_asignacion": "2024-10-14T09:20:03.144Z",
       "f_inicio": "",
+      "f_finalizacion": "",
       "costo": 0
     }
   ],
   "estadosViajes": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "ASIGNADO"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "EN CURSO"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "FINALIZADO"
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "NO FINALIZADO"
     }
   ],

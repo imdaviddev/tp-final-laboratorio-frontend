@@ -318,6 +318,11 @@ const SupervisionCrearRecorridoPage = () => {
         })
     }
 
+    const quitarPaquetesAgregados = () => {
+        setPaquetesSeleccionados(new Set)
+        setPaquetesAgregdos(new Set)
+    }
+
     const seleccionarConductor = (id: number) => {
         setConductorSeleccionado(prev => {
             const conductorNuevo = conductores.find(c => c.id === id);
@@ -334,7 +339,7 @@ const SupervisionCrearRecorridoPage = () => {
         cerrarModalSeleccionable();
     }
 
-    const quitarConductorAgregado = (id: number) => {
+    const quitarConductorAgregado = () => {
         setConductorSeleccionado(prev => null)
         setConductorAsignado(prev => null)
     }
@@ -355,7 +360,7 @@ const SupervisionCrearRecorridoPage = () => {
         cerrarModalSeleccionable();
     }
 
-    const quitarVehiculoAgregado = (matricula: string) => {
+    const quitarVehiculoAgregado = () => {
         setVehiculoSeleccionado(prev => null)
         setVehiculoAsignado(prev => null)
     }
@@ -371,9 +376,15 @@ const SupervisionCrearRecorridoPage = () => {
             estado: "ASIGNADO",
             f_asignacion: new Date().toISOString(),
             f_inicio: "",
+            f_finalizacion: "",
             costo: 0,    
         }
-        crearRecorrido(nuevoRecorrido);
+        crearRecorrido(nuevoRecorrido).then(() => {
+            quitarConductorAgregado()
+            quitarVehiculoAgregado()
+            quitarPaquetesAgregados()
+        } ).catch(error => alert("No se pudo crear el Recorrido: " + error))
+        .then(() => alert("Se creo exitosamente el recorrido"));
     }
 
     return <>
@@ -429,7 +440,7 @@ const SupervisionCrearRecorridoPage = () => {
         <ListConductorAsignado>
             <div style={{ display: "flex", flexDirection: "row", width: "100%", alignItems: "center", justifyContent: "space-around" }} key={conductorAsignado.id}>
                 <ConductorItem conductor={conductorAsignado} />
-                <BotonQuitar onClick={() => quitarConductorAgregado(conductorAsignado.id)}>
+                <BotonQuitar onClick={() => quitarConductorAgregado()}>
                     <QuitarBotonList />
                 </BotonQuitar>
             </div>
@@ -476,7 +487,7 @@ const SupervisionCrearRecorridoPage = () => {
         <ListVehiculoAsignado>
             <div style={{ display: "flex", flexDirection: "row", width: "100%", alignItems: "center", justifyContent: "space-around" }} key={vehiculoAsignado.id}>
                 <VehiculoItem vehiculo={vehiculoAsignado} />
-                <BotonQuitar onClick={() => quitarVehiculoAgregado(vehiculoAsignado.matricula)}>
+                <BotonQuitar onClick={() => quitarVehiculoAgregado()}>
                     <QuitarBotonList />
                 </BotonQuitar>
             </div>

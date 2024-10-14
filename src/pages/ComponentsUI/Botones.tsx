@@ -24,3 +24,17 @@ export const BotonAgregarAbrirModal = styled.button`
     margin-bottom: 0.8rem;
     cursor: pointer;
 `
+
+export const SubmitButton = styled.button`
+  padding: 10px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #cc2514; /* Color primario */
+  color: white;
+  font-size: 16px;
+  
+  &:hover {
+    background-color: #da7168; /* Color secundario */
+  }
+`;

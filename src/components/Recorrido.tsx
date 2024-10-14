@@ -1,16 +1,13 @@
 import camionRojo from '../../public/camionRojo.svg'
 import { styled } from "styled-components"
 import Detalle from './Detalle';
+import { Boton } from '../pages/ComponentsUI/Botones';
+import {Link} from 'react-router-dom'
 
-
-interface Props {
-
-    numero: string | number // | Puede ser un tipo de dato O el otro 
-}
 
 const RecorridoContainer = styled.div`
-    margin: 5px;
-    padding: 5px;
+    margin: 10px;
+    padding: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -24,8 +21,8 @@ const ImgRecorrido = styled.div`
     border-radius: 10px;
     margin: 5px;
     background-image: url("${camionRojo}");
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3.8rem;
+    height: 3.8rem;
 `
 
 const DescRecorrido = styled.div`
@@ -34,13 +31,15 @@ const DescRecorrido = styled.div`
     flex-direction: column;
 `
 
-export default function Recorrido(props: Props) {
+export default function Recorrido(props) {
     return (
         <RecorridoContainer>
             <ImgRecorrido></ImgRecorrido>
             <DescRecorrido>
-               <Detalle tipo="Recorrido" valor={props.numero}></Detalle>
-                <a href="#">Ver detalle</a>
+               <Detalle tipo="Recorrido" valor={props.id_viaje}></Detalle>
+               <Detalle tipo="estado" valor={props.estado}></Detalle>
+     
+                <Boton><Link to={`recorridos/${props.id_viaje}`}>Ver Detalle</Link></Boton>
             </DescRecorrido>
         </RecorridoContainer>
 
