@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Container, FilaGeneral, TituloPage } from "../ComponentsUI"
-import { ButtonGeneral } from "../Mantenimiento/MantenimientoReparaciones"
+import { Boton } from "../ComponentsUI/Botones";  
 
 function AdministracionReportes() {
   const [mostrar1, setMostrar1] = useState(false);
@@ -16,12 +16,12 @@ function AdministracionReportes() {
         Reportes    
     </TituloPage>    
     <FilaGeneral style={{justifyContent: 'center', gap: '0.7rem '}}>
-        <ButtonGeneral onClick={() => handleClick(1)}>
+        <Boton onClick={() => handleClick(1)}>
             Historial de Compras
-        </ButtonGeneral>
-        <ButtonGeneral onClick={()=>handleClick(2)}>
+        </Boton>
+        <Boton onClick={()=>handleClick(2)}>
             Historial de Uso
-        </ButtonGeneral>
+        </Boton>
     </FilaGeneral>
     <Container>
         {mostrar1 ? 

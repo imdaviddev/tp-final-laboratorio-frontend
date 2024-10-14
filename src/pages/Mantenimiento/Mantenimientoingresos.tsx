@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
-import { BoxGeneral, ContainerGeneral, FilaGeneral, TituloPage, VerDetalle } from '../ComponentsUI'
-import Camion from '../../../public/camion.svg';
+import { ContainerPadre, MensajeBienvenida } from '../ComponentsUI'
+import FormNuevoIngreso from './Components/FormNuevoIngreso'
 
 export const ColumnaGeneral = styled.div`
   display: flex;
@@ -17,63 +17,13 @@ export const TituloGeneral = styled.div`
   font-weight: bold;
 `
 
-const Mantenimientoingresos = () => {
-  return <>
-    <TituloPage>
-        Ingresos
-    </TituloPage>
-    <ContainerGeneral style={{background: 'none'}}>
-      <ColumnaGeneral>
-        <TituloGeneral>
-          Vehiculo #C4m10n15
-        </TituloGeneral>
-        <FilaGeneral style={{background: 'none'}}>
-          <BoxGeneral style={{width: '120px'}}>
-            <img src={Camion} style={{width: '100$', height: '100%'}}/>
-          </BoxGeneral>
-          <BoxGeneral>
-            <p>Matricula AIE: S40</p>
-            <p>Diagnostico: Optica Rota</p>
-            <p>Estado: pendiente</p>
-            <VerDetalle/>
-          </BoxGeneral>
-        </FilaGeneral>
-      </ColumnaGeneral>
-
-      <ColumnaGeneral>
-        <TituloGeneral>
-          Vehiculo #C4m10n15
-        </TituloGeneral>
-        <FilaGeneral style={{background: 'none'}}>
-          <BoxGeneral style={{width: '120px'}}>
-            <img src={Camion} style={{width: '100$', height: '100%'}}/>
-          </BoxGeneral>
-          <BoxGeneral>
-            <p>Matricula AIE: S40</p>
-            <p>Diagnostico: Optica Rota</p>
-            <p>Estado: pendiente</p>
-            <VerDetalle/>
-          </BoxGeneral>
-        </FilaGeneral>
-      </ColumnaGeneral>
-      <ColumnaGeneral>
-        <TituloGeneral>
-          Vehiculo #C4m10n15
-        </TituloGeneral>
-        <FilaGeneral style={{background: 'none'}}>
-          <BoxGeneral style={{width: '120px'}}>
-            <img src={Camion} style={{width: '100$', height: '100%'}}/>
-          </BoxGeneral>
-          <BoxGeneral>
-            <p>Matricula AIE: S40</p>
-            <p>Diagnostico: Optica Rota</p>
-            <p>Estado: pendiente</p>
-            <VerDetalle/>
-          </BoxGeneral>
-        </FilaGeneral>
-      </ColumnaGeneral>
-    </ContainerGeneral>
-  </>
+const MantenimientoIngresos = () => {
+  return (
+    <ContainerPadre>
+      <MensajeBienvenida>Nuevo Ingreso</MensajeBienvenida>
+      <FormNuevoIngreso></FormNuevoIngreso>
+    </ContainerPadre>
+  )
 }
 
-export default Mantenimientoingresos
+export default MantenimientoIngresos

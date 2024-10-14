@@ -7,7 +7,6 @@ export const TituloPage = styled.div`
     font-weight: bold;
     font-size: 1.2rem;
 `
-
 export const Titulo = styled.div`
     text-align: center;
     font-weight: bold;
@@ -27,7 +26,6 @@ export const ContainerControles = styled.div`
     display: flex;
     flex-direction: column;
 `
-
 export const Button = styled.button`
     color: white;
     background-color: #c33c3c;
@@ -38,7 +36,6 @@ export const Button = styled.button`
     border: solid 1px #9c9c9e;
     font-size: 0.7rem;
 `
-
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
@@ -46,8 +43,7 @@ export const Row = styled.div`
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1rem;
-` 
-
+`
 export const Controles = styled.div`
     width: 100%;
     display: flex;
@@ -55,21 +51,19 @@ export const Controles = styled.div`
     justify-content: space-between;
     flex: 1;
     gap: 0.5rem;
-`;
-
+`
 export const Container = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
 `
-
 export const ControlesConfirmar = styled.div`
     display: flex;
     gap: 1rem;
     flex-direction: row;
     flex: 1;
-` 
+`
 
 export interface PropsButtonControl {
     texto: string
@@ -145,7 +139,7 @@ export const ListaPaquetesIngresados = () => {
 
     return <WrapperListaPaquetes>
         {lista.map(paqueteIngresado => {
-            return <li>{paqueteIngresado.id} <br/> {paqueteIngresado.direccion}</li>
+            return <li>{paqueteIngresado.id} <br /> {paqueteIngresado.direccion}</li>
         })}
 
     </WrapperListaPaquetes>
@@ -186,10 +180,10 @@ export const BoxGeneral = styled.div`
 `
 
 export const VerDetalle = () => {
-  return <p style={{
-    color: 'red',
-    textDecoration: 'underline',
-  }}>ver detalle</p>
+    return <p style={{
+        color: 'red',
+        textDecoration: 'underline',
+    }}>ver detalle</p>
 }
 
 export const PageContainer = styled.div`
@@ -222,7 +216,7 @@ export const MensajeBienvenida = styled.div`
   font-size: 32px;
   font-weight: bold;
   color: white;
-  background-color: red;
+  background-color: #d42b12;
   border-radius: 10px;
   box-shadow: 3px 3px 3px gray;
   text-align: center;
@@ -241,19 +235,19 @@ export const MensajeBienvenida = styled.div`
 
 //Centra todo lo disponible de la pagina ¿Se puede mejorar?
 export const ContainerPadre = styled.div`
-    margin-top: 125px;
-    height: 250px;
+    margin-top: 25px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `
 
+
 //Contiene bordes de sombra y los datos en si del recorrido
 export const ContainerHijo = styled.div`
-    height: 375px;
-    width: 450px;
-    padding: 50px;
+    min-height: 50vh;
+    min-width: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -278,15 +272,15 @@ export const ContainerDetalle = styled.div`
 `
 
 export const DescHijo = styled.div`
-  margin-bottom: 25px;
+  margin: 25px;
   padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  color: red;
-  background-color: #f9f9f9;
-  border: 1px solid #C90035; /* Bordecito bonito con el terciario */
+  color: #d42b12;
+  background-color: white;
+  border: 1px solid #d42b12;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -307,4 +301,45 @@ export const Reportes = styled.div`
     @media (max-width: 600px) {
         width: 350px
     }
+`
+//label form
+export const LabelForm = styled.label`
+  margin: 10px 5px 5px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  color: red; /* Color secundario */
+`;
+
+export const InputForm = styled.input`
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+`;
+
+export const SelectForm = styled.select`
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #C90035; /* Color terciario */
+  border-radius: 4px;
+  font-size: 16px;
+  color: #5B1647; /* Color primario */
+`;
+
+export const FormContainer = styled.form`
+    display: flex;
+    flex-direction: column;
+    min-width: 400px; /* Ajusta el ancho según sea necesario */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #93063E;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+`;
+
+export const GroupSelectForm = styled.div`
+    display: flex;
+    align-items: center;
 `

@@ -43,16 +43,13 @@
     align-items: center;
     padding: 10px;
     color: linear;
-    border-top: solid 1px gray;
-    border-bottom: solid 1px gray;
+    border-top: solid 1px #d42b12;
+    border-bottom: solid 1px #d42b12;
     background: linear-gradient(to top,
-            rgb(106, 23, 23),
-            rgb(126, 30, 30),
-            rgb(142, 32, 32),
-            rgb(156, 21, 21) 40%,
-            rgb(192, 21, 21) 50%,
-            rgb(255, 29, 29),
-            rgb(253, 89, 89));
+            #d42b12,
+            #cc2514,
+            #da7168,
+            #e7bcbc);
 }
 
 .header-bottom ul {

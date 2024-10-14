@@ -389,6 +389,69 @@
       "costoTotal": 1200,
       "descripcion_reparaciones": "Revisión del sistema de arranque. Se determinó que la batería está descargada y necesita ser reemplazada.",
       "id": "5615"
+    },
+    {
+      "id": "defb",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "0129",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "98b9",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "2e7c",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "5228",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "2920",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "7236",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca"
+    },
+    {
+      "id": "e920",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca",
+      "tipo": "Reparacion"
+    },
+    {
+      "id": "325d",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca",
+      "tipo": "MANTENIMIENTO"
+    },
+    {
+      "id": "05ce",
+      "matricula": "125FAJK",
+      "descripcion_problemas": "PORQUE QUIERO",
+      "nombre_usuario": "Luca",
+      "tipo": "MANTENIMIENTO"
     }
   ],
   "ticketsEstados": [
