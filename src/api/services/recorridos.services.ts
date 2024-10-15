@@ -28,7 +28,7 @@ export async function createRecorrido(recorrido: IRecorridoCreate): Promise<IRec
 
 export async function updateRecorrido(recorrido: IRecorridoUpdate): Promise<IRecorrido> {
   try {
-    const response = await axios.put<IRecorrido>(`${API_URL}/${recorrido.id}`, recorrido, {
+    const response = await axios.put<IRecorrido>(`${API_URL}/${recorrido.id_viaje}`, recorrido, {
       headers: {
         'Content-Type': 'application/json',
       },

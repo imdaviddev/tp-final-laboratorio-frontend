@@ -31,3 +31,8 @@ export interface IRecorridoCreate {
     costo: number;
     f_finalizacion: string; 
 }
+
+export interface IRecorridoUpdate {
+    id_viaje: number;
+
+}
