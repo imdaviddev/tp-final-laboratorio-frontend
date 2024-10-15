@@ -3,7 +3,8 @@ import Detalle from '../../../components/Detalle'
 import { Boton } from '../../ComponentsUI/Botones'
 import { ButtonGroup } from '../../ComponentsUI';
 import camionRojo from '../../../../public/camion-mantenimiento.svg';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Estado } from '../../../api/models/tickets.models';
 
 const ContainerTicket = styled.div`
 display: flex;
@@ -45,7 +46,6 @@ margin: 5px;
 `
 
 const Ticket = (props) => {
-
     return (
         <ContainerTicket>
             <NameTicket> Ticket {props.id_ticket}</NameTicket>
@@ -57,13 +57,21 @@ const Ticket = (props) => {
                         <Detalle tipo={"Tipo"} valor={props.tipo}></Detalle>
                     </DescGroup>
                     <ButtonGroup>
-                        <Boton><Link to={`tickets/detalle/${props.id_ticket}`}></Link>Ver Detalle</Boton>
-                        <Boton><Link to={`tickets/${props.id_ticket}`}>Cerrar Ticket</Link></Boton>
+                        <Boton>
+                            <Link to={`tickets/detalle/${props.id_ticket}`}>Ver Detalle</Link>
+                        </Boton>
+
+                        {/* Condicional para mostrar "Cerrar Ticket" solo si está en curso */}
+                        {props.estado === Estado.EN_CURSO && (
+                            <Boton>
+                                <Link to={`tickets/${props.id_ticket}`}>Cerrar Ticket</Link>
+                            </Boton>
+                        )}
                     </ButtonGroup>
                 </DescTicket>
             </ContainerDescTicket>
         </ContainerTicket>
-    )
+    );
 }
 
 

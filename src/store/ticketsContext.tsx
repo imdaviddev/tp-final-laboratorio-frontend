@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import { ITicket, ITicketCreate } from '../api/models/tickets.models';
-import { createTicket, getTickets } from '../api/services/tickets.services';
+import { ITicket, ITicketCreate, ITicketUpdate } from '../api/models/tickets.models';
+import { createTicket, getTickets, updateTicket } from '../api/services/tickets.services';
 
 type ticketstore = {
     Tickets: ITicket[];
@@ -8,6 +8,7 @@ type ticketstore = {
     obtenerTickets: () => Promise<void>;
     obtenerTicket: (ticketId: number) => Promise<ITicket>;
     crearTicket: (newTicket: ITicketCreate) => Promise<void>;
+    actualizarTicket: (updatedTicket: ITicketUpdate) => Promise<void>;
 };
 
 const useTicketstore = create<ticketstore>((set, get) => ({
@@ -44,6 +45,20 @@ const useTicketstore = create<ticketstore>((set, get) => ({
             console.error('Failed to create Ticket:', error);
         }
     },
+
+    actualizarTicket: async (updatedTicket: ITicketUpdate) => {
+        try {
+            const updatedTicketFromServer = await updateTicket(updatedTicket);
+            set((state) => ({
+                Tickets: state.Tickets.map((ticket) =>
+                    ticket.id_ticket === updatedTicket.id_ticket ? updatedTicketFromServer : ticket
+                ),
+            }));
+        } catch (error) {
+            console.error('Detalles del error:', error.response?.data || error.message);
+        }
+    },
+
 }));
 
 export default useTicketstore;

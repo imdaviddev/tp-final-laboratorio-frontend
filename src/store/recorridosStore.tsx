@@ -35,12 +35,12 @@ const useRecorridoStore = create<recorridosStore>((set, get) => ({
     }
   },
 
-  actualizarRecorrido: async (updateRecorrido: IRecorridoUpdate) => {
+  actualizarRecorrido: async (updatedRecorrido: IRecorridoUpdate) => {
     try {
-      const updatedPaqueteFromServer = await updateRecorrido(updateRecorrido);
+      const updatedPaqueteFromServer = await updateRecorrido(updatedRecorrido);
       set((state) => ({
-        recorridos: state.recorridos.map((paquete) =>
-          paquete.id === updateRecorrido.id ? updatedPaqueteFromServer : paquete
+        recorridos: state.recorridos.map((recorrido) =>
+          recorrido.id_viaje === updatedRecorrido.id_viaje ? updatedPaqueteFromServer : recorrido
         ),
       }));
     } catch (error) {
