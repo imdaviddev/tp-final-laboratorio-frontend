@@ -12,7 +12,7 @@ const GroupSelect = styled.div`
     align-items: center;
 `
 
-const GroupCont = styled.div`
+const RepuestosGroup = styled.div`
 
 `
 
@@ -21,11 +21,12 @@ function sendHandler(event: FormEvent<HTMLFormElement>): void {
 }
 
 const TicketDetails = () => {
-
-
     const { obtenerTicket, obtenerTickets } = useTicketstore();
     const [ticketParticular, setTicketParticular] = useState<ITicket>();
     const { ticketId } = useParams();
+
+    // Estado para manejar los repuestos
+    const [repuestos, setRepuestos] = useState([{ id: "", cantidad: 1 }]);
 
     useEffect(() => {
         obtenerTickets()
@@ -36,6 +37,11 @@ const TicketDetails = () => {
             })
 
     }, [ticketParticular]);
+
+    // Función para añadir un nuevo repuesto
+    const añadirRepuesto = () => {
+        setRepuestos([...repuestos, { id: "", cantidad: 1 }]);
+    };
 
     if (ticketParticular == null) {
         return (
@@ -51,26 +57,22 @@ const TicketDetails = () => {
                 <InputForm></InputForm>
                 <LabelForm>Repuestos Utilizados</LabelForm>
 
-                <GroupSelect>
+                <RepuestosGroup>
+                    {repuestos.map((repuesto, index) => (
+                        <GroupSelect key={index}>
+                            <SelectForm>
+                                <option value="">Seleccionar repuesto</option>
+                                {/* Aquí podrías agregar las opciones de repuestos */}
+                            </SelectForm>
+                            <BotonIncremental />
+                        </GroupSelect>
+                    ))}
+                </RepuestosGroup>
 
-                    <SelectForm>
-                        <option value="">Seleccionar repuesto</option>
-                    </SelectForm>
-                    <BotonIncremental />
-                </GroupSelect>
-
-                <GroupSelect>
-                    <SelectForm>
-                        <option value="">Seleccionar repuesto</option>
-                    </SelectForm>
-                    <BotonIncremental />
-                </GroupSelect>
-
-                <Boton>Añadir Repuesto</Boton>
+                <Boton onClick={añadirRepuesto}>Añadir Repuesto</Boton>
                 <SubmitButton>Confirmar</SubmitButton>
             </FormContainer>
         </ContainerPadre>
-
     )
 }
 
