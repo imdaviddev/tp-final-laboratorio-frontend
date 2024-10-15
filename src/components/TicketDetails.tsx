@@ -5,7 +5,7 @@ import { ITicketUpdate } from "../api/models/tickets.models";
 import useTicketstore from "../store/ticketsContext";
 import useRepuestoStore from "../store/repuestosContext";
 import { Boton, SubmitButton } from '../pages/ComponentsUI/Botones';
-import { ContainerPadre, MensajeBienvenida, FormContainer, LabelForm, InputForm, SelectForm } from "../pages/ComponentsUI";
+import { ContainerPadre, MensajeBienvenida, LabelForm, InputForm, SelectForm } from "../pages/ComponentsUI";
 
 const GroupSelect = styled.div`
     display: flex;
@@ -89,8 +89,8 @@ const TicketDetails = () => {
             }))
         };
 
-        actualizarTicket(ticketData); // Envía la data del ticket y los repuestos utilizados
-        console.log("Enviando datos: ", ticketData);
+        actualizarTicket(ticketData); // Envía la data del ticket y los repuestos utilizados ¿A DONDE?
+        console.log(ticketData);
 
         setDataBody({ id_ticket: 0, estado: "", repuestos: [] });
     };

@@ -55,7 +55,7 @@ const useTicketstore = create<ticketstore>((set, get) => ({
                 ),
             }));
         } catch (error) {
-            console.error('Failed to update Ticket:', error);
+            console.error('Detalles del error:', error.response?.data || error.message);
         }
     },
 
