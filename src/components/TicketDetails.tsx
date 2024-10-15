@@ -21,13 +21,16 @@ const Container = styled.div`
 `;
 
 const TicketDetails = () => {
-    const { repuestos, obtenerRepuestos, hasFetched } = useRepuestoStore();
-    const { actualizarTicket } = useTicketstore();
-    const { obtenerTicket, obtenerTickets } = useTicketstore();
+
     const { ticketId } = useParams();
+    const { repuestos, obtenerRepuestos, hasFetched } = useRepuestoStore();
+    const { actualizarTicket, obtenerTicket, obtenerTickets } = useTicketstore();
 
     const [ticketParticular, setTicketParticular] = useState(null);
     const [repuestosUtilizados, setRepuestosUtilizados] = useState([{ id: 0, cantidad: 1 }]);
+
+    //A QUIEN LE TENGO QUE ENVIAR ESTOS DATOS? AL TICKET LE PASO EL ID Y EL ESTADO, PERO Y LOS REPUESTOS?
+
     const [data, setDataBody] = useState<ITicketUpdate>({
         id_ticket: 0,
         estado: "",
@@ -48,29 +51,15 @@ const TicketDetails = () => {
         });
     }, [ticketId, obtenerTicket, obtenerTickets]);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setDataBody(prev => ({ ...prev, [name]: value }));
+
+    const handleChange = (e) => {
+        setDataBody({ ...data, [e.target.name]: e.target.value });
     };
 
-    const handleChangeTipo = (event: React.ChangeEvent<HTMLSelectElement>, index: number) => {
-        const repuestoId = event.target.value;
-
-        setRepuestosUtilizados(prevRepuestos =>
-            prevRepuestos.map((repuesto, idx) =>
-                idx === index
-                    ? { ...repuesto, id: parseInt(repuestoId) } // Actualiza el ID del repuesto seleccionado
-                    : repuesto
-            )
-        );
-    };
-
-    const incrementarCantidad = (id_repuesto: number) => {
-        setRepuestosUtilizados(prevRepuestos =>
-            prevRepuestos.map(repuesto =>
-                repuesto.id === id_repuesto
-                    ? { ...repuesto, cantidad: repuesto.cantidad + 1 }
-                    : repuesto
+    const handleChangeTipo = (event, index) => {
+        setRepuestosUtilizados(prev =>
+            prev.map((repuesto, idx) =>
+                idx === index ? { ...repuesto, id: event.target.value } : repuesto
             )
         );
     };
@@ -79,18 +68,26 @@ const TicketDetails = () => {
         setRepuestosUtilizados([...repuestosUtilizados, { id: 0, cantidad: 1 }]);
     };
 
+    const incrementarCantidad = (id) => {
+        setRepuestosUtilizados(prev =>
+            prev.map(repuesto =>
+                repuesto.id === id ? { ...repuesto, cantidad: repuesto.cantidad + 1 } : repuesto
+            )
+        );
+    };
+
     const sendHandler = () => {
         const ticketData = {
             id_ticket: ticketParticular?.id_ticket,
             estado: data.estado,
-            repuestos: repuestosUtilizados.map(repuesto => ({
-                id: repuesto.id,
-                cantidad: repuesto.cantidad
-            }))
+            repuestos: repuestosUtilizados,
         };
 
-        actualizarTicket(ticketData); // Envía la data del ticket y los repuestos utilizados ¿A DONDE?
-        console.log(ticketData);
+        actualizarTicket(ticketData)
+            .then(() => {
+                console.log('Ticket actualizado');
+            })
+            .catch(error => console.error('Error al actualizar:', error));
 
         setDataBody({ id_ticket: 0, estado: "", repuestos: [] });
     };
