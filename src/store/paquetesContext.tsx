@@ -41,7 +41,7 @@ const usePaquetestore = create<paquetestore>((set, get) => ({
       const updatedPaqueteFromServer = await updatePaquete(updatedPaquete);
       set((state) => ({
         paquetes: state.paquetes.map((paquete) =>
-            paquete.id_paquete === updatedPaquete.id_paquete ? updatedPaqueteFromServer : paquete
+            paquete.id_paquete === updatedPaquete.id ? updatedPaqueteFromServer : paquete
         ),
       }));
     } catch (error) {

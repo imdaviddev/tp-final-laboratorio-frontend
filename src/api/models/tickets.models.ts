@@ -4,7 +4,7 @@ export interface ITicket {
     descripcion_problemas: string
     fecha_creacion: string
     fecha_finalizacion: string
-    estado: Estado
+    estado: Estado |string,
     tipo: Tipo | string,
     matricula: string
     costoTotal: number
@@ -16,6 +16,13 @@ export interface ITicketCreate {
     descripcion_problemas: string
     nombre_usuario: string
     tipo: Tipo | string
+}
+
+export interface ITicketUpdate {
+    id_ticket: number
+    estado: Estado | string
+    repuestos: any[]
+
 }
 
 export enum Estado {
