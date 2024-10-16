@@ -33,13 +33,6 @@ const Container = styled.div`
     border-radius: 5%;
 `;
 
-const RepuestosGroup = styled.div`
-`;
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
 
 const TicketDetails = () => {
 
@@ -55,6 +48,8 @@ const TicketDetails = () => {
     const [data, setDataBody] = useState<ITicketUpdate>({
         id_ticket: 0,
         estado: "",
+        descripcion: "",
+        repuestos: []
     });
 
     useEffect(() => {
@@ -92,7 +87,7 @@ const TicketDetails = () => {
     const eliminarRepuesto = (index) => {
         setRepuestosUtilizados(repuestosUtilizados.filter((_, idx) => idx !== index));
     };
-    
+
     const incrementarCantidad = (index) => {
         setRepuestosUtilizados(prev =>
             prev.map((repuesto, idx) =>
@@ -110,20 +105,13 @@ const TicketDetails = () => {
             )
         );
     };
-    
-    const incrementarCantidad = (id) => {
-        setRepuestosUtilizados(prev =>
-            prev.map(repuesto =>
-                repuesto.id === id ? { ...repuesto, cantidad: repuesto.cantidad + 1 } : repuesto
-            )
-        );
-    };
 
     const sendHandler = () => {
         const ticketData = {
             id_ticket: ticketParticular?.id_ticket,
-            estado: data.estado
-
+            estado: data.estado,
+            descripcion: data.descripcion,
+            repuestos: repuestosUtilizados
         };
 
         actualizarTicket(ticketData)
@@ -132,8 +120,7 @@ const TicketDetails = () => {
             })
             .catch(error => console.error('Error al actualizar:', error));
 
-        setDataBody({ id_ticket: 0, estado: "" });
-
+        setDataBody({ id_ticket: 0, estado: "", descripcion: "", repuestos: [] });
     };
 
     if (ticketParticular == null) {
@@ -176,7 +163,7 @@ const TicketDetails = () => {
                             <Boton onClick={() => incrementarCantidad(index)}>+</Boton>
                             <Boton onClick={() => disminuirCantidad(index)}>-</Boton>
                             <Boton onClick={() => eliminarRepuesto(index)}><FontAwesomeIcon icon={faTrashCan} /></Boton>
-                            </GroupSelect>
+                        </GroupSelect>
                     ))}
                 </RepuestosGroup>
 
