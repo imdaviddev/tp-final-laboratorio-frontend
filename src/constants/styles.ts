@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { css } from 'styled-components';
 import {Button,Paper} from '@mui/material';
 
 const stylesConstants = {
@@ -14,6 +15,32 @@ const stylesConstants = {
         padding: '1rem 2rem',
     },
 }
+
+
+export const customScrollbar = css`
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #e7bcbc;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #da7168;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #cc2514;
+  }
+`;
+
+// Ejemplo de uso en un componente
+
+
+
 
 
 //Estilos para los menus de Material UI
