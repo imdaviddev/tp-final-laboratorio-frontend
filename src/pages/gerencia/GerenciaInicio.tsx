@@ -39,7 +39,7 @@ const GerenciaHomePage = () => {
                             <Recorrido 
                                 key={recorrido.id_viaje}
                                 id_viaje={recorrido.id_viaje}
-                                estado={recorrido.estado.nombre}
+                                estado={recorrido.estado}
                             />
                         ))}
                     </Prueba>
