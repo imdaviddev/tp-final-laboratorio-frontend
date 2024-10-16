@@ -17,7 +17,6 @@ import AdministracionInicio from '../pages/Administracion/AdministracionInicio';
 import AdministracionRepuestos from '../pages/Administracion/AdministracionRepuestos';
 import AdministracionDeProveedores from '../pages/Administracion/AdministracionDeProveedores';
 import AdministracionReportes from '../pages/Administracion/AdministracionReportes';
-import Ticket from '../pages/Mantenimiento/Components/Ticket';
 
 const Router = () => {
   return <>

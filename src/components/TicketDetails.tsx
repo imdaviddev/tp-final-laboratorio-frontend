@@ -33,7 +33,6 @@ const Container = styled.div`
     border-radius: 5%;
 `;
 
-
 const TicketDetails = () => {
 
     const { ticketId } = useParams();
@@ -82,7 +81,6 @@ const TicketDetails = () => {
     const añadirRepuesto = () => {
         setRepuestosUtilizados([...repuestosUtilizados, { id: 0, cantidad: 1 }]);
     };
-
 
     const eliminarRepuesto = (index) => {
         setRepuestosUtilizados(repuestosUtilizados.filter((_, idx) => idx !== index));

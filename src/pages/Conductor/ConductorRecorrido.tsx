@@ -6,7 +6,6 @@ import './css/conductor.css'
 const CoductorRecorrido = () => {
     return <>
         <ContainerPadre>
-
             <MensajeBienvenida>Tus recorridos</MensajeBienvenida>
             <ContainerHijo>
                 <DescHijo>Reporte de rutas</DescHijo>

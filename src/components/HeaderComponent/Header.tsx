@@ -49,7 +49,6 @@ const NavbarSupervisor = () => {
       <ul>
         <Link to={supervision+""}>Inicio</Link>
         <Link to={supervision+"crear-recorrido"}>Crear Recorrido</Link>
-        <Link to={supervision+"conductores"}>Conductores</Link>
         <Link to={supervision+"vehiculos"}>Vehiculos</Link>
         <Link to={supervision+"reportes"}>Reportes</Link>
       </ul>

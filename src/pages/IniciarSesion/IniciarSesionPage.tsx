@@ -17,7 +17,6 @@ const IniciarSesionPage = () => {
     <nav className="header-bottom-iniciar-sesion">
           <ul>
             <li>Seguimiento</li>
-            <li>Sucursales</li>
             <li>Sobre Nosotros</li>
           </ul>
     </nav>
@@ -30,7 +29,7 @@ const IniciarSesionPage = () => {
         </div>
         <form className='formulario-iniciar-sesion-container'>
             <div className='campo-formulario-iniciar-sesion'>
-               <label htmlFor="username">ID de Usuario</label>
+               <label htmlFor="username">Nombre de Usuario</label>
                <input type="text" id='username' key={'username'} placeholder='Value'/>     
             </div>
             <div className='campo-formulario-iniciar-sesion'>
@@ -41,8 +40,6 @@ const IniciarSesionPage = () => {
             <button className='formulario-iniciar-sesion-btn-submit'>
               Iniciar Sesion
             </button>
-
-            <p className='formulario-iniciar-sesion-olvidaste-tu-contrasenia'>¿Olvidaste tu contraseña?</p>
         </form>
 
     </div>
