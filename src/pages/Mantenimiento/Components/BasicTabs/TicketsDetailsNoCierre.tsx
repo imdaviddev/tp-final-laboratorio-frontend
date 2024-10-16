@@ -80,6 +80,10 @@ const TicketsDetalle = () => {
                                 <StyledTableCell>{ticketDetalle.fecha_creacion}</StyledTableCell>
                             </StyledTableRow>
                             <StyledTableRow>
+                                <StyledTableCell>Fecha de Finalización</StyledTableCell>
+                                <StyledTableCell>{ticketDetalle.fecha_finalizacion}</StyledTableCell>
+                            </StyledTableRow>
+                            <StyledTableRow>
                                 <StyledTableCell>Tecnico</StyledTableCell>
                                 <StyledTableCell>{ticketDetalle.nombre_usuario}</StyledTableCell>
                             </StyledTableRow>

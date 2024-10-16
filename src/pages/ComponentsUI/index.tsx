@@ -236,6 +236,7 @@ export const MensajeBienvenida = styled.div`
 
 //Centra todo lo disponible de la pagina ¿Se puede mejorar?
 export const ContainerPadre = styled.div`
+    font-family: arial;
     margin-top: 25px;
     min-height: 250px;
     display: flex;
