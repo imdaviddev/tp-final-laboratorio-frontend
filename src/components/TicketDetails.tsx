@@ -22,7 +22,6 @@ const RepuestosGroup = styled.div`
     max-height: 245px;
     overflow-y: auto;
     ${customScrollbar};
-
 `;
 
 const Container = styled.div`
@@ -32,6 +31,14 @@ const Container = styled.div`
     margin-bottom: 2.5rem;
     border: 3px solid red;
     border-radius: 5%;
+`;
+
+const RepuestosGroup = styled.div`
+`;
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
 `;
 
 const TicketDetails = () => {
@@ -81,6 +88,7 @@ const TicketDetails = () => {
         setRepuestosUtilizados([...repuestosUtilizados, { id: 0, cantidad: 1 }]);
     };
 
+
     const eliminarRepuesto = (index) => {
         setRepuestosUtilizados(repuestosUtilizados.filter((_, idx) => idx !== index));
     };
@@ -103,11 +111,19 @@ const TicketDetails = () => {
         );
     };
     
+    const incrementarCantidad = (id) => {
+        setRepuestosUtilizados(prev =>
+            prev.map(repuesto =>
+                repuesto.id === id ? { ...repuesto, cantidad: repuesto.cantidad + 1 } : repuesto
+            )
+        );
+    };
 
     const sendHandler = () => {
         const ticketData = {
             id_ticket: ticketParticular?.id_ticket,
             estado: data.estado
+
         };
 
         actualizarTicket(ticketData)
@@ -117,6 +133,7 @@ const TicketDetails = () => {
             .catch(error => console.error('Error al actualizar:', error));
 
         setDataBody({ id_ticket: 0, estado: "" });
+
     };
 
     if (ticketParticular == null) {
