@@ -139,20 +139,6 @@
       "apellido": "Rodríguez",
       "dni": "56789012",
       "rol": "CONDUCTOR"
-    },
-    {
-      "id": "8f4a",
-      "nombre": "David",
-      "apellido": "El Pibe",
-      "dni": "43221555",
-      "rol": "CONDUCTOR"
-    },
-    {
-      "id": "955d",
-      "nombre": "Luca",
-      "apellido": "Velazquez",
-      "dni": "44509626",
-      "rol": "CONDUCTOR"
     }
   ],
   "proveedores": [
@@ -504,10 +490,7 @@
       "id_viaje": 1,
       "id_conductor": 1,
       "matricula": "dsfdf",
-      "estado": {
-        "id": 2,
-        "nombre": "EN CURSO"
-      },
+      "estado": "EN CURSO",
       "f_asignacion": "2024-10-01T10:00:00Z",
       "f_inicio": "2024-10-01T10:15:00Z",
       "costo": 2323,
@@ -518,10 +501,7 @@
       "id_viaje": 2,
       "id_conductor": 2,
       "matricula": "abc123",
-      "estado": {
-        "id": 1,
-        "nombre": "ASIGNADO"
-      },
+      "estado":"ASIGNADO",
       "f_asignacion": "2024-10-01T11:00:00Z",
       "f_inicio": "",
       "costo": 1500,
@@ -532,10 +512,7 @@
       "id_viaje": 3,
       "id_conductor": 3,
       "matricula": "xyz456",
-      "estado": {
-        "id": 3,
-        "nombre": "FINALIZADO"
-      },
+      "estado": "FINALIZADO",
       "f_asignacion": "2024-10-01T09:00:00Z",
       "f_inicio": "2024-10-01T09:15:00Z",
       "costo": 1800,
@@ -543,7 +520,7 @@
       "id": "68eb"
     },
     {
-      "id": "ecd8",
+      "id": 4,
       "id_conductor": "2",
       "matricula": "JKL012",
       "estado": "ASIGNADO",
@@ -553,7 +530,7 @@
       "costo": 0
     },
     {
-      "id": "f26f",
+      "id": 5,
       "id_conductor": "2",
       "matricula": "GHI789",
       "estado": "ASIGNADO",
@@ -583,6 +560,7 @@
   ],
   "vehiculos": [
     {
+      "id": 1,
       "matricula": "ABC123",
       "marca": "Ford",
       "modelo": "Transit",
@@ -591,10 +569,10 @@
       "peso_admitido": 3500,
       "volumen_admitido": 12.5,
       "km_recorridos": 15200,
-      "anio": 2019,
-      "id": "2c17"
+      "anio": 2019
     },
     {
+      "id": 2,
       "matricula": "DEF456",
       "marca": "Mercedes",
       "modelo": "Sprinter",
@@ -603,10 +581,10 @@
       "peso_admitido": 4000,
       "volumen_admitido": 15,
       "km_recorridos": 18500,
-      "anio": 2020,
-      "id": "98ff"
+      "anio": 2020
     },
     {
+      "id": 3,
       "matricula": "GHI789",
       "marca": "Volkswagen",
       "modelo": "Crafter",
@@ -615,10 +593,10 @@
       "peso_admitido": 3500,
       "volumen_admitido": 14.2,
       "km_recorridos": 10000,
-      "anio": 2021,
-      "id": "4271"
+      "anio": 2021
     },
     {
+      "id": 4,
       "matricula": "JKL012",
       "marca": "Iveco",
       "modelo": "Daily",
@@ -627,10 +605,10 @@
       "peso_admitido": 3800,
       "volumen_admitido": 13,
       "km_recorridos": 22000,
-      "anio": 2018,
-      "id": "fd31"
+      "anio": 2018
     },
     {
+      "id": 5,
       "matricula": "MNO345",
       "marca": "Renault",
       "modelo": "Master",
@@ -639,8 +617,20 @@
       "peso_admitido": 3200,
       "volumen_admitido": 11.8,
       "km_recorridos": 16000,
-      "anio": 2019,
-      "id": "060f"
+      "anio": 2019
+    },
+    {
+      "id": 6,
+      "marca": "Ford",
+      "modelo": "Silverado",
+      "anio": "2002",
+      "matricula": "F3322A",
+      "estadoVTV": "Rechazado",
+      "fechaVTV": "2024-10-02",
+      "peso_admitido": "232",
+      "volumen_admitido": "3232",
+      "estado": "NO APTO PARA CIRCULAR",
+      "km_recorridos": "323"
     }
   ],
   "vehiculosEstados": [

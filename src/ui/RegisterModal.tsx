@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const ModalWrapper = styled.div`
-    width: 100vw;
+    width: 98.8vw;
     min-height: 100vh;
     padding: 2rem 0;
     height: 100vh;
@@ -13,7 +13,21 @@ export const ModalWrapper = styled.div`
     top: 0;
     left: 0;
     background: #10101078;
-    overflow-y: auto;
+    overflow-y: scroll;
+    margin-right: 2rem;
+
+    &::-webkit-scrollbar{
+        background-color: white;
+        border: solid: 1px black;
+        margin-right: 0.5rem;
+        border-radius: 0.8rem;;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: #d80505;
+        border-radius: 0.8rem;;   
+    }
+
 `
 
 export const ModalContainer = styled.div`
@@ -30,6 +44,7 @@ export const ModalContainer = styled.div`
     border-radius: 10px; 
     border: 1px solid rgba(255, 255, 255, 0.3); 
     padding: 20px;
+    margin-top: 20rem;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); 
 
     @media (width < 500px) {

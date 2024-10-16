@@ -52,7 +52,7 @@ const ModalFormRegisterVehiculo: React.FC<PropsRegister> = ({ cancelHandler }) =
         estadoVTV: "",
         fechaVTV: "",
         peso_admitido: 0,
-        volumen_admitido_mts_cubicos: 0,
+        volumen_admitido: 0,
         estado: "",
         km_recorridos: 0,
     });
@@ -72,10 +72,12 @@ const ModalFormRegisterVehiculo: React.FC<PropsRegister> = ({ cancelHandler }) =
             estadoVTV: '',
             fechaVTV: '',
             peso_admitido: 0,
-            volumen_admitido_mts_cubicos: 0,
+            volumen_admitido: 0,
             estado: '',
             km_recorridos: 0,
         });
+
+        cancelHandler();
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -84,8 +86,8 @@ const ModalFormRegisterVehiculo: React.FC<PropsRegister> = ({ cancelHandler }) =
     };
 
     return (
-        <ModalWrapper>
-            <ModalContainer>
+        <ModalWrapper style={{position:"fixed"}}>
+            <ModalContainer style={{marginTop:"28rem"}}>
                 <TituloModal>
                     Ingrese los datos del Vehículo
                 </TituloModal>
@@ -179,12 +181,12 @@ const ModalFormRegisterVehiculo: React.FC<PropsRegister> = ({ cancelHandler }) =
                     </ModalCampoContainer>
 
                     <ModalCampoContainer>
-                        <TituloCampo htmlFor="volumen_admitido_mts_cubicos">Volumen Admitido (m³)</TituloCampo>
+                        <TituloCampo htmlFor="volumen_admitido">Volumen Admitido (m³)</TituloCampo>
                         <Campo
-                            id="volumen_admitido_mts_cubicos"
-                            name="volumen_admitido_mts_cubicos"
+                            id="volumen_admitido"
+                            name="volumen_admitido"
                             type="number"
-                            value={data.volumen_admitido_mts_cubicos}
+                            value={data.volumen_admitido}
                             onChange={handleChange}
                         />
                     </ModalCampoContainer>
