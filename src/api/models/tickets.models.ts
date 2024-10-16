@@ -21,8 +21,6 @@ export interface ITicketCreate {
 export interface ITicketUpdate {
     id_ticket: number
     estado: Estado | string
-    repuestos: any[]
-
 }
 
 export enum Estado {

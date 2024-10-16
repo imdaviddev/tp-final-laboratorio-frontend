@@ -6,10 +6,31 @@ import useTicketstore from "../store/ticketsContext";
 import useRepuestoStore from "../store/repuestosContext";
 import { Boton, SubmitButton } from '../pages/ComponentsUI/Botones';
 import { ContainerPadre, MensajeBienvenida, LabelForm, InputForm, SelectForm } from "../pages/ComponentsUI";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { customScrollbar } from "../constants/styles";
+
 
 const GroupSelect = styled.div`
     display: flex;
     align-items: center;
+    margin-right: 15px;
+`;
+
+const RepuestosGroup = styled.div`
+    margin: 10px;
+    max-height: 245px;
+    overflow-y: auto;
+    ${customScrollbar};
+`;
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border: 3px solid red;
+    border-radius: 5%;
 `;
 
 const RepuestosGroup = styled.div`
@@ -34,7 +55,6 @@ const TicketDetails = () => {
     const [data, setDataBody] = useState<ITicketUpdate>({
         id_ticket: 0,
         estado: "",
-        repuestos: []
     });
 
     useEffect(() => {
@@ -68,6 +88,29 @@ const TicketDetails = () => {
         setRepuestosUtilizados([...repuestosUtilizados, { id: 0, cantidad: 1 }]);
     };
 
+
+    const eliminarRepuesto = (index) => {
+        setRepuestosUtilizados(repuestosUtilizados.filter((_, idx) => idx !== index));
+    };
+    
+    const incrementarCantidad = (index) => {
+        setRepuestosUtilizados(prev =>
+            prev.map((repuesto, idx) =>
+                idx === index ? { ...repuesto, cantidad: repuesto.cantidad + 1 } : repuesto
+            )
+        );
+    };
+
+    const disminuirCantidad = (index) => {
+        setRepuestosUtilizados(prev =>
+            prev.map((repuesto, idx) =>
+                idx === index && repuesto.cantidad > 0
+                    ? { ...repuesto, cantidad: repuesto.cantidad - 1 }
+                    : repuesto
+            )
+        );
+    };
+    
     const incrementarCantidad = (id) => {
         setRepuestosUtilizados(prev =>
             prev.map(repuesto =>
@@ -79,8 +122,8 @@ const TicketDetails = () => {
     const sendHandler = () => {
         const ticketData = {
             id_ticket: ticketParticular?.id_ticket,
-            estado: data.estado,
-            repuestos: repuestosUtilizados,
+            estado: data.estado
+
         };
 
         actualizarTicket(ticketData)
@@ -89,7 +132,8 @@ const TicketDetails = () => {
             })
             .catch(error => console.error('Error al actualizar:', error));
 
-        setDataBody({ id_ticket: 0, estado: "", repuestos: [] });
+        setDataBody({ id_ticket: 0, estado: "" });
+
     };
 
     if (ticketParticular == null) {
@@ -98,7 +142,7 @@ const TicketDetails = () => {
 
     return (
         <ContainerPadre>
-            <MensajeBienvenida>Cierre de Ticket</MensajeBienvenida>
+            <MensajeBienvenida>Cierre de Ticket NRO-{ticketParticular.id_ticket}</MensajeBienvenida>
             <Container>
                 <LabelForm>Descripción</LabelForm>
                 <InputForm
@@ -129,8 +173,10 @@ const TicketDetails = () => {
                                 ))}
                             </SelectForm>
                             <LabelForm>{repuestoUtilizado.cantidad}</LabelForm>
-                            <Boton onClick={() => incrementarCantidad(repuestoUtilizado.id)}>+</Boton>
-                        </GroupSelect>
+                            <Boton onClick={() => incrementarCantidad(index)}>+</Boton>
+                            <Boton onClick={() => disminuirCantidad(index)}>-</Boton>
+                            <Boton onClick={() => eliminarRepuesto(index)}><FontAwesomeIcon icon={faTrashCan} /></Boton>
+                            </GroupSelect>
                     ))}
                 </RepuestosGroup>
 
