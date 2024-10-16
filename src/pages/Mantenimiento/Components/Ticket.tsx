@@ -58,7 +58,7 @@ const Ticket = (props) => {
                     </DescGroup>
                     <ButtonGroup>
                         <Boton>
-                            <Link to={`tickets/detalle/${props.id_ticket}`}>Ver Detalle</Link>
+                            <Link to={`detalle/${props.id_ticket}`}>Ver Detalle</Link>
                         </Boton>
 
                         {/* Condicional para mostrar "Cerrar Ticket" solo si está en curso */}

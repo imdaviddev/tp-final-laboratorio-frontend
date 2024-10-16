@@ -61,6 +61,10 @@ export default function BasicTabs() {
       </Box>
       <CustomTabPanel value={value} index={0}>
         <ContainerDetalle>
+          <br />
+          <br />
+          <br />
+          <br />
           <RecorridoDetalle>
             <Detalle tipo="Recorrido" valor="#064"></Detalle>
             <Detalle tipo="Fecha" valor="25/08/2024"></Detalle>

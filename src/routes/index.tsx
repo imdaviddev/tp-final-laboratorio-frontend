@@ -10,11 +10,14 @@ import { ConductorInicio, ConductorRecorrido, ConductorReportes, ConductorPageLa
 import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout, SupervisionReportesPage, SupervisionVehiculosPage } from '../pages/Supervision';
 import { MantenimientoPageLayout, MantenimientoHistorial, MantenimientoInicio, MantenimientoIngresos } from '../pages/Mantenimiento';
 
+import TicketsDetalle from '../pages/Mantenimiento/Components/BasicTabs/TicketsDetailsNoCierre'
+
 import AdministracionPageLayout from '../pages/Administracion/AdministracionPageLayout';
 import AdministracionInicio from '../pages/Administracion/AdministracionInicio';
 import AdministracionRepuestos from '../pages/Administracion/AdministracionRepuestos';
 import AdministracionDeProveedores from '../pages/Administracion/AdministracionDeProveedores';
 import AdministracionReportes from '../pages/Administracion/AdministracionReportes';
+import Ticket from '../pages/Mantenimiento/Components/Ticket';
 
 const Router = () => {
   return <>
@@ -41,6 +44,7 @@ const Router = () => {
         <Route element={<MantenimientoPageLayout />} path='/mantenimiento'>
           <Route index element={<MantenimientoInicio />} />
           <Route element={<TicketDetails />} path='tickets/:ticketId'/>
+          <Route element={<TicketsDetalle />} path='detalle/:ticketId'/>
           <Route element={<MantenimientoIngresos />} path='ingresos' />
           <Route element={<MantenimientoHistorial />} path='historial-de-tickets' />
         </Route>

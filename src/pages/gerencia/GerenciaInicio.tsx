@@ -18,7 +18,29 @@ const Prueba = styled.div`
     min-height: 30vh
   }
 `
+const recorridosPrueba = [
+    {
+        id_viaje: "K560",
+        estado: "EN CURSO"
+    },
+    {
+        id_viaje: "F360",
+        estado: "FINALIZADO"
+    },
+    {
+        id_viaje: "k560",
+        estado: "EN CURSO"
+    },
+    {
+        id_viaje: "k560",
+        estado: "ASIGNADO"
+    },
+    {
+        id_viaje: "k560",
+        estado: "NO FINALIZADO"
+    }
 
+]
 const GerenciaHomePage = () => {
 
     const { recorridos, obtenerRecorridos, hasFetched } = useRecorridostore();
@@ -26,7 +48,7 @@ const GerenciaHomePage = () => {
     useEffect(() => {
         if (!hasFetched) obtenerRecorridos();
     }, [obtenerRecorridos, hasFetched]);
-    
+
     return <>
         <ContainerPadre>
             <MensajeBienvenida>Hola, Val</MensajeBienvenida>
@@ -35,8 +57,8 @@ const GerenciaHomePage = () => {
                 <DescHijo>Recorridos durante esta semana</DescHijo>
                 <ContainerDetalle>
                     <Prueba>
-                        {recorridos.map((recorrido) => (
-                            <Recorrido 
+                        {recorridosPrueba.map((recorrido) => (
+                            <Recorrido
                                 key={recorrido.id_viaje}
                                 id_viaje={recorrido.id_viaje}
                                 estado={recorrido.estado}

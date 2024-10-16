@@ -4,6 +4,8 @@ import FiltrarHistorial from './Components/FiltrarHistorial'
 import { ContainerTickets } from "./Components/BasicTabs/BasicTabs"
 import useTicketstore from "../../store/ticketsContext"
 import { useEffect } from "react"
+import { Estado } from '../../api/models/tickets.models';
+
 
 const MantenimientoHistorial = () => {
 
@@ -20,9 +22,11 @@ const MantenimientoHistorial = () => {
       <MensajeBienvenida>Historial</MensajeBienvenida>
       <FiltrarHistorial></FiltrarHistorial>
       <ContainerTickets>
-        {Tickets.map((ticket) => (
-          <Ticket key={ticket.id_ticket} {...ticket}></Ticket>
-        ))}
+      {Tickets.map((ticket) => (
+            ticket.estado !== Estado.EN_CURSO && (
+              <Ticket key={ticket.id_ticket} {...ticket}></Ticket>
+            )
+          ))}
       </ContainerTickets>
     </ContainerPadre>
 

@@ -40,7 +40,7 @@ export default function BasicTabs(props) {
         </Reportes>
         <Container>
           <ButtonGroup>
-            <Boton> {props.descripcionBoton} semanales</Boton>
+            <Boton> {props.descripcionBoton} Semanales</Boton>
             <Boton> {props.descripcionBoton} Mensuales</Boton>
           </ButtonGroup>
         </Container>

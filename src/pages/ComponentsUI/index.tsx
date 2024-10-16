@@ -1,4 +1,5 @@
 import { styled } from "styled-components"
+import { customScrollbar } from "../../constants/styles"
 
 export const TituloPage = styled.div`
     width: 100%;
@@ -268,7 +269,7 @@ export const ContainerDetalle = styled.div`
   align-items: center;
   justify-content: center;
   overflow-y: auto;
- 
+  ${customScrollbar}
 `
 
 export const DescHijo = styled.div`

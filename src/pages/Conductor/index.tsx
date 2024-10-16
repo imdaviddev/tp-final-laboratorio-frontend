@@ -3,6 +3,7 @@ import ConductorInicio from "./ConductorInicio"
 import ConductorReportes from "./ConductorReportes"
 import ConductorRecorrido from "./ConductorRecorrido"
 import ConductorPageLayout from "./ConductorPageLayout"
+import { customScrollbar } from "../../constants/styles"
 
 export const MensajeBienvenida = styled.div`
   margin-top: 35px;
@@ -83,7 +84,7 @@ export const ContainerDetalle = styled.div`
   align-items: center;
   justify-content: center;
   overflow-y: auto;
- 
+  ${customScrollbar}
 `
 
 export const ContainerImgDetalle = styled.div`
@@ -120,7 +121,6 @@ export const RecorridoDetalle = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border:1px solid black;
   border-radius: 10px;
 
   @media (max-width: 600px) {
