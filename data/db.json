@@ -501,7 +501,7 @@
       "id_viaje": 2,
       "id_conductor": 2,
       "matricula": "abc123",
-      "estado":"ASIGNADO",
+      "estado": "ASIGNADO",
       "f_asignacion": "2024-10-01T11:00:00Z",
       "f_inicio": "",
       "costo": 1500,
@@ -535,6 +535,16 @@
       "matricula": "GHI789",
       "estado": "ASIGNADO",
       "f_asignacion": "2024-10-15T02:01:07.582Z",
+      "f_inicio": "",
+      "f_finalizacion": "",
+      "costo": 0
+    },
+    {
+      "id": "2f0a",
+      "id_conductor": "2",
+      "matricula": "ABC123",
+      "estado": "ASIGNADO",
+      "f_asignacion": "2024-10-16T22:45:14.091Z",
       "f_inicio": "",
       "f_finalizacion": "",
       "costo": 0

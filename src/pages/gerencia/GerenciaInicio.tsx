@@ -57,7 +57,7 @@ const GerenciaHomePage = () => {
                 <DescHijo>Recorridos durante esta semana</DescHijo>
                 <ContainerDetalle>
                     <Prueba>
-                        {recorridosPrueba.map((recorrido) => (
+                        {recorridos.map((recorrido) => (
                             <Recorrido
                                 key={recorrido.id_viaje}
                                 id_viaje={recorrido.id_viaje}
