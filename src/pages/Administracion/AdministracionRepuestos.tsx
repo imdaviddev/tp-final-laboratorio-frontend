@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Table,
   TableBody,
@@ -12,89 +12,35 @@ import {
   Typography,
   Box,
   Dialog,
-  DialogTitle,
-  DialogContent,
   DialogActions,
 } from '@mui/material';
 import { Container, ContainerPadre, InputForm, MensajeBienvenida } from '../ComponentsUI';
-import { Boton } from '../ComponentsUI/Botones';
+import { Boton, SubmitButton } from '../ComponentsUI/Botones';
+import RepuestoDetails from './components/repuestoDetails';
+import useRepuestoStore from '../../store/repuestosContext';
+import { IRepuesto } from '../../api/models/respuestos.models';
 
-
-interface Repuesto {
-  id: string;
-  nombre: string;
-  umbralCompraMinima: number;
-  precio: number;
-  id_catalogo: string;
-  stock: number;
-  stock_minimo: number;
-  descripcion: string;
-}
-
-const repuestosIniciales: Repuesto[] = [
-  {
-    id: '1',
-    nombre: 'Filtro de aceite',
-    umbralCompraMinima: 10,
-    precio: 15.99,
-    id_catalogo: 'CAT001',
-    stock: 50,
-    stock_minimo: 10,
-    descripcion: 'Filtro de aceite de alta calidad para motores de automóviles.'
-  },
-  {
-    id: '2',
-    nombre: 'Pastillas de freno',
-    umbralCompraMinima: 5,
-    precio: 45.50,
-    id_catalogo: 'CAT002',
-    stock: 30,
-    stock_minimo: 8,
-    descripcion: 'Pastillas de freno de cerámica para un frenado suave y eficiente.'
-  },
-  {
-    id: '3',
-    nombre: 'Bujías',
-    umbralCompraMinima: 8,
-    precio: 8.75,
-    id_catalogo: 'CAT001',
-    stock: 100,
-    stock_minimo: 20,
-    descripcion: 'Bujías de encendido para motores de gasolina.'
-  },
-  {
-    id: '4',
-    nombre: 'Amortiguadores',
-    umbralCompraMinima: 2,
-    precio: 89.99,
-    id_catalogo: 'CAT003',
-    stock: 15,
-    stock_minimo: 4,
-    descripcion: 'Amortiguadores de gas para una conducción suave y estable.'
-  },
-  {
-    id: '5',
-    nombre: 'Correa de distribución',
-    umbralCompraMinima: 1,
-    precio: 35.25,
-    id_catalogo: 'CAT002',
-    stock: 25,
-    stock_minimo: 5,
-    descripcion: 'Correa de distribución resistente para motores de 4 cilindros.'
-  },
-];
 
 export default function administracionRepuestos() {
-  const [repuestos, setRepuestos] = useState<Repuesto[]>(repuestosIniciales); // Lista original
-  const [repuestosFiltrados, setRepuestosFiltrados] = useState<Repuesto[]>(repuestosIniciales); // Lista filtrada
+  const { repuestos, obtenerRepuestos, hasFetched } = useRepuestoStore();
+  const [repuestosFiltrados, setRepuestosFiltrados] = useState<IRepuesto[]>(repuestos); // Lista filtrada
   const [cambios, setCambios] = useState<Set<string>>(new Set());
   const [detallesAbiertos, setDetallesAbiertos] = useState(false);
-  const [repuestoSeleccionado, setRepuestoSeleccionado] = useState<Repuesto | null>(null);
+  const [repuestoSeleccionado, setRepuestoSeleccionado] = useState<IRepuesto | null>(null);
   const [inputFiltro, setInputFiltro] = useState("");
+
+  useEffect(() => {
+    if (!hasFetched) {
+      obtenerRepuestos();
+    }
+  }, [obtenerRepuestos, hasFetched]);
+
+  useEffect(() => {
+    setRepuestosFiltrados(repuestos);
+  }, [repuestos]);
 
   const filterInputChange = (input: string) => {
     if (input.trim() === "") {
-      // Si el input esta vacio devuelve todos los repuestos 
       setRepuestosFiltrados(repuestos);
     } else {
       setRepuestosFiltrados(
@@ -106,27 +52,31 @@ export default function administracionRepuestos() {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputFiltro(e.target.value); // Guarda el valor del input en el estado
+    setInputFiltro(e.target.value);
   };
 
   const handleButtonClick = () => {
     filterInputChange(inputFiltro);
   };
 
-  const handleUmbralChange = (id: string, nuevoUmbral: number) => {
-    setRepuestos(repuestos.map(repuesto =>
-      repuesto.id === id ? { ...repuesto, umbralCompraMinima: nuevoUmbral } : repuesto
-    ));
-    setCambios(new Set(cambios.add(id)));
+  const handleUmbralChange = (idRepuesto: string, nuevoUmbral: number) => {
+    // Actualiza los repuestos filtrados
+    const filtradosActualizados = repuestosFiltrados.map(repuesto =>
+      String(repuesto.id) === idRepuesto
+        ? { ...repuesto, stock_minimo: nuevoUmbral }
+        : repuesto
+    );
+
+    setRepuestosFiltrados(filtradosActualizados);
+
+    // Crea un nuevo Set para registrar los cambios y forzar un re-render
+    const nuevosCambios = new Set(cambios);
+    nuevosCambios.add(idRepuesto);
+    setCambios(nuevosCambios); // Actualiza el estado con una nueva referencia al Set
   };
 
-  const handleConfirmar = () => {
-    console.log('Cambios confirmados:', repuestos.filter(r => cambios.has(r.id)));
-    // Aquí puedes enviar los cambios a tu backend o realizar otras acciones necesarias
-    setCambios(new Set()); // Resetear los cambios después de confirmar
-  };
 
-  const handleVerDetalles = (repuesto: Repuesto) => {
+  const handleVerDetalles = (repuesto: IRepuesto) => {
     setRepuestoSeleccionado(repuesto);
     setDetallesAbiertos(true);
   };
@@ -134,6 +84,13 @@ export default function administracionRepuestos() {
   const handleCerrarDetalles = () => {
     setDetallesAbiertos(false);
     setRepuestoSeleccionado(null);
+  };
+
+  const handleConfirmar = () => {
+    console.log('Cambios confirmados:', repuestosFiltrados.filter(r => cambios.has(String(r.id))));
+    // enviar los cambios al backend
+    // actualizarRepuestos(repuestosFiltrados); <-- persistir cambio
+    setCambios(new Set()); // Resetear los cambios despues de confirmar
   };
 
   return (
@@ -152,76 +109,48 @@ export default function administracionRepuestos() {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>ID</TableCell>
                 <TableCell>Nombre</TableCell>
                 <TableCell>Precio</TableCell>
                 <TableCell>Umbral de Compra Mínima</TableCell>
+                <TableCell>Stock Disponible</TableCell>
                 <TableCell>Acciones</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {repuestosFiltrados.map((repuesto) => (
-                <TableRow
-                  key={repuesto.id}
-                  sx={{
-                    '&:last-child td, &:last-child th': { border: 0 },
-                    backgroundColor: cambios.has(repuesto.id) ? 'rgba(76, 175, 80, 0.1)' : 'inherit'
-                  }}
-                >
-                  <TableCell component="th" scope="row">
-                    {repuesto.id}
-                  </TableCell>
+                <TableRow key={repuesto.id}>
                   <TableCell>{repuesto.nombre}</TableCell>
-                  <TableCell>${repuesto.precio.toFixed(2)}</TableCell>
+                  <TableCell>${repuesto.costo.toFixed(2)}</TableCell>
                   <TableCell>
                     <TextField
                       type="number"
-                      value={repuesto.umbralCompraMinima}
-                      onChange={(e) => handleUmbralChange(repuesto.id, parseInt(e.target.value, 10))}
+                      value={repuesto.stock_minimo}  // Reflejar el valor correcto
+                      onChange={(e) => handleUmbralChange(String(repuesto.id), parseInt(e.target.value, 10))}
                       inputProps={{ min: 0 }}
-                      variant="outlined"
                       size="small"
                     />
                   </TableCell>
+                  <TableCell>{repuesto.stock}</TableCell>
                   <TableCell>
-                    <Button
-                      variant="outlined"
-                      size="small"
-                      onClick={() => handleVerDetalles(repuesto)}
-                    >
-                      Ver Detalles
-                    </Button>
+                    <Boton onClick={() => handleVerDetalles(repuesto)}>Ver Detalles</Boton>
                   </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
-        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleConfirmar}
-            disabled={cambios.size === 0}
-          >
-            Confirmar Cambios
-          </Button>
-        </Box>
+        <SubmitButton onClick={handleConfirmar} disabled={cambios.size === 0}>Confirmar Cambios</SubmitButton>
 
         <Dialog open={detallesAbiertos} onClose={handleCerrarDetalles}>
-          <DialogTitle>Detalles del Repuesto</DialogTitle>
-          <DialogContent>
-            {repuestoSeleccionado && (
-              <Box>
-                <Typography><strong>ID Repuesto:</strong> {repuestoSeleccionado.id}</Typography>
-                <Typography><strong>ID Catálogo:</strong> {repuestoSeleccionado.id_catalogo}</Typography>
-                <Typography><strong>Nombre:</strong> {repuestoSeleccionado.nombre}</Typography>
-                <Typography><strong>Stock:</strong> {repuestoSeleccionado.stock}</Typography>
-                <Typography><strong>Stock Mínimo:</strong> {repuestoSeleccionado.stock_minimo}</Typography>
-                <Typography><strong>Descripción:</strong> {repuestoSeleccionado.descripcion}</Typography>
-              </Box>
-            )}
-          </DialogContent>
+          {repuestoSeleccionado && (
+            <RepuestoDetails
+              id_catalogo={repuestoSeleccionado.id_catalogo}
+              nombre={repuestoSeleccionado.nombre}
+              stock={repuestoSeleccionado.stock}
+              stock_minimo={repuestoSeleccionado.stock_minimo}
+              descripcion={repuestoSeleccionado.descripcion}
+            />
+          )}
           <DialogActions>
             <Button onClick={handleCerrarDetalles}>Cerrar</Button>
           </DialogActions>
@@ -230,3 +159,4 @@ export default function administracionRepuestos() {
     </ContainerPadre>
   );
 }
+
