@@ -20,7 +20,6 @@ import RepuestoDetails from './components/repuestoDetails';
 import useRepuestoStore from '../../store/repuestosContext';
 import { IRepuesto } from '../../api/models/respuestos.models';
 
-
 export default function administracionRepuestos() {
   const { repuestos, obtenerRepuestos, hasFetched } = useRepuestoStore();
   const [repuestosFiltrados, setRepuestosFiltrados] = useState<IRepuesto[]>(repuestos); // Lista filtrada

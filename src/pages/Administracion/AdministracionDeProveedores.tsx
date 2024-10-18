@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Table,
     TableBody,
@@ -18,110 +18,30 @@ import {
 } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { ContainerPadre, MensajeBienvenida } from '../ComponentsUI';
+import useProveedorestore from '../../store/proveedoresContext';
+import { IProveedor } from '../../api/models/proveedores.models';
+import useCatalogostore from '../../store/catalogosContext';
+import useRepuestoStore from '../../store/repuestosContext';
 
-// Tipos de datos
-interface Repuesto {
-    id: string;
-    nombre: string;
-    precio: number;
-}
-
-interface Catalogo {
-    id: string;
-    mesVigencia: string;
-    repuestos: Repuesto[];
-}
-
-interface Proveedor {
-    id: string;
-    nombre: string;
-    gmail: string;
-    nroTelefono: string;
-    catalogos: Catalogo[];
-}
-
-// Datos de ejemplo
-const proveedores: Proveedor[] = [
-    {
-        id: '1',
-        nombre: 'Proveedor A',
-        gmail: 'proveedora@example.com',
-        nroTelefono: '123-456-7890',
-        catalogos: [
-            {
-                id: 'C1',
-                mesVigencia: 'Enero 2024',
-                repuestos: [
-                    { id: 'R1', nombre: 'Repuesto 1', precio: 100 },
-                    { id: 'R2', nombre: 'Repuesto 2', precio: 200 },
-                ],
-            },
-            {
-                id: 'C2',
-                mesVigencia: 'Febrero 2024',
-                repuestos: [
-                    { id: 'R3', nombre: 'Repuesto 3', precio: 150 },
-                    { id: 'R4', nombre: 'Repuesto 4', precio: 250 },
-                ],
-            },
-        ],
-    },
-    {
-        id: '1',
-        nombre: 'Proveedor A',
-        gmail: 'proveedora@example.com',
-        nroTelefono: '123-456-7890',
-        catalogos: [
-            {
-                id: 'C1',
-                mesVigencia: 'Enero 2024',
-                repuestos: [
-                    { id: 'R1', nombre: 'Repuesto 1', precio: 100 },
-                    { id: 'R2', nombre: 'Repuesto 2', precio: 200 },
-                ],
-            },
-            {
-                id: 'C2',
-                mesVigencia: 'Febrero 2024',
-                repuestos: [
-                    { id: 'R3', nombre: 'Repuesto 3', precio: 150 },
-                    { id: 'R4', nombre: 'Repuesto 4', precio: 250 },
-                ],
-            },
-        ],
-    },
-    {
-        id: '1',
-        nombre: 'Proveedor A',
-        gmail: 'proveedora@example.com',
-        nroTelefono: '123-456-7890',
-        catalogos: [
-            {
-                id: 'C1',
-                mesVigencia: 'Enero 2024',
-                repuestos: [
-                    { id: 'R1', nombre: 'Repuesto 1', precio: 100 },
-                    { id: 'R2', nombre: 'Repuesto 2', precio: 200 },
-                ],
-            },
-            {
-                id: 'C2',
-                mesVigencia: 'Febrero 2024',
-                repuestos: [
-                    { id: 'R3', nombre: 'Repuesto 3', precio: 150 },
-                    { id: 'R4', nombre: 'Repuesto 4', precio: 250 },
-                ],
-            },
-        ],
-    },
-];
 
 export default function administracionProveedores() {
     const [open, setOpen] = useState(false);
-    const [selectedProveedor, setSelectedProveedor] = useState<Proveedor | null>(null);
+    const { proveedores, obtenerProveedores, hasFetched } = useProveedorestore();
+    const { catalogos, obtenerCatalogos } = useCatalogostore();
+    const { repuestos, obtenerRepuestos } = useRepuestoStore();
+    const [selectedProveedor, setSelectedProveedor] = useState<IProveedor | null>(null);
     const [expandedCatalogo, setExpandedCatalogo] = useState<string | null>(null);
 
-    const handleProveedorClick = (proveedor: Proveedor) => {
+    useEffect(() => {
+        if (!hasFetched) {
+            obtenerProveedores();
+            obtenerCatalogos();
+            obtenerRepuestos();
+        }
+    }, [obtenerProveedores, obtenerCatalogos, obtenerRepuestos, hasFetched]);
+
+
+    const handleProveedorClick = (proveedor: IProveedor) => {
         setSelectedProveedor(proveedor);
         setOpen(true);
     };
@@ -143,7 +63,6 @@ export default function administracionProveedores() {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell>ID</TableCell>
                             <TableCell>Nombre</TableCell>
                             <TableCell>Gmail</TableCell>
                             <TableCell>Nro. Teléfono</TableCell>
@@ -156,10 +75,9 @@ export default function administracionProveedores() {
                                 onClick={() => handleProveedorClick(proveedor)}
                                 style={{ cursor: 'pointer' }}
                             >
-                                <TableCell>{proveedor.id}</TableCell>
-                                <TableCell>{proveedor.nombre}</TableCell>
-                                <TableCell>{proveedor.gmail}</TableCell>
-                                <TableCell>{proveedor.nroTelefono}</TableCell>
+                                <TableCell>{proveedor.nombre_empresa}</TableCell>
+                                <TableCell>{proveedor.mail}</TableCell>
+                                <TableCell>{proveedor.telefono}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
@@ -167,33 +85,35 @@ export default function administracionProveedores() {
             </TableContainer>
 
             <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
-                <DialogTitle>{selectedProveedor?.nombre} - Catálogos</DialogTitle>
+                <DialogTitle>{selectedProveedor?.nombre_empresa} - Catálogos</DialogTitle>
                 <DialogContent>
                     <List>
-                        {selectedProveedor?.catalogos.map((catalogo) => (
-                            <React.Fragment key={catalogo.id}>
-                                <ListItem onClick={() => handleCatalogoClick(catalogo.id)}>
-                                    <ListItemText primary={`Catálogo ${catalogo.id} - ${catalogo.mesVigencia}`} />
-                                    {expandedCatalogo === catalogo.id ? <ExpandLess /> : <ExpandMore />}
-                                </ListItem>
-                                <Collapse in={expandedCatalogo === catalogo.id} timeout="auto" unmountOnExit>
-                                    <List component="div" disablePadding>
-                                        {catalogo.repuestos.map((repuesto) => (
-                                            <ListItem key={repuesto.id} sx={{ pl: 4 }}>
-                                                <ListItemText
-                                                    primary={repuesto.nombre}
-                                                    secondary={
-                                                        <Typography component="span" variant="body2" color="text.primary">
-                                                            ID: {repuesto.id} - Precio: ${repuesto.precio}
-                                                        </Typography>
-                                                    }
-                                                />
-                                            </ListItem>
-                                        ))}
-                                    </List>
-                                </Collapse>
-                            </React.Fragment>
-                        ))}
+                        {selectedProveedor ? (
+                            catalogos.map((catalogo) => (
+                                <React.Fragment key={catalogo.id}>
+                                    <ListItem onClick={() => handleCatalogoClick(String(catalogo.id))}>
+                                        <ListItemText primary={`Catálogo ${catalogo.id} - ${catalogo.mes_vigencia}`} />
+                                        {expandedCatalogo === String(catalogo.id) ? <ExpandLess /> : <ExpandMore />}
+                                    </ListItem>
+                                    <Collapse in={expandedCatalogo === String(catalogo.id)} timeout="auto" unmountOnExit>
+                                        <List component="div" disablePadding>
+                                            {repuestos.map((repuesto) => (
+                                                <ListItem key={repuesto.id} sx={{ pl: 4 }}>
+                                                    <ListItemText
+                                                        primary={repuesto.nombre}
+                                                        secondary={
+                                                            <Typography component="span" variant="body2" color="text.primary">
+                                                                ID: {repuesto.id} - Precio: ${repuesto.costo}
+                                                            </Typography>
+                                                        }
+                                                    />
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    </Collapse>
+                                </React.Fragment>
+                            ))
+                        ) : null}
                     </List>
                 </DialogContent>
             </Dialog>
