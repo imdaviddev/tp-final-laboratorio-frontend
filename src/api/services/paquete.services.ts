@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IPaquete, IPaqueteCreate, IPaqueteUpdate } from "../models/paquetes.models";
+import { IPaquete } from "../models/paquetes.models";
 
 const API_URL_BASE = 'http://127.0.0.1:3000'
 const API_URL = API_URL_BASE + '/paquetes';
@@ -13,7 +13,7 @@ export async function getPaquetes(): Promise<IPaquete[]> {
     }
 }
 
-export async function createPaquete(paquete: IPaqueteCreate): Promise<IPaquete> {
+export async function createPaquete(paquete: IPaquete): Promise<IPaquete> {
     try {
         const response = await axios.post<IPaquete>(API_URL, paquete, {
             headers: {
@@ -26,7 +26,7 @@ export async function createPaquete(paquete: IPaqueteCreate): Promise<IPaquete> 
     }
 }
 
-export async function updatePaquete(paquete: IPaqueteUpdate): Promise<IPaquete> {
+export async function updatePaquete(paquete: IPaquete): Promise<IPaquete> {
     try {
       const response = await axios.put<IPaquete>(`${API_URL}/${paquete.id}`, paquete, {
         headers: {
