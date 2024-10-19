@@ -191,7 +191,7 @@
       "stock": 30,
       "stock_minimo": 5,
       "cant_a_comprar": 10,
-      "costo": 8.50,
+      "costo": 8.5,
       "descripcion": "Filtro de aire para mejorar la calidad del aire en el motor."
     },
     {
@@ -201,7 +201,7 @@
       "stock": 20,
       "stock_minimo": 3,
       "cant_a_comprar": 5,
-      "costo": 120.00,
+      "costo": 120,
       "descripcion": "Batería de larga duración para vehículos."
     },
     {
@@ -211,7 +211,7 @@
       "stock": 15,
       "stock_minimo": 2,
       "cant_a_comprar": 5,
-      "costo": 45.00,
+      "costo": 45,
       "descripcion": "Frenos de disco de alto rendimiento."
     },
     {
@@ -221,7 +221,7 @@
       "stock": 100,
       "stock_minimo": 20,
       "cant_a_comprar": 30,
-      "costo": 10.00,
+      "costo": 10,
       "descripcion": "Lámpara LED de repuesto para faros."
     },
     {
@@ -231,7 +231,7 @@
       "stock": 25,
       "stock_minimo": 5,
       "cant_a_comprar": 10,
-      "costo": 50.00,
+      "costo": 50,
       "descripcion": "Correa de distribución para motor."
     },
     {
@@ -241,7 +241,7 @@
       "stock": 40,
       "stock_minimo": 10,
       "cant_a_comprar": 15,
-      "costo": 75.00,
+      "costo": 75,
       "descripcion": "Discos de freno para mejorar la seguridad."
     },
     {
@@ -251,7 +251,7 @@
       "stock": 60,
       "stock_minimo": 15,
       "cant_a_comprar": 25,
-      "costo": 5.00,
+      "costo": 5,
       "descripcion": "Bombilla de repuesto para faros delanteros."
     },
     {
@@ -261,7 +261,7 @@
       "stock": 35,
       "stock_minimo": 5,
       "cant_a_comprar": 12,
-      "costo": 12.00,
+      "costo": 12,
       "descripcion": "Filtro de aceite para mantener el motor limpio."
     },
     {
@@ -271,7 +271,7 @@
       "stock": 20,
       "stock_minimo": 5,
       "cant_a_comprar": 5,
-      "costo": 8.00,
+      "costo": 8,
       "descripcion": "Reflector de seguridad para vehículos."
     }
   ],
@@ -547,6 +547,16 @@
       "matricula": "ABC123",
       "estado": "ASIGNADO",
       "f_asignacion": "2024-10-17T23:44:36.918Z",
+      "f_inicio": "",
+      "f_finalizacion": "",
+      "costo": 0
+    },
+    {
+      "id": "2646",
+      "id_conductor": "4",
+      "matricula": "MNO345",
+      "estado": "ASIGNADO",
+      "f_asignacion": "2024-10-19T15:31:32.487Z",
       "f_inicio": "",
       "f_finalizacion": "",
       "costo": 0

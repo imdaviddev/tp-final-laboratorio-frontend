@@ -16,9 +16,9 @@ import {
 } from '@mui/material';
 import { Container, ContainerPadre, InputForm, MensajeBienvenida } from '../ComponentsUI';
 import { Boton, SubmitButton } from '../ComponentsUI/Botones';
-import RepuestoDetails from './components/repuestoDetails';
 import useRepuestoStore from '../../store/repuestosContext';
 import { IRepuesto } from '../../api/models/respuestos.models';
+import RepuestoDetails from './components/RepuestoDetails';
 
 export default function administracionRepuestos() {
   const { repuestos, obtenerRepuestos, hasFetched } = useRepuestoStore();
