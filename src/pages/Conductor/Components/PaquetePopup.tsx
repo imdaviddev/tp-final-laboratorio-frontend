@@ -15,7 +15,7 @@ export default function PackagePopover({ paquete }) {
 
     const handleClose = () => {
         setAnchorEl(null);
-        setScanning(false); // Detener el escaneo cuando el popover se cierra
+        setScanning(false);
     };
 
     const open = Boolean(anchorEl);
@@ -64,10 +64,9 @@ export default function PackagePopover({ paquete }) {
     );
 }
 
-// Componente para escanear el código QR con un Modal (popup centrado)
 const QRScanner: React.FC<{ open: boolean, handleClose: () => void, paquete: any }> = ({ open, handleClose, paquete }) => {
-    const videoRef = useRef<HTMLVideoElement>(null); // Referencia para el video
-    const canvasRef = useRef<HTMLCanvasElement>(null); // Referencia para el canvas
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const canvasRef = useRef<HTMLCanvasElement>(null);
     const [qrCodeData, setQrCodeData] = useState<string | null>(null); // Estado para guardar los datos del QR
 
     useEffect(() => {
