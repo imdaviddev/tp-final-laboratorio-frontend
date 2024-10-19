@@ -255,7 +255,7 @@
       "descripcion": "Bombilla de repuesto para faros delanteros."
     },
     {
-      "id_repuesto": 9,
+      "id": 9,
       "id_catalogo": 1,
       "nombre": "Filtro de aceite",
       "stock": 35,
@@ -266,7 +266,7 @@
     },
     {
       "id": 10,
-      "id_catalogo": 3,
+      "id_catalogo": 2,
       "nombre": "Reflector",
       "stock": 20,
       "stock_minimo": 5,
@@ -290,6 +290,16 @@
       "id": 3,
       "id_proveedor": 2,
       "mes_vigencia": 8
+    },
+    {
+      "id": 4,
+      "id_proveedor": 2,
+      "mes_vigencia": 7
+    },
+    {
+      "id": 5,
+      "id_proveedor": 3,
+      "mes_vigencia": 9
     }
   ],
   "tickets": [
@@ -502,7 +512,7 @@
       "id": "68eb"
     },
     {
-      "id": "4",
+      "id": 4,
       "id_conductor": "2",
       "matricula": "JKL012",
       "estado": "ASIGNADO",

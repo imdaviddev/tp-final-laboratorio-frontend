@@ -30,7 +30,7 @@ export default function administracionProveedores() {
     const { catalogos, obtenerCatalogos } = useCatalogostore();
     const { repuestos, obtenerRepuestos } = useRepuestoStore();
     const [selectedProveedor, setSelectedProveedor] = useState<number>(null);
-    const [expandedCatalogo, setExpandedCatalogo] = useState<string | null>(null);
+    const [expandedCatalogo, setExpandedCatalogo] = useState<number>(null);
 
     useEffect(() => {
         if (!hasFetched) {
@@ -51,7 +51,7 @@ export default function administracionProveedores() {
         setExpandedCatalogo(null);
     };
 
-    const handleCatalogoClick = (catalogoId: string) => {
+    const handleCatalogoClick = (catalogoId: number) => {
         setExpandedCatalogo(expandedCatalogo === catalogoId ? null : catalogoId);
     };
 
@@ -96,13 +96,13 @@ export default function administracionProveedores() {
                             .map((catalogo) => {
                                 return (
                                     <React.Fragment key={catalogo.id}>
-                                        <ListItem onClick={() => handleCatalogoClick(String(catalogo.id))}>
+                                        <ListItem onClick={() => handleCatalogoClick(catalogo.id)}>
                                             <ListItemText primary={`Catálogo ${catalogo.id} - ${catalogo.mes_vigencia}`} />
-                                            {expandedCatalogo === String(catalogo.id) ? <ExpandLess /> : <ExpandMore />}
+                                            {expandedCatalogo === catalogo.id ? <ExpandLess /> : <ExpandMore />}
                                         </ListItem>
-                                        <Collapse in={expandedCatalogo === String(catalogo.id)} timeout="auto" unmountOnExit>
+                                        <Collapse in={expandedCatalogo === catalogo.id} timeout="auto" unmountOnExit>
                                             <List component="div" disablePadding>
-                                                {repuestos.filter((repuesto => repuesto.id_catalogo === catalogo.id))
+                                                {(repuestos.filter((repuesto => repuesto.id_catalogo === expandedCatalogo)))
                                                     .map((repuesto) => (
                                                         <ListItem key={repuesto.id} sx={{ pl: 4 }}>
                                                             <ListItemText
@@ -120,7 +120,7 @@ export default function administracionProveedores() {
                                     </React.Fragment>
                                 );
                             })
-                        )}: <Typography>No se encontraron catálogos para este proveedor.</Typography>
+                        )}
                     </List>
 
                 </DialogContent>
