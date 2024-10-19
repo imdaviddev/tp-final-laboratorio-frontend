@@ -22,6 +22,7 @@ const useRepuestoStore = create<repuestosTore>((set, get) => ({
             console.error('Failed to fetch repuestos:', error);
         }
     },
+
     actualizarRepuesto: async (updatedRepuesto: IRepuestoUpdate) => {
         try {
             const updatedRepuestoFromServer = await updateRepuesto(updatedRepuesto);
