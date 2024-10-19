@@ -29,8 +29,8 @@ export default function administracionProveedores() {
     const { proveedores, obtenerProveedores, hasFetched } = useProveedorestore();
     const { catalogos, obtenerCatalogos } = useCatalogostore();
     const { repuestos, obtenerRepuestos } = useRepuestoStore();
-    const [selectedProveedor, setSelectedProveedor] = useState<IProveedor | null>(null);
-    const [expandedCatalogo, setExpandedCatalogo] = useState<string | null>(null);
+    const [selectedProveedor, setSelectedProveedor] = useState<number>(null);
+    const [expandedCatalogo, setExpandedCatalogo] = useState<number>(null);
 
     useEffect(() => {
         if (!hasFetched) {
@@ -40,9 +40,8 @@ export default function administracionProveedores() {
         }
     }, [obtenerProveedores, obtenerCatalogos, obtenerRepuestos, hasFetched]);
 
-
-    const handleProveedorClick = (proveedor: IProveedor) => {
-        setSelectedProveedor(proveedor);
+    const handleProveedorClick = (idProveedor: number) => {
+        setSelectedProveedor(idProveedor);
         setOpen(true);
     };
 
@@ -52,9 +51,15 @@ export default function administracionProveedores() {
         setExpandedCatalogo(null);
     };
 
-    const handleCatalogoClick = (catalogoId: string) => {
+    const handleCatalogoClick = (catalogoId: number) => {
         setExpandedCatalogo(expandedCatalogo === catalogoId ? null : catalogoId);
     };
+
+    if (proveedores == null || repuestos == null || catalogos == null) {
+        return (
+            <div>Cargando...</div>
+        )
+    }
 
     return (
         <ContainerPadre>
@@ -72,7 +77,8 @@ export default function administracionProveedores() {
                         {proveedores.map((proveedor) => (
                             <TableRow
                                 key={proveedor.id}
-                                onClick={() => handleProveedorClick(proveedor)}
+                                onClick={() => handleProveedorClick(proveedor.id)}
+
                                 style={{ cursor: 'pointer' }}
                             >
                                 <TableCell>{proveedor.nombre_empresa}</TableCell>
@@ -85,36 +91,40 @@ export default function administracionProveedores() {
             </TableContainer>
 
             <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
-                <DialogTitle>{selectedProveedor?.nombre_empresa} - Catálogos</DialogTitle>
+                <DialogTitle> - Catálogos</DialogTitle>
                 <DialogContent>
                     <List>
-                        {selectedProveedor ? (
-                            catalogos.map((catalogo) => (
-                                <React.Fragment key={catalogo.id}>
-                                    <ListItem onClick={() => handleCatalogoClick(String(catalogo.id))}>
-                                        <ListItemText primary={`Catálogo ${catalogo.id} - ${catalogo.mes_vigencia}`} />
-                                        {expandedCatalogo === String(catalogo.id) ? <ExpandLess /> : <ExpandMore />}
-                                    </ListItem>
-                                    <Collapse in={expandedCatalogo === String(catalogo.id)} timeout="auto" unmountOnExit>
-                                        <List component="div" disablePadding>
-                                            {repuestos.map((repuesto) => (
-                                                <ListItem key={repuesto.id} sx={{ pl: 4 }}>
-                                                    <ListItemText
-                                                        primary={repuesto.nombre}
-                                                        secondary={
-                                                            <Typography component="span" variant="body2" color="text.primary">
-                                                                ID: {repuesto.id} - Precio: ${repuesto.costo}
-                                                            </Typography>
-                                                        }
-                                                    />
-                                                </ListItem>
-                                            ))}
-                                        </List>
-                                    </Collapse>
-                                </React.Fragment>
-                            ))
-                        ) : null}
+                        {(catalogos.filter((catalogo => catalogo.id === selectedProveedor))
+                            .map((catalogo) => {
+                                return (
+                                    <React.Fragment key={catalogo.id}>
+                                        <ListItem onClick={() => handleCatalogoClick(catalogo.id)}>
+                                            <ListItemText primary={`Catálogo ${catalogo.id} - ${catalogo.mes_vigencia}`} />
+                                            {expandedCatalogo === catalogo.id ? <ExpandLess /> : <ExpandMore />}
+                                        </ListItem>
+                                        <Collapse in={expandedCatalogo === catalogo.id} timeout="auto" unmountOnExit>
+                                            <List component="div" disablePadding>
+                                                {(repuestos.filter((repuesto => repuesto.id_catalogo === expandedCatalogo)))
+                                                    .map((repuesto) => (
+                                                        <ListItem key={repuesto.id} sx={{ pl: 4 }}>
+                                                            <ListItemText
+                                                                primary={repuesto.nombre}
+                                                                secondary={
+                                                                    <Typography component="span" variant="body2" color="text.primary">
+                                                                        ID: {repuesto.id} - Precio: ${repuesto.costo}
+                                                                    </Typography>
+                                                                }
+                                                            />
+                                                        </ListItem>
+                                                    ))}
+                                            </List>
+                                        </Collapse>
+                                    </React.Fragment>
+                                );
+                            })
+                        )}
                     </List>
+
                 </DialogContent>
             </Dialog>
         </ContainerPadre>

@@ -29,7 +29,7 @@ const RecorridoDetails = () => {
 
     return (
         <div>
-            <Detalle tipo={recorridoParticular.id_viaje} valor={recorridoParticular.estado.nombre} />
+            <Detalle tipo={recorridoParticular.id_viaje} valor={recorridoParticular.estado} />
         </div>
 
     );
