@@ -1,6 +1,6 @@
 export interface IRepuesto {
     id: number ;
-    id_catalogo:  number;
+    id_catalogo: number;
     nombre: string;
     stock: number;
     stock_minimo: number;

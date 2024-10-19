@@ -60,6 +60,7 @@ export default function administracionProveedores() {
             <div>Cargando...</div>
         )
     }
+
     return (
         <ContainerPadre>
             <MensajeBienvenida>Proveedores</MensajeBienvenida>
@@ -77,6 +78,7 @@ export default function administracionProveedores() {
                             <TableRow
                                 key={proveedor.id}
                                 onClick={() => handleProveedorClick(proveedor.id)}
+
                                 style={{ cursor: 'pointer' }}
                             >
                                 <TableCell>{proveedor.nombre_empresa}</TableCell>
