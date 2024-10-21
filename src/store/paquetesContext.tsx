@@ -1,13 +1,13 @@
 import { create } from 'zustand';
-import { IPaquete, IPaqueteCreate, IPaqueteUpdate } from '../api/models/paquetes.models';
+import { IPaquete } from '../api/models/paquetes.models';
 import { createPaquete, getPaquetes, updatePaquete } from '../api/services/paquete.services';
 
 type paquetestore = {
   paquetes: IPaquete[];
   hasFetched: boolean; 
   obtenerPaquetes: () => Promise<void>;
-  crearPaquete: (newPaquete: IPaqueteCreate) => Promise<void>;
-  actualizarPaquete: (updatedPaquete: IPaqueteUpdate) => Promise<void>;
+  crearPaquete: (newPaquete: IPaquete) => Promise<void>;
+  actualizarPaquete: (updatedPaquete: IPaquete) => Promise<void>;
 };
 
 const usePaquetestore = create<paquetestore>((set, get) => ({
@@ -25,7 +25,7 @@ const usePaquetestore = create<paquetestore>((set, get) => ({
     }
   },
 
-  crearPaquete: async (newPaquete: IPaqueteCreate) => {
+  crearPaquete: async (newPaquete: IPaquete) => {
     try {
       const createdPaquete = await createPaquete(newPaquete);
       set((state) => ({
@@ -36,12 +36,12 @@ const usePaquetestore = create<paquetestore>((set, get) => ({
     }
   },
 
-  actualizarPaquete: async (updatedPaquete: IPaqueteUpdate) => {
+  actualizarPaquete: async (updatedPaquete: IPaquete) => {
     try {
       const updatedPaqueteFromServer = await updatePaquete(updatedPaquete);
       set((state) => ({
         paquetes: state.paquetes.map((paquete) =>
-            paquete.id_paquete === updatedPaquete.id ? updatedPaqueteFromServer : paquete
+            paquete.id === updatedPaquete.id ? updatedPaqueteFromServer : paquete
         ),
       }));
     } catch (error) {

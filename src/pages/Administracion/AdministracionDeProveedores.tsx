@@ -104,19 +104,21 @@ export default function administracionProveedores() {
                                         </ListItem>
                                         <Collapse in={expandedCatalogo === catalogo.id} timeout="auto" unmountOnExit>
                                             <List component="div" disablePadding>
-                                                {(repuestos.filter((repuesto => repuesto.id_catalogo === expandedCatalogo)))
-                                                    .map((repuesto) => (
-                                                        <ListItem key={repuesto.id} sx={{ pl: 4 }}>
-                                                            <ListItemText
-                                                                primary={repuesto.nombre}
-                                                                secondary={
-                                                                    <Typography component="span" variant="body2" color="text.primary">
-                                                                        ID: {repuesto.id} - Precio: ${repuesto.costo}
-                                                                    </Typography>
-                                                                }
-                                                            />
-                                                        </ListItem>
-                                                    ))}
+                                                {repuestos.filter(repuesto => repuesto.id_catalogo == catalogo.id)
+                                                    .map((repuesto) => {
+                                                        return (
+                                                            <ListItem key={repuesto.id} sx={{ pl: 4 }}>
+                                                                <ListItemText
+                                                                    primary={repuesto.nombre}
+                                                                    secondary={
+                                                                        <Typography component="span" variant="body2" color="text.primary">
+                                                                            ID: {repuesto.id} - Precio: ${repuesto.costo}
+                                                                        </Typography>
+                                                                    }
+                                                                />
+                                                            </ListItem>
+                                                        );
+                                                    })}
                                             </List>
                                         </Collapse>
                                     </React.Fragment>
