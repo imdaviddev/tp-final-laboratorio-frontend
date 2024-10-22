@@ -1,10 +1,10 @@
 import { styled } from 'styled-components'
-import Detalle from '../../../components/Detalle'
-import { Boton } from '../../ComponentsUI/Botones'
-import { ButtonGroup } from '../../ComponentsUI';
-import camionRojo from '../../../../public/camion-mantenimiento.svg';
+import Detalle from '../../../../components/Detalle'
+import { Boton } from '../../../ComponentsUI/Botones'
+import { ButtonGroup } from '../../../ComponentsUI';
+import camionRojo from '/camion-mantenimiento.svg?url';
 import { Link } from 'react-router-dom'
-import { Estado } from '../../../api/models/tickets.models';
+import { Estado } from '../../../../api/models/tickets.models';
 
 const ContainerTicket = styled.div`
 display: flex;

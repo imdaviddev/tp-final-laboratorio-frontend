@@ -1,5 +1,5 @@
 import { ContainerPadre, MensajeBienvenida } from "../ComponentsUI"
-import Ticket from "./Components/Ticket"
+import Ticket from "./Components/Tickets/Ticket"
 import FiltrarHistorial from './Components/FiltrarHistorial'
 import { ContainerTickets } from "./Components/BasicTabs/BasicTabs"
 import useTicketstore from "../../store/ticketsContext"

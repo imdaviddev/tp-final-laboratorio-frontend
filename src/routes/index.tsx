@@ -3,14 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import IniciarSesionPage from '../pages/IniciarSesion/IniciarSesionPage';
 
 import RecorridoDetails from '../components/RecorridoDetails'
-import TicketDetails from '../components/TicketDetails'
+import TicketDetails from '../pages/Mantenimiento/Components/Tickets/TicketCierre'
 
 import { GerenciaHomePage, GerenciaControles, GerenciaReportes, GerenciaPageLayout } from '../pages/gerencia'
 import { ConductorInicio, ConductorRecorrido, ConductorReportes, ConductorPageLayout } from '../pages/Conductor';
 import { SupervisionConductoresPage, SupervisionCrearRecorridoPage, SupervisionHomePage, SupervisionPageLayout, SupervisionReportesPage, SupervisionVehiculosPage } from '../pages/Supervision';
 import { MantenimientoPageLayout, MantenimientoHistorial, MantenimientoInicio, MantenimientoIngresos } from '../pages/Mantenimiento';
 
-import TicketsDetalle from '../pages/Mantenimiento/Components/BasicTabs/TicketsDetailsNoCierre'
+import TicketsDetalle from '../pages/Mantenimiento/Components/Tickets/TicketDetalle'
 
 import AdministracionPageLayout from '../pages/Administracion/AdministracionPageLayout';
 import AdministracionInicio from '../pages/Administracion/AdministracionInicio';

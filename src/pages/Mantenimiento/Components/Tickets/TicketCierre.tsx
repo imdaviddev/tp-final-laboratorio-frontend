@@ -1,14 +1,14 @@
 import { FormEvent, useEffect, useState } from "react";
 import { styled } from 'styled-components';
 import { useParams } from "react-router-dom";
-import { ITicketUpdate } from "../api/models/tickets.models";
-import useTicketstore from "../store/ticketsContext";
-import useRepuestoStore from "../store/repuestosContext";
-import { Boton, SubmitButton } from '../pages/ComponentsUI/Botones';
-import { ContainerPadre, MensajeBienvenida, LabelForm, InputForm, SelectForm } from "../pages/ComponentsUI";
+import { ITicketUpdate } from "../../../../api/models/tickets.models";
+import useTicketstore from "../../../../store/ticketsContext";
+import useRepuestoStore from "../../../../store/repuestosContext";
+import { Boton, SubmitButton } from '../../../ComponentsUI/Botones';
+import { ContainerPadre, MensajeBienvenida, LabelForm, InputForm, SelectForm } from "../../../ComponentsUI";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
-import { customScrollbar } from "../constants/styles";
+import { customScrollbar } from "../../../../constants/styles";
 
 
 const GroupSelect = styled.div`
