@@ -159,7 +159,7 @@ const TicketDetails = () => {
                                 <option value="">Seleccionar repuesto</option>
                                 {repuestos.map((repuesto) => (
                                     <option key={repuesto.id} value={repuesto.id}>
-                                        {repuesto.nombre} - ${repuesto.costo}  {/* Mostrar nombre y precio */}
+                                        {repuesto.nombre}
                                     </option>
                                 ))}
                             </SelectForm>
@@ -167,7 +167,6 @@ const TicketDetails = () => {
                             <Boton onClick={() => incrementarCantidad(index)}>+</Boton>
                             <Boton onClick={() => disminuirCantidad(index)}>-</Boton>
                             <Boton onClick={() => eliminarRepuesto(index)}><FontAwesomeIcon icon={faTrashCan} /></Boton>
-                            <LabelForm>Costo: ${repuestoUtilizado.costo * repuestoUtilizado.cantidad}</LabelForm>
                         </GroupSelect>
                     ))}
                 </RepuestosGroup>
