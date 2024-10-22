@@ -53,7 +53,7 @@ const TicketDetails = () => {
             obtenerTicket(parseInt(ticketId))
                 .then(promise => {
                     setTicketParticular(promise);
-                    setDescripcion(promise.motivo_ingreso);
+                    setDescripcion("");
                     setEstado(promise.estado);
                 })
                 .catch(error => console.log(error));
