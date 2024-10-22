@@ -1,7 +1,9 @@
+import { IRepuestoUtilizado } from "./respuestos.models"
+
 export interface ITicket {
-    id_ticket: number
+    id: number
     nombre_usuario: string
-    descripcion_problemas: string
+    motivo_ingreso: string
     fecha_creacion: string
     fecha_finalizacion: string
     estado: Estado |string,
@@ -9,6 +11,7 @@ export interface ITicket {
     matricula: string
     costoTotal: number
     descripcion_reparaciones: string
+    repuestos: IRepuestoUtilizado[]
 }
 
 export interface ITicketCreate {
@@ -16,13 +19,6 @@ export interface ITicketCreate {
     descripcion_problemas: string
     nombre_usuario: string
     tipo: Tipo | string
-}
-
-export interface ITicketUpdate {
-    id_ticket: number
-    estado: Estado | string
-    descripcion: string,
-    repuestos: any[]
 }
 
 export enum Estado {

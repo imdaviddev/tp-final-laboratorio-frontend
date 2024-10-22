@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { ITicket, ITicketCreate, ITicketUpdate } from '../api/models/tickets.models';
+import { ITicket, ITicketCreate } from '../api/models/tickets.models';
 import { createTicket, getTickets, updateTicket } from '../api/services/tickets.services';
 
 type ticketstore = {
@@ -8,7 +8,7 @@ type ticketstore = {
     obtenerTickets: () => Promise<void>;
     obtenerTicket: (ticketId: number) => Promise<ITicket>;
     crearTicket: (newTicket: ITicketCreate) => Promise<void>;
-    actualizarTicket: (updatedTicket: ITicketUpdate) => Promise<void>;
+    actualizarTicket: (updatedTicket: ITicket) => Promise<void>;
 };
 
 const useTicketstore = create<ticketstore>((set, get) => ({
@@ -29,7 +29,7 @@ const useTicketstore = create<ticketstore>((set, get) => ({
     obtenerTicket: async (ticketId: number) => {
         try {
             //const data = await getRecorridoById(recorridoId); OPCION POR API
-            return get().Tickets.find(r => r.id_ticket === ticketId);
+            return get().Tickets.find(r => r.id === ticketId);
         } catch (error) {
             console.error('Failed to fetch Ticket:', error);
         }
@@ -46,12 +46,12 @@ const useTicketstore = create<ticketstore>((set, get) => ({
         }
     },
 
-    actualizarTicket: async (updatedTicket: ITicketUpdate) => {
+    actualizarTicket: async (updatedTicket: ITicket) => {
         try {
             const updatedTicketFromServer = await updateTicket(updatedTicket);
             set((state) => ({
                 Tickets: state.Tickets.map((ticket) =>
-                    ticket.id_ticket === updatedTicket.id_ticket ? updatedTicketFromServer : ticket
+                    ticket.id === updatedTicket.id ? updatedTicketFromServer : ticket
                 ),
             }));
         } catch (error) {

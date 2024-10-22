@@ -89,7 +89,7 @@ export default function BasicTabs(props) {
         <ContainerTickets>
           {Tickets.map((ticket) => (
             ticket.estado === Estado.EN_CURSO && (
-              <Ticket key={ticket.id_ticket} {...ticket}></Ticket>
+              <Ticket key={ticket.id} {...ticket}></Ticket>
             )
           ))}
         </ContainerTickets>
@@ -98,7 +98,7 @@ export default function BasicTabs(props) {
         <ContainerTickets>
           {Tickets.map((ticket) => (
             ticket.estado !== Estado.EN_CURSO && (
-              <Ticket key={ticket.id_ticket} {...ticket}></Ticket>
+              <Ticket key={ticket.id} {...ticket}></Ticket>
             )
           ))}
         </ContainerTickets>
