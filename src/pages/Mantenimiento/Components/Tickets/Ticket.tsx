@@ -1,10 +1,10 @@
 import { styled } from 'styled-components'
-import Detalle from '../../../components/Detalle'
-import { Boton } from '../../ComponentsUI/Botones'
-import { ButtonGroup } from '../../ComponentsUI';
-import camionRojo from '../../../../public/camion-mantenimiento.svg';
+import Detalle from '../../../../components/Detalle'
+import { Boton } from '../../../ComponentsUI/Botones'
+import { ButtonGroup } from '../../../ComponentsUI';
+import camionRojo from '/camion-mantenimiento.svg?url';
 import { Link } from 'react-router-dom'
-import { Estado } from '../../../api/models/tickets.models';
+import { Estado } from '../../../../api/models/tickets.models';
 
 const ContainerTicket = styled.div`
 display: flex;
@@ -48,7 +48,7 @@ margin: 5px;
 const Ticket = (props) => {
     return (
         <ContainerTicket>
-            <NameTicket> Ticket {props.id_ticket}</NameTicket>
+            <NameTicket> Ticket {props.id}</NameTicket>
             <ContainerDescTicket>
                 <ImgTicket></ImgTicket>
                 <DescTicket>
@@ -58,13 +58,13 @@ const Ticket = (props) => {
                     </DescGroup>
                     <ButtonGroup>
                         <Boton>
-                            <Link to={`detalle/${props.id_ticket}`}>Ver Detalle</Link>
+                            <Link to={`detalle/${props.id}`}>Ver Detalle</Link>
                         </Boton>
 
                         {/* Condicional para mostrar "Cerrar Ticket" solo si está en curso */}
                         {props.estado === Estado.EN_CURSO && (
                             <Boton>
-                                <Link to={`tickets/${props.id_ticket}`}>Cerrar Ticket</Link>
+                                <Link to={`tickets/${props.id}`}>Cerrar Ticket</Link>
                             </Boton>
                         )}
                     </ButtonGroup>

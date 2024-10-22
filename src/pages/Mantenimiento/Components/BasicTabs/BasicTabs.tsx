@@ -6,7 +6,7 @@ import { tabStyles, commonTabSx } from '../../../../constants/styles';
 import a11yProps from './a11yProps'
 import CustomTabPanel from './CustomTabPanel';
 import { styled } from 'styled-components'
-import Ticket from '../../Components/Ticket';
+import Ticket from '../../Components/Tickets/Ticket';
 import useTicketstore from '../../../../store/ticketsContext';
 import { useEffect } from 'react';
 import { Estado } from '../../../../api/models/tickets.models';
@@ -89,7 +89,7 @@ export default function BasicTabs(props) {
         <ContainerTickets>
           {Tickets.map((ticket) => (
             ticket.estado === Estado.EN_CURSO && (
-              <Ticket key={ticket.id_ticket} {...ticket}></Ticket>
+              <Ticket key={ticket.id} {...ticket}></Ticket>
             )
           ))}
         </ContainerTickets>
@@ -98,7 +98,7 @@ export default function BasicTabs(props) {
         <ContainerTickets>
           {Tickets.map((ticket) => (
             ticket.estado !== Estado.EN_CURSO && (
-              <Ticket key={ticket.id_ticket} {...ticket}></Ticket>
+              <Ticket key={ticket.id} {...ticket}></Ticket>
             )
           ))}
         </ContainerTickets>

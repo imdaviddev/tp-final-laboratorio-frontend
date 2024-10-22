@@ -9,6 +9,12 @@ export interface IRepuesto {
     descripcion: string;
 }
 
+export interface IRepuestoUtilizado {
+    id: number;
+    id_ticket: number;
+    cantidad: number;
+    costo: number;
+}
 
 export interface IRepuestoUpdate {
     id_repuesto: number;

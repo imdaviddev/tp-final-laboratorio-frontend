@@ -14,6 +14,7 @@ import {
 import { styled } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import { Estado } from "../../../../api/models/tickets.models";
 
 const StyledCard = styled(Card)(({ theme }) => ({
     maxWidth: 800,
@@ -29,7 +30,7 @@ const StyledCardHeader = styled(CardHeader)(({ theme }) => ({
 
 const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
     marginTop: theme.spacing(2),
-    
+
 }));
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -81,7 +82,11 @@ const TicketsDetalle = () => {
                             </StyledTableRow>
                             <StyledTableRow>
                                 <StyledTableCell>Fecha de Finalización</StyledTableCell>
-                                <StyledTableCell>{ticketDetalle.fecha_finalizacion}</StyledTableCell>
+                                {ticketDetalle.estado === Estado.EN_CURSO ? (
+                                    <StyledTableCell><b>Pendiente de cálculo</b></StyledTableCell>
+                                ) : (
+                                    <StyledTableCell>{ticketDetalle.fecha_finalizacion}</StyledTableCell>
+                                )}
                             </StyledTableRow>
                             <StyledTableRow>
                                 <StyledTableCell>Tecnico</StyledTableCell>
@@ -97,7 +102,12 @@ const TicketsDetalle = () => {
                             </StyledTableRow>
                             <StyledTableRow>
                                 <StyledTableCell>Costo Total</StyledTableCell>
-                                <StyledTableCell>${ticketDetalle.costoTotal}</StyledTableCell>
+                                {ticketDetalle.estado === Estado.EN_CURSO ? (
+                                    <StyledTableCell><b>Pendiente de cálculo</b></StyledTableCell>
+                                ) : (
+                                    <StyledTableCell>${ticketDetalle.costoTotal}</StyledTableCell>
+                                )}
+
                             </StyledTableRow>
                             <StyledTableRow>
                                 <StyledTableCell>Descripcion</StyledTableCell>
