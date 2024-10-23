@@ -8,7 +8,7 @@ import { ContainerPadre, MensajeBienvenida, LabelForm, InputForm, SelectForm } f
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { customScrollbar } from "../../../../constants/styles";
-import { ITicket } from "../../../../api/models/tickets.models";
+import { ITicket, ITicketUpdate } from "../../../../api/models/tickets.models";
 
 const GroupSelect = styled.div`
     display: flex;
@@ -49,10 +49,12 @@ const TicketDetails = () => {
     }, [obtenerRepuestos, hasFetched]);
 
     useEffect(() => {
-        obtenerTickets().then(() => {
+        obtenerTickets().then((tickets) => {
+            console.log(tickets)
             obtenerTicket(parseInt(ticketId))
                 .then(promise => {
                     setTicketParticular(promise);
+                    console.log("hola",promise);
                     setDescripcion("");
                     setEstado(promise.estado);
                 })
@@ -105,27 +107,32 @@ const TicketDetails = () => {
     };
 
     const sendHandler = () => {
-        const ticketData: ITicket = {
-            id: ticketParticular!.id,
+        if (!ticketParticular) {
+            console.error('El ticket no está disponible.');
+            return;
+        }
+    
+        const ticketData: ITicketUpdate = {
+            id: ticketParticular.id,
             estado: estado,
-            nombre_usuario: ticketParticular!.nombre_usuario,
+            nombre_usuario: ticketParticular.nombre_usuario,
             motivo_ingreso: ticketParticular.motivo_ingreso,
-            fecha_creacion: ticketParticular!.fecha_creacion,
-            fecha_finalizacion: "",
-            tipo: ticketParticular!.tipo,
-            matricula: ticketParticular!.matricula,
-            costoTotal: repuestosUtilizados.reduce((acc, repuesto) => acc + repuesto.cantidad * repuesto.costo, 0),  // Suma el costo total
+            fecha_creacion: ticketParticular.fecha_creacion,
+            tipo: ticketParticular.tipo,
+            matricula: ticketParticular.matricula,
+            costoTotal: repuestosUtilizados.reduce((acc, repuesto) => acc + repuesto.cantidad * repuesto.costo, 0), // Suma el costo total
             descripcion_reparaciones: descripcion,
             repuestos: repuestosUtilizados
         };
-
+    
         actualizarTicket(ticketData)
             .then(() => {
                 console.log('Ticket actualizado');
-                console.log(ticketData)
+                console.log(ticketData);
             })
             .catch(error => console.error('Error al actualizar:', error));
     };
+    
 
     if (ticketParticular == null) {
         return <div>Cargando...</div>;

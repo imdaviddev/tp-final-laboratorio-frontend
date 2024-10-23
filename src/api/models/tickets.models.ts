@@ -1,11 +1,24 @@
 import { IRepuestoUtilizado } from "./respuestos.models"
 
 export interface ITicket {
-    id: number
+    id: number;
     nombre_usuario: string
     motivo_ingreso: string
     fecha_creacion: string
     fecha_finalizacion: string
+    estado: Estado | string,
+    tipo: Tipo | string,
+    matricula: string
+    costoTotal: number
+    descripcion_reparaciones: string
+    repuestos: IRepuestoUtilizado[]
+}
+
+export interface ITicketUpdate {
+    id: number
+    nombre_usuario: string
+    motivo_ingreso: string
+    fecha_creacion: string
     estado: Estado |string,
     tipo: Tipo | string,
     matricula: string

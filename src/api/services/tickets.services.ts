@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ITicket, ITicketCreate } from "../models/tickets.models";
+import { ITicket, ITicketCreate, ITicketUpdate } from "../models/tickets.models";
 
 const API_URL_BASE = 'http://127.0.0.1:3000'
 const API_URL = API_URL_BASE + '/tickets';
@@ -13,7 +13,7 @@ export async function getTickets(): Promise<ITicket[]> {
     }
 }
 
-export async function updateTicket(ticket: ITicket): Promise<ITicket> {
+export async function updateTicket(ticket: ITicketUpdate): Promise<ITicket> {
     try {
         const response = await axios.put<ITicket>(`${API_URL}/${ticket.id}`, ticket, {
             headers: {
